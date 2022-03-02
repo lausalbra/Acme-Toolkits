@@ -26,7 +26,22 @@ public class FavouriteLinkTest extends TestHarness {
 	public void favouriteLink() {
 		super.navigateHome();
 		super.clickOnMenu("Anonymous", "15414656X: Salgado Bravo, Laura");		
-		super.checkCurrentUrl("https://www.youtube.com/");
+		super.checkCurrentUrl("https://www.youtube.com");
+		super.navigateHome();
+		super.clickOnMenu("Anonymous", "49133636R: Barba Moreno, Alejandro");		
+		super.checkCurrentUrl("https://www.youtube.com/watch?v=GQt1-1oPrOM");
+		super.navigateHome();
+		super.clickOnMenu("Anonymous", "15427850W: Sanchez Hossdorf, Alexander");		
+		super.checkCurrentUrl("https://www.youtube.com/watch?v=eSZFIXbqmhs&list=PLNQtd15ZC-ZyZKruTodo-4I3_kfoGaDEq&index=2&t=3241s");
+		super.navigateHome();
+		super.clickOnMenu("Anonymous", "47563095S: Pardo Pastor, Carlos");		
+		super.checkCurrentUrl("https://www.youtube.com/watch?v=fJ9rUzIMcZQ");
+		super.navigateHome();
+		super.clickOnMenu("Anonymous", "29539112M: Silva Leon, Fernando");		
+		super.checkCurrentUrl("https://www.powerpyx.com");
+		super.navigateHome();
+		super.clickOnMenu("Anonymous", "29533279Z: García Lergo, Horacio");		
+		super.checkCurrentUrl("https://www.youtube.com/watch?v=K3Qzzggn--s");
 	}
 	
 	// Ancillary methods ------------------------------------------------------ 

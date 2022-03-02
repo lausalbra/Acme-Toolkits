@@ -22,7 +22,7 @@
     
     
     
-    <wb-module deploy-name="Hello-World-22.1-22.1">
+    <wb-module deploy-name="Acme-Toolkits-1.0-1.0">
                                                                                                                                                                                                 
         
         
@@ -148,9 +148,9 @@
         
         
         
-        <property name="java-output-path" value="/Hello-World-22.0/target/classes"/>
+        <property name="java-output-path" value="/Acme-Toolkits-1.0/target/classes"/>
                 
-        <property name="context-root" value="Hello-World-22.1"/>
+        <property name="context-root" value="Acme-Toolkits-1.0"/>
                                                                                                                                                                                             
     
     

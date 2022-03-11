@@ -56,7 +56,7 @@ public class Toolkit extends AbstractEntity{
 	protected String	optionalLink;
 	
 	@NotNull
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	protected Component component;
 	
 	@NotNull

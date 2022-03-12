@@ -14,6 +14,7 @@ import javax.validation.constraints.Positive;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
 import acme.roles.Patron;
@@ -43,7 +44,7 @@ public class Patronage extends AbstractEntity{
 	protected String legalStuff;
 	
 	@Positive
-	protected Integer budget;
+	protected Money budget;
 	
 	protected Date startPeriod;
 	
@@ -55,11 +56,12 @@ public class Patronage extends AbstractEntity{
 	//Relationships -----------------------------------------------------------------------------
 	@NotNull
 	@Valid
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	Patron patron; 
 	
 	@NotNull
 	@Valid
-	@ManyToOne(optional = true)
-	Inventor inventor; 
+	@ManyToOne(optional = false)
+	Inventor inventor;
+	
 }

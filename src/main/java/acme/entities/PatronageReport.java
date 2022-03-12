@@ -9,6 +9,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -30,6 +31,7 @@ public class PatronageReport extends AbstractEntity{
 	
 	@NotBlank
 	@Column(unique = true)
+	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?:[0-9]{4}$")
 	protected String sequenceNumber;
 	
 	@NotNull
@@ -48,6 +50,6 @@ public class PatronageReport extends AbstractEntity{
 	@NotNull
 	@Valid
 	@ManyToOne(optional = true)
-	Patronage patronage; 
+	Patronage patronage;
 	
 }

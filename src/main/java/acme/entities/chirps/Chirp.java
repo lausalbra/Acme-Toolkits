@@ -1,4 +1,4 @@
-package acme.entities.chirp;
+package acme.entities.chirps;
 
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;

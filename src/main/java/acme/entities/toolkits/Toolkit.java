@@ -8,7 +8,6 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.PositiveOrZero;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
@@ -30,11 +29,6 @@ public class Toolkit extends AbstractEntity{
 	
 	//Attributes  
 	
-	
-	@NotBlank
-	@Length(max=101)
-	protected String 	name;
-	
 	@NotNull
 	@Column(unique = true)
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
@@ -42,24 +36,28 @@ public class Toolkit extends AbstractEntity{
 	
 	@NotBlank
 	@Length(max=101)
-	protected String 	technology;
+	protected String 	title;
 	
 	@NotBlank
 	@Length(max=256)
 	protected String 	description;
 	
-	@NotNull
-	@PositiveOrZero
-	protected String 	retailPrice;
+	@NotBlank
+	@Length(max=256)
+	protected String 	assemblyNote;
 	
 	@URL
 	protected String	optionalLink;
 	
+	// Relationships 
+	
 	@NotNull
+	@Valid
 	@ManyToOne(optional = true)
 	protected Component component;
 	
 	@NotNull
+	@Valid
 	@OneToOne(optional = false)
 	protected Tool tool;
 	

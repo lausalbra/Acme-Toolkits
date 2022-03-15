@@ -1,4 +1,4 @@
-key,status,code,legalStuff,budget,startPeriod,endPeriod,link
-patronage-01,accepted,ABC-123-A,Nueva funcionalidad de Twitch,"EUR 10,000.00",2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-patronage-02,accepted,ABC-123-B,Segunda nueva funcionalidad de Twitch,"EUR 15,000.00",2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-patronage-03,accepted,ABC-123-C,Tercera nueva funcionalidad de Twitch,"EUR 20,000.00",2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
+key,status,code,legalStuff,budget,startPeriod,endPeriod,link,key:patron,key:inventor
+patronage-01,accepted,ABC-123-A,Nueva funcionalidad de Twitch,"EUR 10,000.00",2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv,patron-01,inventor-01
+patronage-02,accepted,ABC-123-B,Segunda nueva funcionalidad de Twitch,"EUR 15,000.00",2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv,patron-01,inventor-02
+patronage-03,accepted,ABC-123-C,Tercera nueva funcionalidad de Twitch,"EUR 20,000.00",2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv,patron-02,inventor-01

@@ -10,6 +10,7 @@ import javax.validation.constraints.PositiveOrZero;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,7 +31,7 @@ public class Tool extends AbstractEntity{
 	@Length(max=101)
 	protected String 	name;
 	
-	@NotNull
+	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$")
 	protected String 	code;
@@ -45,7 +46,7 @@ public class Tool extends AbstractEntity{
 	
 	@NotNull
 	@PositiveOrZero
-	protected Double 	retailPrice;
+	protected Money 	retailPrice;
 	
 	@URL
 	protected String	optionalLink;

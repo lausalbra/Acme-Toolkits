@@ -45,7 +45,7 @@ public class Tool extends AbstractEntity{
 	
 	@NotNull
 	@PositiveOrZero
-	protected String 	retailPrice;
+	protected Double 	retailPrice;
 	
 	@URL
 	protected String	optionalLink;

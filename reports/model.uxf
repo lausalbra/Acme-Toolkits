@@ -244,7 +244,7 @@ Patronage
 + status: EnumType {NotNull}
 + code: String {regexp = "^[A-Z]{3}-[0-9]{3}(-[A-Z])?$", unique}
 + legalStuff: String {NotBlank, Length(max = 256)}
-+ budget: Integer
++ budget: Money
 + startPeriod: Date
 + endPeriod: Date 
 + link: String {URL}

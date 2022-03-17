@@ -18,3 +18,13 @@ account that you must link Acme-Framework-22.1 excluding the following resources
 
 - **/fragments/**
  
+ ELECCIONES REALIZADAS Y SU RAZÓN
+
+Patronage: 
+- A pesar de que el atributo startPerio y endPeriod puedan parecer que estén en el futuro, lo que nos indica es que deben estar un mes más tarde (al menos startPeriod) del momento de creación del Patronage, y no en el futuro de cuando se popula a la base de datos (cosa que ésta no tendría en cuenta a la hora de popular con la etiqueta @Future). No obstante, si sólo fuese se nos dijese que debe de estar en el futuro del momento que se crea, la hubiéremos puesto, ya que nos hubiere ahorrado añadir un método en el servicio de crear la entidad (que se harán en el futuro), mas no es el caso, debido a que debe de estar, al menos, un mes posterior al momento de la creación. Dado que vamos a tener que añadir una validación sí o sí al método, y que la etiqueta @Future nos medio obligaría a poner los datos de startPerio y endPeriod muy en el futuro (para no estar cambiándolos constantemente), se ha decidido no colocar la etiqueta @Future en ninguno de los dos, y ya, a nivel de servicio, crear la validación correspondiente.
+
+Configuration: 
+- En esta entidad, no se nos ha dado una definición exacta de cómo es, sino que se nos han aportado los datos que ésta llevara en primera (y única, se puede entender) instancia, por lo que si son necesarios ciertos campos o no, es algo de nuestra elección, basándonos en el sentido común. 
+    - Se ha decidido que no será totalmente necesario que haya palabras spam de ningún tipo (para que el administrador del sistema decida si quiere o no que haya palabras spam); pero el umbral de estas sí que será necesario, aunque no haya palabras spam (en caso de que se coloque un umbral sin haber palabras spam, éste no tendrá efecto alguno) para que, si se meten palabras spam, siempre haya un umbral. En caso de que no se coloque umbral, se podría poner a "0.00".
+    - Para las divisas, será necesario poner siempre una divisa por defecto (que, aunque no se nos haya indicado por ahora, tendrá un uso en el futuro) y unas divisas aceptadas (ya que se podría entender que, al no haber ninguna divisa aceptada, no se podría introducir ningún tipo de moneda en el sistema).
+- Los datos han decidido meterse separados por dobles puntos (palabras spam y divisas), dado que es un carácter que, muy difícilmente, pueda encontrarse en palabras como tal, al contrario que los guiones.

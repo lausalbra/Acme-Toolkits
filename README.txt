@@ -39,3 +39,8 @@ instancia, por lo que si son necesarios ciertos campos o no, es algo de nuestra 
     aceptadas (ya que se podría entender que, al no haber ninguna divisa aceptada, no se podría introducir ningún tipo de moneda en el sistema).
 - Los datos han decidido meterse separados por dobles puntos (palabras spam y divisas), dado que es un carácter que, muy difícilmente, pueda encontrarse en palabras
 como tal, al contrario que los guiones.
+
+Dasboards: 
+- Para esta entidad se pedian agrupar algunos atributos por divisa, se ha decidido dejar esta funcionalidad para cuando para posteriormente en concreto cuando se 
+realicen los dashboards services. Por tanto no se han escrito distintos atributos para cada tipo de moneda. Además, hemos pensado escribir un atributo por entidad,
+no es necesario y aumentaria innecesariamente el tamaño del uml, pues estariamos hablando de casi triplicar el numero de atributos.

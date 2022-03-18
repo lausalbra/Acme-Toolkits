@@ -508,4 +508,34 @@ bg=green</panel_attributes>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>312</x>
+      <y>564</y>
+      <w>204</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Announcement
+--
++ creation: Date {NotNull, Temporal(TIMESTAMP)}
++ title: String {NotBlank, Lenght(1,101)}
++ body: String {NotBlank, Lenght(1,101)}
++criticalFlag: Boolean {NotNull}
++ link: String {URL}
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>408</x>
+      <y>480</y>
+      <w>18</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
 </diagram>

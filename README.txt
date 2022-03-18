@@ -41,6 +41,8 @@ instancia, por lo que si son necesarios ciertos campos o no, es algo de nuestra 
 como tal, al contrario que los guiones.
 
 Dasboards: 
-- Para esta entidad se pedian agrupar algunos atributos por divisa, se ha decidido dejar esta funcionalidad para cuando para posteriormente en concreto cuando se 
-realicen los dashboards services. Por tanto no se han escrito distintos atributos para cada tipo de moneda. Además, hemos pensado escribir un atributo por entidad,
-no es necesario y aumentaria innecesariamente el tamaño del uml, pues estariamos hablando de casi triplicar el numero de atributos.
+- Para esta entidad se pedian agrupar algunos atributos por divisa. Se ha decidido dejar esta funcionalidad para más adelante; en concreto, cuando se
+realicen los servicios de estas dos entidades (tanto la de Patron como la de Administrator). Por tanto, no se han escrito distintos atributos para cada tipo de moneda.
+Además, escribir un atributo por entidad no es necesario y aumentaria innecesariamente el tamaño del uml, pues estariamos hablando de casi triplicar el numero de
+atributos, lo que se resumiría en dificultar la visión del uml, y hacer gran parte del contenido en la entidad, el cuál se puede hacer en el servicio de forma
+más dinámica y sencilla.

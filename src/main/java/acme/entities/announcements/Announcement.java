@@ -1,4 +1,4 @@
-package acme.entities.announcement;
+package acme.entities.announcements;
 
 import java.util.Date;
 
@@ -40,7 +40,7 @@ public class Announcement extends AbstractEntity {
 	protected Boolean criticalFlag;
 	
 	@URL
-	protected String URL;
+	protected String link;
 	
 	
 

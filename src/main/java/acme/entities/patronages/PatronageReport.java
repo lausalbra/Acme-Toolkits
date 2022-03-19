@@ -49,7 +49,7 @@ public class PatronageReport extends AbstractEntity{
 	
 	@NotNull
 	@Valid
-	@ManyToOne(optional = true)
+	@ManyToOne(optional = false)
 	Patronage patronage;
 	
 }

@@ -1,7 +1,11 @@
 package acme.forms;
 
 import java.io.Serializable;
+import java.util.Map;
 
+import com.mysql.cj.conf.ConnectionUrlParser.Pair;
+
+import acme.entities.Status;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,50 +18,22 @@ public class AdminDashboard implements Serializable {
 	protected static final long	serialVersionUID	= 1L;
 	
 	// Attributes 
+	
+	int										numberOfComponents;
+	int										numberOfTools;
+	
+	// <Technology,Currency>
+	Map<Pair<String,String>, Stats>         statsRetailPriceOfComponents;
+	Map<Pair<String,String>, Stats>         statsRetailPriceOfTools;
+	
+	// Patronages
+	
+	int										numberOfPropsedPatronages;
+	int										numberOfAcceptedPatronages;
+	int										numberOfDeniedPatronages;
+	
+	Map<Status,Stats>						statsBudgetOfStatusPatronages;
 
-	// Components
-	Integer						numberOfComponents;
-	
-	Double						averageRetailPriceOfComponents;
-	Double						deviationRetailPriceOfComponents;
-	Double						minimumRetailPriceOfComponents;
-	Double						maximumRetailPriceOfComponents;
-	
-	// Tools
-	
-	Integer						numberOfTools;
-	
-	Double						averageRetailPriceOfTools;
-	Double						deviationRetailPriceOfTools;
-	Double						minimumRetailPriceOfTools;
-	Double						maximumRetailPriceOfTools;
-	
-	// Proposed Patronages
-	
-	Integer						numberOfProposedPatronages;
-	
-	Double						averageBudgetOfProposedPatronages;
-	Double						deviationBudgetOfProposedPatronages;
-	Double						minimumBudgetOfProposedPatronages;
-	Double						maximumBudgetOfProposedPatronages;
-	
-	// Accepted Patronages
-	
-	Integer						numberOfAcceptedPatronages;
-	
-	Double						averageBudgetOfAcceptedPatronages;
-	Double						deviationBudgetOfAcceptedPatronages;
-	Double						minimumBudgetOfAcceptedPatronages;
-	Double						maximumBudgetOfAcceptedPatronages;
-	
-	// Denied Patronages
-	
-	Integer						numberOfDeniedPatronages;
-	
-	Double						averageBudgetOfDeniedPatronages;
-	Double						deviationBudgetOfDeniedPatronages;
-	Double						minimumBudgetOfDeniedPatronages;
-	Double						maximumBudgetOfDeniedPatronages;
 
 
 }

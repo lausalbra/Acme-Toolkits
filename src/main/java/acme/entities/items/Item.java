@@ -26,7 +26,6 @@ public class Item extends AbstractEntity{
 	
 	//Attributes  
 	
-	
 	@NotBlank
 	@Length(max=100)
 	protected String 	name;

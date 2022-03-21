@@ -1,11 +1,11 @@
-key,title,author,body,email
-chirp-01,Title 01,Author 01,Body 01,email@01.com
-chirp-02,Title 02,Author 02,Body 02,email@02.com
-chirp-03,Title 03,Author 03,Body 03,email@03.com
-chirp-04,Title 04,Author 04,Body 04,email@04.com
-chirp-05,Title 05,Author 05,Body 05,email@05.com
-chirp-06,Title 06,Author 06,Body 06,email@06.com
-chirp-07,Title 07,Author 07,Body 07,email@07.com
-chirp-08,Title 08,Author 08,Body 08,email@08.com
-chirp-09,Title 09,Author 09,Body 09,email@09.com
-chirp-10,Title 10,Author 10,Body 10,email@10.com
+key,creationMoment,title,author,body,email
+chirp-01,2022/01/01 10:00,Title 01,Author 01,Body 01,email@01.com
+chirp-02,2022/01/02 11:00,Title 02,Author 02,Body 02,email@02.com
+chirp-03,2022/01/03 12:00,Title 03,Author 03,Body 03,email@03.com
+chirp-04,2022/01/04 13:00,Title 04,Author 04,Body 04,email@04.com
+chirp-05,2022/01/05 14:00,Title 05,Author 05,Body 05,email@05.com
+chirp-06,2022/02/01 15:00,Title 06,Author 06,Body 06,email@06.com
+chirp-07,2022/02/02 16:00,Title 07,Author 07,Body 07,email@07.com
+chirp-08,2022/02/03 17:00,Title 08,Author 08,Body 08,email@08.com
+chirp-09,2022/02/04 18:00,Title 09,Author 09,Body 09,email@09.com
+chirp-10,2022/02/05 19:00,Title 10,Author 10,Body 10,email@10.com

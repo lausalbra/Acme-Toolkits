@@ -19,6 +19,12 @@ master.menu.sign-out = Sign out
 
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
+master.menu.anonymous.chirp.list-recent = List recent chirps
+
+# master.menu.authenticated #######################################################
+
+master.menu.authenticated = Authenticated
+master.menu.authenticated.chirp.list-recent = List recent chirps
 
 # master.menu.administrator ###################################################
 
@@ -29,6 +35,7 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.configuration = Show configuration
+master.menu.administrator.chirp.list-recent = List recent chirps
 
 # master.menu.provider ########################################################
 
@@ -39,6 +46,15 @@ master.menu.provider.favourite-link = Favourite link
 
 master.menu.consumer = Consumer
 master.menu.consumer.favourite-link = Favourite link
+
+# master.menu.patron ##########################################################
+master.menu.patron = Patron
+master.menu.patron.chirp.list-recent = List recent chirps
+
+# master.menu.inventor ##########################################################
+
+master.menu.inventor = Inventor
+master.menu.inventor.chirp.list-recent = List recent chirps
 
 # master.menu.user-account ####################################################
 

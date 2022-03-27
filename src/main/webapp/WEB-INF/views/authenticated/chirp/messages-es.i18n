@@ -1,0 +1,5 @@
+authenticated.chirp.list.label.creationMoment = Fecha Creación
+authenticated.chirp.list.label.title = Título
+authenticated.chirp.list.label.author = Autor
+authenticated.chirp.list.label.body = Cuerpo
+authenticated.chirp.list.label.email = Correo

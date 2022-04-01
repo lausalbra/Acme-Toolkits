@@ -1,4 +1,4 @@
-package acme.features.administrator.chirp;
+package acme.features.any.chirp;
 
 import javax.annotation.PostConstruct;
 
@@ -7,13 +7,13 @@ import org.springframework.stereotype.Controller;
 
 import acme.entities.chirps.Chirp;
 import acme.framework.controllers.AbstractController;
-import acme.framework.roles.Administrator;
+import acme.framework.roles.Any;
 
 @Controller
-public class AdministratorChirpController extends AbstractController<Administrator, Chirp>{
+public class AnyChirpController extends AbstractController<Any, Chirp>{
 	
 	  @Autowired
-	    protected AdministratorChirpListRecentService    listRecentService;
+	    protected AnyChirpListRecentService    listRecentService;
 	  
 	  @PostConstruct
 	    protected void initialise() {

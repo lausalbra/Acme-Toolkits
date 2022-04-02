@@ -1,0 +1,11 @@
+administrator.item.list.label.name = Nombre
+administrator.item.list.label.code = Código
+administrator.item.list.label.technology = Tecnología
+administrator.item.list.label.retailPrice = Precio de venta
+
+administrator.item.form.label.name = Nombre
+administrator.item.form.label.code = Código
+administrator.item.form.label.technology = Tecnología
+administrator.item.form.label.description = Descripción
+administrator.item.form.label.retailPrice = Precio de venta
+administrator.item.form.label.optionalLink = Link Opcional

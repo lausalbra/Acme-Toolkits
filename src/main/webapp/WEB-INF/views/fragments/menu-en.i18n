@@ -20,11 +20,15 @@ master.menu.sign-out = Sign out
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.chirp.list-recent = List recent chirps
+master.menu.anonymous.item.list-all-component = List All Components
+master.menu.anonymous.item.list-all-tool = List All Tools
 
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.chirp.list-recent = List recent chirps
+master.menu.authenticated.item.list-all-component = List all Components
+master.menu.authenticated.item.list-all-tool = List all Tools
 
 # master.menu.administrator ###################################################
 
@@ -36,6 +40,8 @@ master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.configuration = Show configuration
 master.menu.administrator.chirp.list-recent = List recent chirps
+master.menu.administrator.item.list-all-component = List All Components
+master.menu.administrator.item.list-all-tool = List All Tools
 
 # master.menu.provider ########################################################
 

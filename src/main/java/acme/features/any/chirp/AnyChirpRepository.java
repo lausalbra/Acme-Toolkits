@@ -1,4 +1,4 @@
-package acme.features.patron.chirp;
+package acme.features.any.chirp;
 
 import java.util.Collection;
 import java.util.Date;
@@ -10,7 +10,7 @@ import acme.entities.chirps.Chirp;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface PatronChirpRepository extends AbstractRepository {
+public interface AnyChirpRepository extends AbstractRepository {
 	
 	@Query("select c from Chirp c where c.creationMoment > :deadline")
 	Collection<Chirp> findRecentChirps(Date deadline);

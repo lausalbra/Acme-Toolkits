@@ -24,13 +24,13 @@
 			<acme:menu-suboption code="15427850W: Sanchez Hossdorf, Alexander" action="https://www.youtube.com/watch?v=eSZFIXbqmhs&list=PLNQtd15ZC-ZyZKruTodo-4I3_kfoGaDEq&index=2&t=3241s"/>
 			<acme:menu-suboption code="47563095S: Pardo Pastor, Carlos" action="https://www.youtube.com/watch?v=fJ9rUzIMcZQ"/>
 			<acme:menu-suboption code="29539112M: Silva Leon, Fernando" action="https://www.powerpyx.com"/>
-			<acme:menu-suboption code="29533279Z: García Lergo, Horacio" action="https://www.youtube.com/watch?v=K3Qzzggn--s"/>
+			<acme:menu-suboption code="29533279Z: GarcÃ­a Lergo, Horacio" action="https://www.youtube.com/watch?v=K3Qzzggn--s"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/anonymous/chirp/list-recent"/>
+			<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
-		<acme:menu-suboption code="master.menu.authenticated.chirp.list-recent" action="/authenticated/chirp/list-recent"/>
+		<acme:menu-suboption code="master.menu.authenticated.chirp.list-recent" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
@@ -42,7 +42,7 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.chirp.list-recent" action="/administrator/chirp/list-recent"/>
+			<acme:menu-suboption code="master.menu.administrator.chirp.list-recent" action="/any/chirp/list-recent"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
@@ -50,13 +50,13 @@
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.patron" access="hasRole('Patron')">
-            <acme:menu-suboption code="master.menu.patron.chirp.list-recent" action="/patron/chirp/list-recent"/>
-            <acme:menu-suboption code="master.menu.patron.patronage.list-mine" action="/patron/patronage/list-mine"/>
+      <acme:menu-suboption code="master.menu.patron.chirp.list-recent" action="/patron/chirp/list-recent"/>
+      <acme:menu-suboption code="master.menu.patron.patronage.list-mine" action="/patron/patronage/list-mine"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">
-		<acme:menu-suboption code="master.menu.inventor.chirp.list-recent" action="/inventor/chirp/list-recent"/>
-		<acme:menu-suboption code="master.menu.inventor.patronage.list-mine" action="/inventor/patronage/list-mine"/>
+		  <acme:menu-suboption code="master.menu.inventor.chirp.list-recent" action="/inventor/chirp/list-recent"/>
+		  <acme:menu-suboption code="master.menu.inventor.patronage.list-mine" action="/inventor/patronage/list-mine"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">

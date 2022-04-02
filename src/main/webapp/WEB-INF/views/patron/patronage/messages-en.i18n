@@ -1,0 +1,13 @@
+patron.patronage.list.label.code = Code
+patron.patronage.list.label.start-period = Start of the period
+patron.patronage.list.label.end-period = End of the period
+
+patron.patronage.form.label.status = Status:
+patron.patronage.form.label.code = Code:
+patron.patronage.form.label.legal-stuff = Legal Stuff:
+patron.patronage.form.label.budget = Budget:
+patron.patronage.form.label.inventor.name = Inventor's name:
+patron.patronage.form.label.inventor.email = Inventor's email:
+patron.patronage.form.label.start-period = Start of the period:
+patron.patronage.form.label.end-period = End of the period:
+patron.patronage.form.label.link = Link with further information:

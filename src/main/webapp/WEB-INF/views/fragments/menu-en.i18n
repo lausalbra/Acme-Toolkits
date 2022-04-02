@@ -56,11 +56,13 @@ master.menu.consumer.favourite-link = Favourite link
 # master.menu.patron ##########################################################
 master.menu.patron = Patron
 master.menu.patron.chirp.list-recent = List recent chirps
+master.menu.patron.patronage.list-mine = List my patronages
 
 # master.menu.inventor ##########################################################
 
 master.menu.inventor = Inventor
 master.menu.inventor.chirp.list-recent = List recent chirps
+master.menu.inventor.patronage.list-mine = List my patronages
 
 # master.menu.user-account ####################################################
 

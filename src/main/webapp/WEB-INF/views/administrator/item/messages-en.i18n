@@ -1,0 +1,11 @@
+administrator.item.list.label.name = Name
+administrator.item.list.label.code = Code
+administrator.item.list.label.technology = Technology
+administrator.item.list.label.retailPrice = Retail Price
+
+administrator.item.form.label.name = Name
+administrator.item.form.label.code = Code
+administrator.item.form.label.technology = Technology
+administrator.item.form.label.description = Description
+administrator.item.form.label.retailPrice = Retail Price
+administrator.item.form.label.optionalLink = Optional Link

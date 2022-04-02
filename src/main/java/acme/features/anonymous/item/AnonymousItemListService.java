@@ -1,4 +1,4 @@
-package acme.features.administrator.item;
+package acme.features.anonymous.item;
 
 import java.util.Collection;
 
@@ -9,18 +9,18 @@ import acme.entities.items.Item;
 import acme.entities.items.ItemType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Administrator;
+import acme.framework.roles.Anonymous;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AdministratorItemListService implements AbstractListService<Administrator, Item>{
+public class AnonymousItemListService implements AbstractListService<Anonymous, Item>{
 	
 	//Internal State
 	
 	@Autowired
-	protected AdministratorItemRepository repository;
+	protected AnonymousItemRepository repository;
 	
-	//AbstractListService<Administrator, Item> interface 
+	//AbstractListService<Anonymous, Item> interface 
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {

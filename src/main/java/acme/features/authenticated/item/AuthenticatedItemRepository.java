@@ -1,4 +1,4 @@
-package acme.features.administrator.item;
+package acme.features.authenticated.item;
 
 import java.util.Collection;
 
@@ -10,7 +10,7 @@ import acme.entities.items.ItemType;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AdministratorItemRepository extends AbstractRepository{
+public interface AuthenticatedItemRepository extends AbstractRepository{
 	
 	@Query("select i from Item i where i.itemType = :type")
 	Collection<Item> findAllItem(ItemType type);

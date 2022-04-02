@@ -1,4 +1,4 @@
-package acme.features.inventor.patronage;
+package acme.features.patron.patronage;
 
 import java.util.Collection;
 
@@ -9,9 +9,9 @@ import acme.entities.patronages.Patronage;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface InventorPatronageRepository extends AbstractRepository {
+public interface PatronPatronageRepository extends AbstractRepository {
 	
-	@Query("select p from Patronage p where p.inventor.userAccount.username = :username")
+	@Query("select p from Patronage p where p.patron.userAccount.username = :username")
 	Collection<Patronage> findMinePatronages(String username);
 	
 	@Query("select p from Patronage p where p.id = :id")

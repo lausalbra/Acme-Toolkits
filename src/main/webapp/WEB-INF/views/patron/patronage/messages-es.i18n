@@ -1,0 +1,16 @@
+patron.patronage.list.label.code = Código
+patron.patronage.list.label.start-period = Comienzo del período
+patron.patronage.list.label.end-period = Fin del período
+
+patron.patronage.form.label.status = Estatus:
+PROPOSED = PROPUESTO
+ACCEPTED = ACEPTADO
+DENIED = DENEGADO
+patron.patronage.form.label.code = Código:
+patron.patronage.form.label.legal-stuff = Cosas legales:
+patron.patronage.form.label.budget = Presupuesto:
+patron.patronage.form.label.inventor.name = Nombre del inventor:
+patron.patronage.form.label.inventor.email = Correo del inventor:
+patron.patronage.form.label.start-period = Comienzo del período:
+patron.patronage.form.label.end-period = Fin del período:
+patron.patronage.form.label.link = Enlace con más información:

@@ -1,19 +1,16 @@
 package acme.features.inventor.patronage;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.entities.Principal;
-import acme.framework.services.AbstractListService;
+import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class InventorPatronageListMineService implements AbstractListService<Inventor, Patronage>{
+public class InventorPatronageShowService implements AbstractShowService<Inventor, Patronage>{
 	
 	@Autowired
 	protected InventorPatronageRepository repository;
@@ -25,14 +22,15 @@ public class InventorPatronageListMineService implements AbstractListService<Inv
 	}
 
 	@Override
-	public Collection<Patronage> findMany(final Request<Patronage> request) {
+	public Patronage findOne(final Request<Patronage> request) {
 		assert request != null;
 		
-		Collection<Patronage> result;
-		Principal principal;
-
-		principal = request.getPrincipal();
-        result = this.repository.findMinePatronages(principal.getUsername());
+		Patronage result;
+		int id;
+		
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOnePatronage(id);
+		
 		return result;
 	}
 
@@ -41,7 +39,11 @@ public class InventorPatronageListMineService implements AbstractListService<Inv
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "code","startPeriod","endPeriod");
+		
+		request.unbind(entity, model, "status","code","legalStuff","budget","patron.userAccount.identity.fullName",
+			"patron.userAccount.identity.email","startPeriod","endPeriod","link");
+		model.setAttribute("confirmation", false);
+		model.setAttribute("readonly", true);
 		
 	}
 	

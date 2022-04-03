@@ -28,14 +28,14 @@
 			<acme:menu-separator/>
 
 			<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/any/chirp/list-recent"/>
-      <acme:menu-suboption code="master.menu.anonymous.item.list-all-component" action="/anonymous/item/list?type=COMPONENT"/>
-			<acme:menu-suboption code="master.menu.anonymous.item.list-all-tool" action="/anonymous/item/list?type=TOOL"/>
+      <acme:menu-suboption code="master.menu.anonymous.item.list-all-component" action="/any/item/list?type=COMPONENT"/>
+			<acme:menu-suboption code="master.menu.anonymous.item.list-all-tool" action="/any/item/list?type=TOOL"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 		<acme:menu-suboption code="master.menu.authenticated.chirp.list-recent" action="/any/chirp/list-recent"/>
-    <acme:menu-suboption code="master.menu.authenticated.item.list-all-component" action="/authenticated/item/list?type=COMPONENT"/>
-		<acme:menu-suboption code="master.menu.authenticated.item.list-all-tool" action="/authenticated/item/list?type=TOOL"/>
+    <acme:menu-suboption code="master.menu.authenticated.item.list-all-component" action="/any/item/list?type=COMPONENT"/>
+		<acme:menu-suboption code="master.menu.authenticated.item.list-all-tool" action="/any/item/list?type=TOOL"/>
       
 		</acme:menu-option>
 		
@@ -50,8 +50,8 @@
 			<acme:menu-separator/>
 
 			<acme:menu-suboption code="master.menu.administrator.chirp.list-recent" action="/any/chirp/list-recent"/>
-      <acme:menu-suboption code="master.menu.administrator.item.list-all-component" action="/administrator/item/list?type=COMPONENT"/>
-			<acme:menu-suboption code="master.menu.administrator.item.list-all-tool" action="/administrator/item/list?type=TOOL"/>
+      <acme:menu-suboption code="master.menu.administrator.item.list-all-component" action="/any/item/list?type=COMPONENT"/>
+			<acme:menu-suboption code="master.menu.administrator.item.list-all-tool" action="/any/item/list?type=TOOL"/>
 
 		</acme:menu-option>
 

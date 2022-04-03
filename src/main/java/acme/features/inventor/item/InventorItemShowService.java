@@ -1,4 +1,4 @@
-package acme.features.any.item;
+package acme.features.inventor.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,18 +6,18 @@ import org.springframework.stereotype.Service;
 import acme.entities.items.Item;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
-import acme.framework.roles.Any;
 import acme.framework.services.AbstractShowService;
+import acme.roles.Inventor;
 
 @Service
-public class AnyItemShowService implements AbstractShowService<Any, Item>{
+public class InventorItemShowService implements AbstractShowService<Inventor, Item>{
 	
 	//Internal State
 	
 	@Autowired
-	protected AnyItemRepository repository;
+	protected InventorItemRepository repository;
 		
-	//AbstractShowService<Any, Item> interface
+	//AbstractShowService<Inventor, Item> interface
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
@@ -45,7 +45,7 @@ public class AnyItemShowService implements AbstractShowService<Any, Item>{
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "optionalLink", "inventor.userAccount.identity.fullName");
+		request.unbind(entity, model, "name", "code", "technology", "description", "retailPrice", "optionalLink");
 	}
 
 }

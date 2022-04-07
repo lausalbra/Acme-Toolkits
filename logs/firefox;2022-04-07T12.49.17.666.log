@@ -1,0 +1,5 @@
+1649327884104	geckodriver	INFO	Listening on 127.0.0.1:43493
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\laura\\AppData\\Local\\Temp\\rust_mozprofileKMD2Sh\\search.json.mozlz4", (void 0)))
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

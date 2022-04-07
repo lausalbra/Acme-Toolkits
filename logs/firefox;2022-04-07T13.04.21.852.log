@@ -1,0 +1,6 @@
+1649329406210	geckodriver	INFO	Listening on 127.0.0.1:11152
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\laura\\AppData\\Local\\Temp\\rust_mozprofile4WFFAC\\search.json.mozlz4", (void 0)))
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "http://localhost:8081"
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message fJavaScript error: resoource://gre/mrodules/LoginManager:" "http://localhost:8081"Parent.jsm, line 136: TypeError: gRecipeM
+anager is null
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: IOUtils: Shutting down and refusing additional I/O tasks

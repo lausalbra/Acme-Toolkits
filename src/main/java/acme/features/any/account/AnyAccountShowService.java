@@ -1,5 +1,7 @@
 package acme.features.any.account;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,6 +9,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.UserAccount;
 import acme.framework.roles.Any;
+import acme.framework.roles.UserRole;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -35,6 +38,8 @@ public class AnyAccountShowService implements AbstractShowService<Any, UserAccou
 		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneUserAccount(id);
+		result.getRoles().forEach(r -> {
+		});
 		
 		return result;
 	}
@@ -44,12 +49,26 @@ public class AnyAccountShowService implements AbstractShowService<Any, UserAccou
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		
+		request.unbind(entity, model, "username");
+		
 		final String fullName = entity.getIdentity().getFullName();
         model.setAttribute("fullName", fullName);
+        
         final String email = entity.getIdentity().getEmail();
         model.setAttribute("email", email);
         
-		request.unbind(entity, model, "username");
+        StringBuilder buffer;
+        Collection<UserRole> roles;
+
+		roles = entity.getRoles();
+		buffer = new StringBuilder();
+		for (final UserRole role : roles) {
+			buffer.append(role.getAuthorityName());
+			buffer.append(" ");
+		}
+
+		model.setAttribute("roleList", buffer.toString());
 	}
 
 }

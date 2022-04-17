@@ -11,6 +11,7 @@ import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.entities.UserAccount;
 import acme.framework.roles.Any;
+import acme.framework.roles.UserRole;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -46,16 +47,17 @@ public class AnyAccountListService implements AbstractListService<Any, UserAccou
 		assert entity != null;
 		assert model != null;
 		
-		final boolean patron = entity.getRoles().stream().anyMatch(r->r.toString().contains("Patron"));
-		final boolean inventor = entity.getRoles().stream().anyMatch(r->r.toString().contains("Inventor"));
-		
-		model.setAttribute("ua", 22);
-		if (inventor) {
-			if (patron) {
-				model.setAttribute("roles", "Patron, Inventor");
-			}else {model.setAttribute("roles", "Inventor");}
-		}else {if(patron){model.setAttribute("roles", "Patron");}}
-//		model.setAttribute("roles", entity.getRoles());
+		StringBuilder buffer;
+        Collection<UserRole> roles;
+
+		roles = entity.getRoles();
+		buffer = new StringBuilder();
+		for (final UserRole role : roles) {
+			buffer.append(role.getAuthorityName());
+			buffer.append(" ");
+		}
+
+		model.setAttribute("roles", buffer.toString());
 		
 		request.unbind(entity, model,"username");
 	}

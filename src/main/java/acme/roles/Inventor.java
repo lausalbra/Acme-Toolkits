@@ -44,11 +44,6 @@ public class Inventor extends UserRole {
 	@URL
 	protected String link;
 	
-	@Override
-	public String toString() {
-		return "Inventor";
-	}
-	
 	// User: administrator; Pass: administrator
 
 	// Derived attributes -----------------------------------------------------

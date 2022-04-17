@@ -29,13 +29,15 @@
 			<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/any/chirp/list-recent"/>
       		<acme:menu-suboption code="master.menu.anonymous.item.list-all-component" action="/any/item/list?type=COMPONENT"/>
 			<acme:menu-suboption code="master.menu.anonymous.item.list-all-tool" action="/any/item/list?type=TOOL"/>
+			<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 		<acme:menu-suboption code="master.menu.authenticated.chirp.list-recent" action="/any/chirp/list-recent"/>
+		<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/any/chirp/list-recent"/>
     	<acme:menu-suboption code="master.menu.authenticated.item.list-all-component" action="/any/item/list?type=COMPONENT"/>
 		<acme:menu-suboption code="master.menu.authenticated.item.list-all-tool" action="/any/item/list?type=TOOL"/>
-      
+      	<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

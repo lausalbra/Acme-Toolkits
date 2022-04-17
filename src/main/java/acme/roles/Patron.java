@@ -28,11 +28,13 @@ import lombok.Setter;
 public class Patron extends UserRole {
 
 	// Serialisation identifier -----------------------------------------------
+	
 
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
-
+	
+	
 	@NotBlank
 	@Length(max = 100)
 	protected String			company;
@@ -43,7 +45,11 @@ public class Patron extends UserRole {
 	
 	@URL
 	protected String link;
-	
+
+	@Override
+	public String toString() {
+		return "Patron";
+	}
 	// User: administrator; Pass: administrator
 
 	// Derived attributes -----------------------------------------------------

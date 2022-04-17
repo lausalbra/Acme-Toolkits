@@ -1,2 +1,4 @@
 any.user-account.list.label.username = Usuario
-any.user-account.list.label.password = Contraseña
+any.user-account.list.label.roles = Roles
+any.user-account.form.label.fullName = Nombre Completo
+any.user-account.form.label.email = Email

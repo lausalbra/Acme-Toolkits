@@ -15,9 +15,13 @@ public class AnyAccountController extends AbstractController<Any, UserAccount>{
 	  @Autowired
 	    protected AnyAccountListService    listService;
 	  
+	  @Autowired
+	    protected AnyAccountShowService    showService;
+	  
 	  @PostConstruct
 	    protected void initialise() {
 	        super.addCommand("list", this.listService);
+	        super.addCommand("show", this.showService);
 	    }
 
 }

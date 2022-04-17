@@ -20,8 +20,7 @@ public interface AnyAccountRepository extends AbstractRepository {
 	Collection<UserAccount> findUserAccounts();
 	
 	@Query("select ua from UserAccount ua where ua.id = :id")
-	UserAccount oneUserAccount(String id);
-	
+	UserAccount findOneUserAccount(int id);
 	
 
 }

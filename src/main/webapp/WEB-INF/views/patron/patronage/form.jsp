@@ -12,8 +12,8 @@
     <acme:input-textbox code="patron.patronage.form.label.code" path="code"/>
     <acme:input-textarea code="patron.patronage.form.label.legal-stuff" path="legalStuff"/>
     <acme:input-money code="patron.patronage.form.label.budget" path="budget"/>
-    <acme:input-textbox code="patron.patronage.form.label.inventor.name" path="inventor.userAccount.identity.fullName"/>
-    <acme:input-email code="patron.patronage.form.label.inventor.email" path="inventor.userAccount.identity.email"/>
+    <acme:input-textbox code="patron.patronage.form.label.inventor.name" path="fullName"/>
+    <acme:input-email code="patron.patronage.form.label.inventor.email" path="email"/>
     <acme:input-moment code="patron.patronage.form.label.start-period" path="startPeriod"/>
     <acme:input-moment code="patron.patronage.form.label.end-period" path="endPeriod"/>
     <acme:input-url code="patron.patronage.form.label.link" path="link"/>

@@ -42,6 +42,7 @@ master.menu.administrator.configuration = Show configuration
 master.menu.administrator.chirp.list-recent = List recent chirps
 master.menu.administrator.item.list-all-component = List All Components
 master.menu.administrator.item.list-all-tool = List All Tools
+master.menu.administrator.dashboard = Dashboard
 
 # master.menu.provider ########################################################
 

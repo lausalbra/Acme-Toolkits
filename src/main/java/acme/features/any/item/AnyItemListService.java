@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.items.Item;
-import acme.entities.items.ItemType;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
 import acme.framework.roles.Any;
@@ -34,12 +33,7 @@ public class AnyItemListService implements AbstractListService<Any, Item>{
 		assert request != null;
 		
 		Collection<Item> result;
-		String aux;		
-		ItemType type;
-		
-		aux = request.getModel().getString("type");
-		type = ItemType.valueOf(aux);
-		result = this.repository.findAllItem(type);
+		result = this.repository.findAllItem();
 		
 		return result;
 	}
@@ -51,7 +45,10 @@ public class AnyItemListService implements AbstractListService<Any, Item>{
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "name", "code", "technology", "retailPrice", "inventor.userAccount.identity.fullName");
+		request.unbind(entity, model, "name", "itemType", "code", "technology", "retailPrice");
+		
+		final String fullname = entity.getInventor().getUserAccount().getIdentity().getFullName();
+		model.setAttribute("fullname", fullname);
 		
 	}
 }

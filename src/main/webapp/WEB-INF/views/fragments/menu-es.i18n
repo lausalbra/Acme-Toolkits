@@ -62,8 +62,7 @@ master.menu.inventor = Inventor
 master.menu.inventor.chirp.list-recent = Ver chirps recientes
 master.menu.inventor.patronage.list-mine = Ver mis patrocinios
 master.menu.inventor.patronage-report.list-mine = Ver los reportes de mis patrocinios
-master.menu.inventor.item.list-mine-component = Ver mis Componentes
-master.menu.inventor.item.list-mine-tool = Ver mis Herramientas
+master.menu.inventor.item.list-mine = Ver mis Items
 
 # master.menu.user-account ####################################################
 

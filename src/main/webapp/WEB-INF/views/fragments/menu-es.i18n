@@ -20,16 +20,13 @@ master.menu.sign-out = Salir
 master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.chirp.list-recent = Ver chirps recientes
-master.menu.anonymous.item.list-all-component = Ver todos los Componentes
-master.menu.anonymous.item.list-all-tool = Ver todas las Herramientas
+master.menu.anonymous.item.list-all = Ver todos Items
 
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.chirp.list-recent = Ver chirps recientes
-master.menu.authenticated.item.list-all-component = Ver todos los Componentes
-master.menu.authenticated.item.list-all-tool = Ver todas las Herramientas
-
+master.menu.authenticated.item.list-all = Ver todos los Items
 
 # master.menu.administrator ###################################################
 
@@ -41,8 +38,7 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.configuration = Mostrar configuracion
 master.menu.administrator.chirp.list-recent = Ver chirps recientes
-master.menu.administrator.item.list-all-component = Ver todos los Componentes
-master.menu.administrator.item.list-all-tool = Ver todas las Herramientas
+master.menu.administrator.item.list-all = Ver todos los Items
 
 # master.menu.provider ########################################################
 

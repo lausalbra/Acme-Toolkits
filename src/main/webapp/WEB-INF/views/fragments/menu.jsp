@@ -27,16 +27,14 @@
 			<acme:menu-suboption code="29533279Z: García Lergo, Horacio" action="https://www.youtube.com/watch?v=K3Qzzggn--s"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/any/chirp/list-recent"/>
-      		<acme:menu-suboption code="master.menu.anonymous.item.list-all-component" action="/any/item/list?type=COMPONENT"/>
-			<acme:menu-suboption code="master.menu.anonymous.item.list-all-tool" action="/any/item/list?type=TOOL"/>
+      		<acme:menu-suboption code="master.menu.anonymous.item.list-all" action="/any/item/list"/>
 			<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.authenticated" access="hasRole('Authenticated')">
 		<acme:menu-suboption code="master.menu.authenticated.chirp.list-recent" action="/any/chirp/list-recent"/>
 		<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/any/chirp/list-recent"/>
-    	<acme:menu-suboption code="master.menu.authenticated.item.list-all-component" action="/any/item/list?type=COMPONENT"/>
-		<acme:menu-suboption code="master.menu.authenticated.item.list-all-tool" action="/any/item/list?type=TOOL"/>
+    	<acme:menu-suboption code="master.menu.authenticated.item.list-all" action="/any/item/list"/>
       	<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
 		</acme:menu-option>
 		
@@ -50,8 +48,7 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.chirp.list-recent" action="/any/chirp/list-recent"/>
-      		<acme:menu-suboption code="master.menu.administrator.item.list-all-component" action="/any/item/list?type=COMPONENT"/>
-			<acme:menu-suboption code="master.menu.administrator.item.list-all-tool" action="/any/item/list?type=TOOL"/>
+      		<acme:menu-suboption code="master.menu.administrator.item.list-all" action="/any/item/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

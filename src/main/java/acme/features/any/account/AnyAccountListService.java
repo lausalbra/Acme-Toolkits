@@ -24,7 +24,7 @@ public class AnyAccountListService implements AbstractListService<Any, UserAccou
 		assert request != null;
 		return true;
 	}
-
+	
 	@Override
 	public Collection<UserAccount> findMany(final Request<UserAccount> request) {
 		assert request != null;
@@ -46,7 +46,7 @@ public class AnyAccountListService implements AbstractListService<Any, UserAccou
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		
+
 		StringBuilder buffer;
         Collection<UserRole> roles;
 

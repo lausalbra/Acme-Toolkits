@@ -24,7 +24,7 @@
 			<acme:menu-suboption code="15427850W: Sanchez Hossdorf, Alexander" action="https://www.youtube.com/watch?v=eSZFIXbqmhs&list=PLNQtd15ZC-ZyZKruTodo-4I3_kfoGaDEq&index=2&t=3241s"/>
 			<acme:menu-suboption code="47563095S: Pardo Pastor, Carlos" action="https://www.youtube.com/watch?v=fJ9rUzIMcZQ"/>
 			<acme:menu-suboption code="29539112M: Silva Leon, Fernando" action="https://www.powerpyx.com"/>
-			<acme:menu-suboption code="29533279Z: García Lergo, Horacio" action="https://www.youtube.com/watch?v=K3Qzzggn--s"/>
+			<acme:menu-suboption code="29533279Z: GarcÃ­a Lergo, Horacio" action="https://www.youtube.com/watch?v=K3Qzzggn--s"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/any/chirp/list-recent"/>
       		<acme:menu-suboption code="master.menu.anonymous.item.list-all" action="/any/item/list"/>
@@ -65,7 +65,10 @@
 		  	<acme:menu-suboption code="master.menu.inventor.chirp.list-recent" action="/any/chirp/list-recent"/>
 		  	<acme:menu-suboption code="master.menu.inventor.patronage.list-mine" action="/inventor/patronage/list-mine"/>
 		  	<acme:menu-suboption code="master.menu.inventor.patronage-report.list-mine" action="/inventor/patronage-report/list-mine"/>
-      		<acme:menu-suboption code="master.menu.inventor.item.list-mine" action="/inventor/item/list"/>
+     		<acme:menu-suboption code="master.menu.inventor.item.list-mine-component" action="/inventor/item/list?type=COMPONENT"/>
+			  <acme:menu-suboption code="master.menu.inventor.item.list-mine-tool" action="/inventor/item/list?type=TOOL"/>
+			  <acme:menu-suboption code="master.menu.inventor.toolkit.list-mine-toolkit" action="/inventor/toolkit/list-mine-toolkits"/>
+      	<acme:menu-suboption code="master.menu.inventor.item.list-mine" action="/inventor/item/list"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">

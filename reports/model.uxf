@@ -368,7 +368,7 @@ bg=green</panel_attributes>
       <h>90</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Form&gt;&gt;
-AdminDashboard
+AdministratorDashboard
 --
 + numberOfComponents: int
 + numberOfTools: int

@@ -51,7 +51,7 @@
       		<acme:menu-suboption code="master.menu.administrator.item.list-all-component" action="/any/item/list?type=COMPONENT"/>
 			<acme:menu-suboption code="master.menu.administrator.item.list-all-tool" action="/any/item/list?type=TOOL"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

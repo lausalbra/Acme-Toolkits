@@ -1,5 +1,6 @@
 package acme.features.administrator.dashboard;
 
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.Status;
 import acme.entities.items.ItemType;
-import acme.forms.AdminDashboard;
+import acme.forms.AdministratorDashboard;
 import acme.forms.Stats;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -18,26 +19,26 @@ import acme.framework.roles.Administrator;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class AdministratorDashboardShowService implements AbstractShowService<Administrator, AdminDashboard>{
+public class AdministratorDashboardShowService implements AbstractShowService<Administrator, AdministratorDashboard>{
 	
 	//Internal State
 	
 	@Autowired
 	protected AdministratorDashboardRepository repository;
 			
-	//AbstractShowService<Administrator, AdminDashboard>
+	//AbstractShowService<Administrator, AdministratorDashboard>
 	
 	@Override
-	public boolean authorise(final Request<AdminDashboard> request) {
+	public boolean authorise(final Request<AdministratorDashboard> request) {
 		assert request != null;
 		
 		return true; 
 	}
 	
 	@Override
-	public AdminDashboard findOne(final Request<AdminDashboard> request) {
+	public AdministratorDashboard findOne(final Request<AdministratorDashboard> request) {
 		assert request != null;
-		final AdminDashboard result = new AdminDashboard();
+		final AdministratorDashboard result = new AdministratorDashboard();
 		
 		final int numberOfComponents = this.repository.numberOfItem(ItemType.COMPONENT);
 		final int numberOfTools = this.repository.numberOfItem(ItemType.TOOL);
@@ -65,7 +66,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final List<String> listStatsRetailPriceOfTools = this.repository.statsRetailPriceOfItem(ItemType.TOOL);
 		
 		for (int i=0; i<listStatsRetailPriceOfTools.size(); i++) {
-			final String[] arrayList = listStatsRetailPriceOfTools.get(i).split(";");
+			final String[] arrayList = listStatsRetailPriceOfTools.get(i).split(":");
 			final Pair<String, String> pareja = Pair.of(arrayList[0], arrayList[1]);
 			final Stats stat = new Stats();
 			stat.setAverage(Double.valueOf(arrayList[2]));
@@ -77,7 +78,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		}
 		
 		
-		final Map<Status,Stats> statsBudgetOfStatusPatronages = new HashMap<>();
+		final EnumMap<Status,Stats> statsBudgetOfStatusPatronages = new EnumMap<>(Status.class);
 		final List<String> listStatsBudgetOfStatusPatronages = this.repository.statsBudgetOfStatusPatronages();
 		
 		for (int i=0; i<listStatsBudgetOfStatusPatronages.size(); i++) {
@@ -87,6 +88,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 			stat.setDeviation(Double.valueOf(arrayList[2]));
 			stat.setMinumun(Double.valueOf(arrayList[3]));
 			stat.setMaximun(Double.valueOf(arrayList[4]));
+			
+			System.out.println(Status.valueOf(arrayList[0]));
 			
 			statsBudgetOfStatusPatronages.put(Status.valueOf(arrayList[0]), stat);
 		}
@@ -106,7 +109,7 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 	}
 	
 	@Override
-	public void unbind (final Request<AdminDashboard> request, final AdminDashboard entity, final Model model) {
+	public void unbind (final Request<AdministratorDashboard> request, final AdministratorDashboard entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;

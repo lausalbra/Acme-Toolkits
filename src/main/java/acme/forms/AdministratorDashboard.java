@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AdminDashboard implements Serializable {
+public class AdministratorDashboard implements Serializable {
 	
 	// Serialisation identifier 
 

@@ -4,13 +4,15 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.forms.AdminDashboard;
+import acme.forms.AdministratorDashboard;
 import acme.framework.controllers.AbstractController;
 import acme.framework.roles.Administrator;
 
 @Controller
-public class AdministratorDashboardController extends AbstractController<Administrator, AdminDashboard>{
+@RequestMapping("/administrator/administrator-dashboard/")
+public class AdministratorDashboardController extends AbstractController<Administrator, AdministratorDashboard>{
 	
 	//Internal State
 	

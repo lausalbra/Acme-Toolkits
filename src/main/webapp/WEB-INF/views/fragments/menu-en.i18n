@@ -28,6 +28,7 @@ master.menu.authenticated = Authenticated
 master.menu.authenticated.chirp.list-recent = List recent chirps
 master.menu.authenticated.item.list-all = List all Item
 master.menu.authenticated.announcement.list = List recent announcements
+master.menu.authenticated.configuration = Show Configuration
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator

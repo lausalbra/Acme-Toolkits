@@ -55,6 +55,8 @@ public class Item extends AbstractEntity{
 	@NotNull
 	protected ItemType itemType;
 	
+	protected boolean published;
+	
 	//Relationships -----------------------------------------------------------------------------
 		
 	@NotNull

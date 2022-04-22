@@ -1,7 +1,5 @@
 package acme.features.inventor.toolkit;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +22,15 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 	@Override
 	public boolean authorise(final Request<Toolkit> request) {
 		assert request != null;
+		 boolean result;
+		 int toolkitId;
+		 Toolkit toolkit;
+		 
+		 toolkitId = request.getModel().getInteger("id");
+		 toolkit = this.repository.findOneToolkitById(toolkitId);
+		 result = toolkit.getInventor().getId()==request.getPrincipal().getActiveRoleId();
 		
-		return true; 
+		return result; 
 	}
 	
 	@Override
@@ -47,10 +52,10 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		assert entity != null;
 		assert model != null;
 		
-		int id;
-		id = request.getModel().getInteger("id");
+	//	int id;
+	//	id = request.getModel().getInteger("id");
 		
-		final List<String> retailList = this.repository.findRetailPriceByToolkitId(id);
+		//final List<String> retailList = this.repository.findRetailPriceByToolkitId(id);
 		
 //		final List<Integer> quantity = new ArrayList<>();
 //		final List<String> currency = new ArrayList<>();
@@ -61,9 +66,9 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 //			currency.add(trozos[1].trim());
 //		}
 		
-		model.setAttribute("retailPrice", retailList);
+		//model.setAttribute("retailPrice", retailList);
 		
-		request.unbind(entity, model, "code", "title", "description", "assemblyNote", "retailPrice", "optionalLink");
+		request.unbind(entity, model, "code", "title", "description", "assemblyNote", "optionalLink");
 	}
 
 }

@@ -10,7 +10,7 @@ Item-08,Tool 08,ABC-333-D,Technology 08,Sample Tool,EUR 873.43,https://es.wikipe
 Item-09,Tool 09,ABC-444,Technology 09,Sample Tool,EUR 2.78,null,TOOL,true,inventor-02
 Item-10,Tool 10,ABC-444-E,Technology 10,Sample Tool,EUR 90.00,https://es.wikipedia.org/wiki/Tool,TOOL,false,inventor-02
 Item-11,Component 01,AAA-000,Technology 01,Sample Component,EUR 16.0,null,COMPONENT,true,inventor-01
-Item-12,Component 02,AAA-000-A,Technology 02,Sample Component,EUR 15.5,https://en.wikipedia.org/wiki/Component,COMPONENT,false,inventor-01
+Item-12,Component 02,AAA-000-A,Technology 02,Sample Component,EUR 15.5,https://en.wikipedia.org/wiki/Component,COMPONENT,true,inventor-01
 Item-13,Component 03,BBB-111,Technology 03,Sample Component,EUR 123.7,null,COMPONENT,false,inventor-01
 Item-14,Component 04,BBB-111-B,Technology 04,Sample Component,EUR 987.67,https://en.wikipedia.org/wiki/Component,COMPONENT,true,inventor-01
 Item-15,Component 05,CCC-222,Technology 05,Sample Component,EUR 1.0,null,COMPONENT,true,inventor-01
@@ -21,5 +21,5 @@ Item-19,Component 09,EEE-444,Technology 09,Sample Component,EUR 45.61,null,COMPO
 Item-20,Component 10,EEE-444-E,Technology 10,Sample Component,EUR 99.99,https://en.wikipedia.org/wiki/Component,COMPONENT,true,inventor-02
 Item-21,Component 11,FFF-555,Technology 11,Sample Component,EUR 22.22,null,COMPONENT,false,inventor-02
 Item-22,Component 12,FFF-555-F,Technology 12,Sample Component,EUR 50.50,https://en.wikipedia.org/wiki/Component,COMPONENT,true,inventor-02
-Item-23,Component 13,GGG-666,Technology 13,Sample Component,EUR 45.45,null,COMPONENT,false,inventor-02
+Item-23,Component 13,GGG-666,Technology 13,Sample Component,EUR 45.45,null,COMPONENT,true,inventor-02
 Item-24,Component 14,GGG-666-G,Technology 14,Sample Component,EUR 1.01,https://en.wikipedia.org/wiki/Component,COMPONENT,true,inventor-02

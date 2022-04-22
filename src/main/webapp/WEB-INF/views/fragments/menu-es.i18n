@@ -27,6 +27,7 @@ master.menu.anonymous.item.list-all = Ver todos Items
 master.menu.authenticated = Authenticated
 master.menu.authenticated.chirp.list-recent = Ver chirps recientes
 master.menu.authenticated.item.list-all = Ver todos los Items
+master.menu.authenticated.announcement.list = Ver todos los anuncios recientes
 
 # master.menu.administrator ###################################################
 

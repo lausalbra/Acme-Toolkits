@@ -36,6 +36,7 @@
 		<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/any/chirp/list-recent"/>
     	<acme:menu-suboption code="master.menu.authenticated.item.list-all" action="/any/item/list"/>
       	<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
+      	<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
       	<acme:menu-suboption code="master.menu.authenticated.configuration" action="/authenticated/configuration/show"/>
 		</acme:menu-option>
 		

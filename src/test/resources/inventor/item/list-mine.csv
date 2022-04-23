@@ -1,6 +1,6 @@
-recordIndex,name,type,code, technology, retailPrice
-0,Component 01,COMPONENT,AAA-000,Technology 01,EUR 16.00 
-1,Tool 01,TOOL,ABC-000,Technology 01,EUR 123.13
-2,Component 02,COMPONENT,AAA-000-A,Technology 02,EUR 15.50
-3,Tool 04,TOOL,ABC-111-B,Technology 04,EUR 987.77
-4,Component 05,COMPONENT,CCC-222,Technology 05,EUR 1.00
+recordIndex,name,type,code,technology,retailPrice,published
+0,Component 01,COMPONENT,AAA-000,Technology 02,EUR 16.00,true
+1,Tool 01,TOOL,ABC-000,Technology 01,EUR 123.13,true
+2,Component 02,COMPONENT,AAA-000-A,Technology 03,EUR 15.50,true
+3,Tool 04,TOOL,ABC-111-B,Technology 01,EUR 987.77,true
+4,Component 05,COMPONENT,CCC-222,Technology 03,EUR 1.00,true

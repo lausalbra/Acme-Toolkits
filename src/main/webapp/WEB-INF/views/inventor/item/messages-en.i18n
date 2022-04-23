@@ -2,6 +2,7 @@ inventor.item.list.label.name = Name
 inventor.item.list.label.code = Code
 inventor.item.list.label.technology = Technology
 inventor.item.list.label.retailPrice = Retail Price
+inventor.item.list.label.published = Published
 
 inventor.item.form.label.name = Name
 inventor.item.form.label.code = Code
@@ -9,3 +10,4 @@ inventor.item.form.label.technology = Technology
 inventor.item.form.label.description = Description
 inventor.item.form.label.retailPrice = Retail Price
 inventor.item.form.label.optionalLink = Optional Link
+inventor.item.form.label.published = Published

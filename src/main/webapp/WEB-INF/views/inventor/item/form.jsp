@@ -11,7 +11,7 @@
 	<acme:input-textarea code="inventor.item.form.label.description" path="description"/>
 	<acme:input-money code="inventor.item.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="inventor.item.form.label.optionalLink" path="optionalLink"/>
-	
+	<acme:input-checkbox code="inventor.item.form.label.published" path="published"/>
 	
 </acme:form>
 

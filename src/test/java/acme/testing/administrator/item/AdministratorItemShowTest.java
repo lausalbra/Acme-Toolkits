@@ -17,7 +17,7 @@ public class AdministratorItemShowTest  extends TestHarness{
 		
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Administrator", "List All Item");
-		
+		super.checkListingExists();
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkInputBoxHasValue("name", name);

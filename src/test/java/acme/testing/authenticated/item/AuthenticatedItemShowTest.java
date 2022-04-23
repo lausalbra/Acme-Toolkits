@@ -17,7 +17,7 @@ public class AuthenticatedItemShowTest  extends TestHarness{
 		
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Authenticated", "List all Item");
-		
+		super.checkListingExists();
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkInputBoxHasValue("name", name);

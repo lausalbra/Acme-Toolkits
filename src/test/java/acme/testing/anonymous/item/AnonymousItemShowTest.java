@@ -16,7 +16,7 @@ public class AnonymousItemShowTest  extends TestHarness{
 								final String optionalLink, final String fullname) {
 		
 		super.clickOnMenu("Anonymous", "List All Item");
-		
+		super.checkListingExists();
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkInputBoxHasValue("name", name);

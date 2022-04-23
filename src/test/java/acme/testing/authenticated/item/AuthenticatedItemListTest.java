@@ -16,6 +16,7 @@ public class AuthenticatedItemListTest extends TestHarness{
 		
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Authenticated", "List all Item");
+		super.checkListingExists();
 		
 		super.checkColumnHasValue(recordIndex, 0, name);
 		super.checkColumnHasValue(recordIndex, 1, itemType);

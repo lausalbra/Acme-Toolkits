@@ -15,6 +15,7 @@ public class AnonymousItemListTest extends TestHarness{
 								final String code, final String technology, final String retailPrice, final String fullname) {
 		
 		super.clickOnMenu("Anonymous", "List All Item");
+		super.checkListingExists();
 		
 		super.checkColumnHasValue(recordIndex, 0, name);
 		super.checkColumnHasValue(recordIndex, 1, itemType);

@@ -16,6 +16,7 @@ public class AdministratorItemListTest extends TestHarness{
 		
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Administrator", "List All Item");
+		super.checkListingExists();
 		
 		super.checkColumnHasValue(recordIndex, 0, name);
 		super.checkColumnHasValue(recordIndex, 1, itemType);

@@ -6,18 +6,18 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class InventorItemShow  extends TestHarness{
+public class InventorItemShowTest  extends TestHarness{
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/item/show.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveTest(final int recordIndex,final String name, final String itemType, final String code,  
 								final String technology, final String description, final String retailPrice, 
-								final String optionalLink) {
+								final String optionalLink, final String published) {
 		
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my Items");
-		
+		super.checkListingExists();
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkInputBoxHasValue("name", name);
@@ -27,6 +27,7 @@ public class InventorItemShow  extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
+		super.checkInputBoxHasValue("published", published);
 		
 		super.signOut();
 	}

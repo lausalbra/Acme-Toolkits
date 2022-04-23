@@ -50,7 +50,7 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "name", "itemType", "code", "technology", "retailPrice");
+		request.unbind(entity, model, "name", "itemType", "code", "technology", "retailPrice", "published");
 		
 	}
 }

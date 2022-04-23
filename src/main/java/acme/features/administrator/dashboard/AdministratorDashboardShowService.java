@@ -47,51 +47,49 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		final int numberOfDeniedPatronages =  this.repository.numberOfStatusPatronages(Status.DENIED);
 		
 		final Map<Pair<String,String>, Stats> statsRetailPriceOfComponents = new HashMap<>();
-		final List<String> listStatsRetailPriceOfComponents = this.repository.statsRetailPriceOfItem(ItemType.COMPONENT);
+		final List<Object[]> listStatsRetailPriceOfComponents = this.repository.statsRetailPriceOfItem(ItemType.COMPONENT);
 		
 		for (int i=0; i<listStatsRetailPriceOfComponents.size(); i++) {
-			final String[] arrayList = listStatsRetailPriceOfComponents.get(i).split(":");
-			final Pair<String, String> pareja = Pair.of(arrayList[0], arrayList[1]);
+			final Object[] linea = listStatsRetailPriceOfComponents.get(i);
+			final Pair<String, String> pareja = Pair.of((String)(linea[0]), (String)(linea[1]));
 			final Stats stat = new Stats();
-			stat.setAverage(Double.valueOf(arrayList[2]));
-			stat.setDeviation(Double.valueOf(arrayList[3]));
-			stat.setMinumun(Double.valueOf(arrayList[4]));
-			stat.setMaximun(Double.valueOf(arrayList[5]));
+			stat.setAverage((Double)(linea[2]));
+			stat.setDeviation((Double)(linea[3]));
+			stat.setMinumun((Double)(linea[4]));
+			stat.setMaximun((Double)(linea[5]));
 			
 			statsRetailPriceOfComponents.put(pareja, stat);
 		}
 		
 		
 		final Map<Pair<String,String>, Stats> statsRetailPriceOfTools = new HashMap<>();
-		final List<String> listStatsRetailPriceOfTools = this.repository.statsRetailPriceOfItem(ItemType.TOOL);
+		final List<Object[]> listStatsRetailPriceOfTools = this.repository.statsRetailPriceOfItem(ItemType.TOOL);
 		
 		for (int i=0; i<listStatsRetailPriceOfTools.size(); i++) {
-			final String[] arrayList = listStatsRetailPriceOfTools.get(i).split(":");
-			final Pair<String, String> pareja = Pair.of(arrayList[0], arrayList[1]);
+			final Object[] linea = listStatsRetailPriceOfTools.get(i);
+			final Pair<String, String> pareja = Pair.of((String)linea[0], (String)linea[1]);
 			final Stats stat = new Stats();
-			stat.setAverage(Double.valueOf(arrayList[2]));
-			stat.setDeviation(Double.valueOf(arrayList[3]));
-			stat.setMinumun(Double.valueOf(arrayList[4]));
-			stat.setMaximun(Double.valueOf(arrayList[5]));
+			stat.setAverage((Double)(linea[2]));
+			stat.setDeviation((Double)(linea[3]));
+			stat.setMinumun((Double)(linea[4]));
+			stat.setMaximun((Double)(linea[5]));
 			
 			statsRetailPriceOfTools.put(pareja, stat);
 		}
 		
 		
 		final EnumMap<Status,Stats> statsBudgetOfStatusPatronages = new EnumMap<>(Status.class);
-		final List<String> listStatsBudgetOfStatusPatronages = this.repository.statsBudgetOfStatusPatronages();
+		final List<Object[]> listStatsBudgetOfStatusPatronages = this.repository.statsBudgetOfStatusPatronages();
 		
 		for (int i=0; i<listStatsBudgetOfStatusPatronages.size(); i++) {
-			final String[] arrayList = listStatsBudgetOfStatusPatronages.get(i).split(":");
+			final Object[] arrayList = listStatsBudgetOfStatusPatronages.get(i);
 			final Stats stat = new Stats();
-			stat.setAverage(Double.valueOf(arrayList[1]));
-			stat.setDeviation(Double.valueOf(arrayList[2]));
-			stat.setMinumun(Double.valueOf(arrayList[3]));
-			stat.setMaximun(Double.valueOf(arrayList[4]));
+			stat.setAverage((Double)(arrayList[1]));
+			stat.setDeviation((Double)(arrayList[2]));
+			stat.setMinumun((Double)(arrayList[3]));
+			stat.setMaximun((Double)(arrayList[4]));
 			
-			System.out.println(Status.valueOf(arrayList[0]));
-			
-			statsBudgetOfStatusPatronages.put(Status.valueOf(arrayList[0]), stat);
+			statsBudgetOfStatusPatronages.put((Status)arrayList[0], stat);
 		}
 		
 

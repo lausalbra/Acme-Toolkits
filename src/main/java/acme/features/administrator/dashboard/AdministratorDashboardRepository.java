@@ -17,10 +17,10 @@ public interface AdministratorDashboardRepository extends AbstractRepository{
 	@Query("select count(p) from Patronage p where p.status = :status")
 	int numberOfStatusPatronages(Status status);
 	
-	@Query("select concat(i.technology,':', i.retailPrice.currency,':', avg(i.retailPrice.amount),':', stddev(i.retailPrice.amount),':', min(i.retailPrice.amount),':', max(i.retailPrice.amount)) from Item i where i.itemType = :type group by i.technology, i.retailPrice.currency")
-	List<String> statsRetailPriceOfItem(ItemType type);
+	@Query("select i.technology, i.retailPrice.currency, avg(i.retailPrice.amount), stddev(i.retailPrice.amount), min(i.retailPrice.amount), max(i.retailPrice.amount) from Item i where i.itemType = :type group by i.technology, i.retailPrice.currency")
+	List<Object[]> statsRetailPriceOfItem(ItemType type);
 	
-	@Query("select concat(p.status,':', avg(p.budget.amount),':', stddev(p.budget.amount),':', min(p.budget.amount),':', max(p.budget.amount)) from Patronage p group by p.status")
-	List<String> statsBudgetOfStatusPatronages();
+	@Query("select p.status, avg(p.budget.amount), stddev(p.budget.amount), min(p.budget.amount), max(p.budget.amount) from Patronage p group by p.status")
+	List<Object[]> statsBudgetOfStatusPatronages();
 }
 	

@@ -40,7 +40,10 @@ master.menu.administrator.populate-sample = Poblar BD (ejemplos)
 master.menu.administrator.shut-down = Parar el sistema
 master.menu.administrator.configuration = Mostrar configuracion
 master.menu.administrator.chirp.list-recent = Ver chirps recientes
+
 master.menu.administrator.item.list-all = Ver todos los Items
+master.menu.administrator.dashboard = Tablero de Mandos
+
 
 # master.menu.provider ########################################################
 

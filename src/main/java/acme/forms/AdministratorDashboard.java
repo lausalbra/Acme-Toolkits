@@ -3,7 +3,7 @@ package acme.forms;
 import java.io.Serializable;
 import java.util.Map;
 
-import com.mysql.cj.conf.ConnectionUrlParser.Pair;
+import org.springframework.data.util.Pair;
 
 import acme.entities.Status;
 import lombok.Getter;
@@ -11,7 +11,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AdminDashboard implements Serializable {
+public class AdministratorDashboard implements Serializable {
 	
 	// Serialisation identifier 
 

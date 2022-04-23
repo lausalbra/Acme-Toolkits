@@ -50,7 +50,9 @@
 			<acme:menu-suboption code="master.menu.administrator.shut-down" action="/administrator/shut-down"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.chirp.list-recent" action="/any/chirp/list-recent"/>
-      		<acme:menu-suboption code="master.menu.administrator.item.list-all" action="/any/item/list"/>
+      <acme:menu-suboption code="master.menu.administrator.item.list-all" action="/any/item/list"/>
+      <acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/administrator-dashboard/show"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

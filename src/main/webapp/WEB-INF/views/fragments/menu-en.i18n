@@ -20,16 +20,15 @@ master.menu.sign-out = Sign out
 master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.chirp.list-recent = List recent chirps
-master.menu.anonymous.item.list-all-component = List All Components
-master.menu.anonymous.item.list-all-tool = List All Tools
+master.menu.anonymous.item.list-all = List All Item
 
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.chirp.list-recent = List recent chirps
-master.menu.authenticated.item.list-all-component = List all Components
-master.menu.authenticated.item.list-all-tool = List all Tools
-
+master.menu.authenticated.item.list-all = List all Item
+master.menu.authenticated.announcement.list = List recent announcements
+master.menu.authenticated.configuration = Show Configuration
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator
@@ -40,9 +39,10 @@ master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.configuration = Show configuration
 master.menu.administrator.chirp.list-recent = List recent chirps
-master.menu.administrator.item.list-all-component = List All Components
-master.menu.administrator.item.list-all-tool = List All Tools
+
+master.menu.administrator.item.list-all = List All Item
 master.menu.administrator.dashboard = Dashboard
+
 
 # master.menu.provider ########################################################
 
@@ -68,6 +68,9 @@ master.menu.inventor.patronage.list-mine = List my patronages
 master.menu.inventor.patronage-report.list-mine = List my patronage reports
 master.menu.inventor.item.list-mine-component = List my Components
 master.menu.inventor.item.list-mine-tool = List my Tools
+master.menu.inventor.toolkit.list-mine-toolkit = List my Toolkits
+master.menu.inventor.item.list-mine = List my Items
+
 
 # master.menu.user-account ####################################################
 
@@ -77,3 +80,7 @@ master.menu.user-account.provider = Provider data
 master.menu.user-account.become-provider = Become a provider
 master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
+
+# master.menu.any ###############################################################
+
+master.menu.any.user-account.list = List user accounts

@@ -21,7 +21,11 @@ public class InventorPatronageListMineService implements AbstractListService<Inv
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-		return true;
+
+		boolean result;
+		result = request.getPrincipal().hasRole(Inventor.class);
+		
+		return result;
 	}
 
 	@Override

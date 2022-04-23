@@ -5,5 +5,5 @@
 
 <acme:list>
     <acme:list-column code="inventor.patronage-report.list.label.sequence-number" path="sequenceNumber" width="70%"/>
-    <acme:list-column code="inventor.patronage-report.list.label.creation-moment" path="creationMoment" width="20%"/>
+    <acme:list-column code="inventor.patronage-report.list.label.creation-moment" path="creationMoment" width="30%"/>
 </acme:list>

@@ -18,7 +18,11 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 	@Override
 	public boolean authorise(final Request<Patronage> request) {
 		assert request != null;
-		return true;
+
+		boolean result;
+		result = request.getPrincipal().hasRole(Inventor.class);
+		
+		return result;
 	}
 
 	@Override
@@ -40,8 +44,14 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, "status","code","legalStuff","budget","patron.userAccount.identity.fullName",
-			"patron.userAccount.identity.email","startPeriod","endPeriod","link");
+		request.unbind(entity, model, "status","code","legalStuff","budget","startPeriod","endPeriod","link");
+		
+		final String fullName = entity.getPatron().getUserAccount().getIdentity().getFullName();
+		model.setAttribute("fullName", fullName);
+		
+		final String email = entity.getPatron().getUserAccount().getIdentity().getEmail();
+		model.setAttribute("email", email);
+		
 		model.setAttribute("confirmation", false);
 		model.setAttribute("readonly", true);
 		

@@ -16,6 +16,8 @@ public class PatronPatronageListMine extends TestHarness {
 		super.signIn("patron1", "patron1");
 		super.clickOnMenu("Patron", "List my patronages");
 		
+		super.checkListingExists();
+		
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, startPeriod);
 		super.checkColumnHasValue(recordIndex, 2, endPeriod);

@@ -40,7 +40,7 @@ public class FavouriteLinkTest extends TestHarness {
 		super.clickOnMenu("Anonymous", "29539112M: Silva Leon, Fernando");		
 		super.checkCurrentUrl("https://www.powerpyx.com");
 		super.navigateHome();
-		super.clickOnMenu("Anonymous", "29533279Z: García Lergo, Horacio");		
+		super.clickOnMenu("Anonymous", "29533279Z: Garcia Lergo, Horacio");		
 		super.checkCurrentUrl("https://www.youtube.com/watch?v=K3Qzzggn--s");
 	}
 	

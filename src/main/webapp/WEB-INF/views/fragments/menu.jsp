@@ -24,7 +24,7 @@
 			<acme:menu-suboption code="15427850W: Sanchez Hossdorf, Alexander" action="https://www.youtube.com/watch?v=eSZFIXbqmhs&list=PLNQtd15ZC-ZyZKruTodo-4I3_kfoGaDEq&index=2&t=3241s"/>
 			<acme:menu-suboption code="47563095S: Pardo Pastor, Carlos" action="https://www.youtube.com/watch?v=fJ9rUzIMcZQ"/>
 			<acme:menu-suboption code="29539112M: Silva Leon, Fernando" action="https://www.powerpyx.com"/>
-			<acme:menu-suboption code="29533279Z: García Lergo, Horacio" action="https://www.youtube.com/watch?v=K3Qzzggn--s"/>
+			<acme:menu-suboption code="29533279Z: Garcia Lergo, Horacio" action="https://www.youtube.com/watch?v=K3Qzzggn--s"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.anonymous.chirp.list-recent" action="/any/chirp/list-recent"/>
       		<acme:menu-suboption code="master.menu.anonymous.item.list-all" action="/any/item/list"/>

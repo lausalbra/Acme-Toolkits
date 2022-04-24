@@ -51,10 +51,11 @@ master.menu.consumer = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
 
 # master.menu.patron ##########################################################
-master.menu.patron = Patron
+master.menu.patron = Patrón
 master.menu.patron.chirp.list-recent = Ver chirps recientes
 master.menu.patron.patronage.list-mine = Ver mis patrocinios
 master.menu.patron.patronage-report.list-mine = Ver los reportes de mis patrocinios
+master.menu.patron.patron-dashboard = Panel del patrón
 
 # master.menu.inventor ##########################################################
 

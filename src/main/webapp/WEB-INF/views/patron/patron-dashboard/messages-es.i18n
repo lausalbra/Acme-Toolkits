@@ -1,7 +1,12 @@
-patron.patronage-report.list.label.sequence-number = Número de secuencia
-patron.patronage-report.list.label.creation-moment = Momento de creación
+administrator.dashboard.form.title.patronages = Patrocinios
+administrator.dashboard.form.label.proposed-patronages= Patrocinios Propuestos
+administrator.dashboard.form.label.accepted-patronages = Patrocinios Aceptados
+administrator.dashboard.form.label.denied-patronages = Patrocinios Denegados
 
-patron.patronage-report.form.label.sequence-number = Número de secuencia:
-patron.patronage-report.form.label.creation-moment = Momento de creación:
-patron.patronage-report.form.label.memorandum = Memorándum:
-patron.patronage-report.form.label.link = Enlace con más información:
+administrator.dashboard.form.title.stats = Estadísticas
+administrator.dashboard.form.label.status= Estatus
+administrator.dashboard.form.label.currency = Divisa
+administrator.dashboard.form.label.average-value = Media
+administrator.dashboard.form.label.deviation-value = Desviación
+administrator.dashboard.form.label.minimum-value= Mínimo
+administrator.dashboard.form.label.maximum-value = Máximo

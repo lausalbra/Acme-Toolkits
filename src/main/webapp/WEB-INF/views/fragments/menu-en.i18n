@@ -54,6 +54,7 @@ master.menu.patron = Patron
 master.menu.patron.chirp.list-recent = List recent chirps
 master.menu.patron.patronage.list-mine = List my patronages
 master.menu.patron.patronage-report.list-mine = List my patronage reports
+master.menu.patron.patron-dashboard = Patron's Dashboard
 
 # master.menu.inventor ##########################################################
 

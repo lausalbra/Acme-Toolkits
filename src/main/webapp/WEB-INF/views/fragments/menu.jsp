@@ -59,6 +59,7 @@
       		<acme:menu-suboption code="master.menu.patron.chirp.list-recent" action="/any/chirp/list-recent"/>
       		<acme:menu-suboption code="master.menu.patron.patronage.list-mine" action="/patron/patronage/list-mine"/>
       		<acme:menu-suboption code="master.menu.patron.patronage-report.list-mine" action="/patron/patronage-report/list-mine"/>
+      		<acme:menu-suboption code="master.menu.patron.patron-dashboard" action="/patron/patron-dashboard/show"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.inventor" access="hasRole('Inventor')">

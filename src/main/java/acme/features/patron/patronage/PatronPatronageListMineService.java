@@ -37,6 +37,7 @@ public class PatronPatronageListMineService implements AbstractListService<Patro
 
 		principal = request.getPrincipal();
         result = this.repository.findMinePatronages(principal.getUsername());
+
 		return result;
 	}
 

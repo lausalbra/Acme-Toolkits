@@ -18,7 +18,11 @@ public class InventorPatronageReportShowService implements AbstractShowService<I
 	@Override
 	public boolean authorise(final Request<PatronageReport> request) {
 		assert request != null;
-		return true;
+
+		boolean result;
+		result = request.getPrincipal().hasRole(Inventor.class);
+		
+		return result;
 	}
 
 	@Override

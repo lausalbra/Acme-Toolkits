@@ -1,5 +1,5 @@
 recordIndex,username,roles
-0,patron1,Patron
+0,inventor1,Inventor
 1,inventor2,Inventor
-2,patron2,Inventor Patron
-3,inventor1,Inventor
+2,patron1,Patron
+3,patron2,Inventor Patron 

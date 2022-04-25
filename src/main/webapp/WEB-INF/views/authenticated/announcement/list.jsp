@@ -6,6 +6,6 @@
 <acme:list>
     <acme:list-column code="authenticated.announcement.list.label.creation" path="creation" width="30%"/>
     <acme:list-column code="authenticated.announcement.list.label.title" path="title" width="50%"/>
-    <acme:list-column code="authenticated.announcement.list.label.criticalFlag" path="criticalFlag" width="20%"/>
+    <acme:list-column code="authenticated.announcement.list.label.status" path="status" width="20%"/>
    
 </acme:list>

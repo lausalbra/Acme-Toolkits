@@ -6,6 +6,7 @@
 <h2><acme:message code="administrator.dashboard.form.title.components"/></h2>
 
 <table class="table table-sm">
+	<caption><acme:message code="administrator.dashboard.form.label.number-of-components"/></caption>
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.number-of-components"/>
@@ -19,6 +20,7 @@
 <h3><acme:message code="administrator.dashboard.form.title.stats"/></h3>
 
 <table class="table table-sm">
+	<caption><acme:message code="administrator.dashboard.form.title.stats"/></caption>
 	<jstl:forEach var="entry" items="${statsRetailPriceOfComponents}">
 		<tr>
 			<th scope="row">
@@ -70,6 +72,7 @@
 </h2>
 
 <table class="table table-sm">
+	<caption><acme:message code="administrator.dashboard.form.label.number-of-tools"/></caption>
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.number-of-tools"/>
@@ -83,6 +86,7 @@
 <h3><acme:message code="administrator.dashboard.form.title.stats"/></h3>
 
 <table class="table table-sm">
+	<caption><acme:message code="administrator.dashboard.form.title.stats"/></caption>
 	<jstl:forEach var="entry" items="${statsRetailPriceOfTools}">
 		<tr>
 			<th scope="row">
@@ -136,6 +140,7 @@
 </h2>
 
 <table class="table table-sm">
+	<caption><acme:message code="administrator.dashboard.form.label.number-patronages"/></caption>
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.proposed-patronages"/>
@@ -163,6 +168,7 @@
 <h3><acme:message code="administrator.dashboard.form.title.stats"/></h3>
 
 <table class="table table-sm">
+	<caption><acme:message code="administrator.dashboard.form.title.stats"/></caption>
 	<jstl:forEach var="entry" items="${statsBudgetOfStatusPatronages}">
 		<tr>
 			<th scope="row">

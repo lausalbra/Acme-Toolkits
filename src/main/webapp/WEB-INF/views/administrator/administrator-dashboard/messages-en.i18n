@@ -9,6 +9,7 @@ administrator.dashboard.form.label.proposed-patronages= Proposed Patronages
 administrator.dashboard.form.label.accepted-patronages = Accepted Patronages
 administrator.dashboard.form.label.denied-patronages = Denied Patronages
 administrator.dashboard.form.label.status = Status
+administrator.dashboard.form.label.number-patronages = Number of Patronages
 
 administrator.dashboard.form.title.stats = Stats
 administrator.dashboard.form.label.technology= Technology

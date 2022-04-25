@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AnyAccountShow extends TestHarness {
+public class AnyAccountShowTest extends TestHarness {
 
 	@ParameterizedTest	
 	@CsvFileSource(resources = "/any/account/show.csv", encoding = "utf-8", numLinesToSkip = 1)

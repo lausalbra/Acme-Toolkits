@@ -6,6 +6,7 @@
 <h2><acme:message code="administrator.dashboard.form.title.patronages"/></h2>
 
 <table class="table table-sm">
+	<caption><acme:message code="administrator.dashboard.form.title.patronages"/></caption>
 	<tr>
 		<th scope="row">
 			<acme:message code="administrator.dashboard.form.label.proposed-patronages"/>
@@ -33,6 +34,7 @@
 <h3><acme:message code="administrator.dashboard.form.title.stats"/></h3>
 
 <table class="table table-sm">
+	<caption><acme:message code="administrator.dashboard.form.title.stats"/></caption>
 	<jstl:forEach var="entry" items="${statsBudgetOfStatusPatronages}">
 		<tr>
 			<th scope="row">

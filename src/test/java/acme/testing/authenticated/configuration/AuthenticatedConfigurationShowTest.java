@@ -14,8 +14,6 @@ public class AuthenticatedConfigurationShowTest extends TestHarness {
 		
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Authenticated", "Show Configuration");
-		super.checkListingExists();
-		super.clickOnListingRecord(recordIndex);
 		
 		super.checkInputBoxHasValue("defaultCurrency", defaultCurrency);
 		super.checkInputBoxHasValue("acceptedCurrencies", acceptedCurrencies);

@@ -21,12 +21,14 @@ master.menu.anonymous = Anonymous
 master.menu.anonymous.favourite-link = Favourite link
 master.menu.anonymous.chirp.list-recent = List recent chirps
 master.menu.anonymous.item.list-all = List All Item
+master.menu.anonymous.toolkit.list-all = List All Toolkits
 
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.chirp.list-recent = List recent chirps
 master.menu.authenticated.item.list-all = List all Item
+master.menu.authenticated.toolkit.list-all = List All Toolkits
 master.menu.authenticated.announcement.list = List recent announcements
 master.menu.authenticated.configuration = Show Configuration
 # master.menu.administrator ###################################################

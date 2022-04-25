@@ -38,7 +38,7 @@ public class AuthenticatedAnnouncementShowService implements AbstractShowService
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "title","criticalFlag","body","link" );
+		request.unbind(entity, model, "title","status","body","link" );
 	}
 	
 	

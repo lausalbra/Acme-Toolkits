@@ -36,7 +36,7 @@ public class Announcement extends AbstractEntity {
 	@Length(max=255)
 	protected String body;
 
-	protected boolean criticalFlag;
+	protected Status status;
 	
 	@URL
 	protected String link;

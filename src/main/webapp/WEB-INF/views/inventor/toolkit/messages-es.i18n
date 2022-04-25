@@ -1,7 +1,8 @@
 inventor.toolkit.form.label.code = Codigo:
 inventor.toolkit.form.label.title = Titulo:
 inventor.toolkit.form.label.description = Descripción:
-inventor.toolkit.form.label.assembleNotes = Notas de ensamblaje:
+inventor.toolkit.form.label.assemblyNote = Notas de ensamblaje:
+inventor.toolkit.form.label.retailPrice = Precio de venta:
 inventor.toolkit.form.label.link = Link opcional:
 
 inventor.toolkit.form.button.items = Objetos

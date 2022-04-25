@@ -21,12 +21,14 @@ master.menu.anonymous = Anónimo
 master.menu.anonymous.favourite-link = Enlace favorito
 master.menu.anonymous.chirp.list-recent = Ver chirps recientes
 master.menu.anonymous.item.list-all = Ver todos Items
+master.menu.anonymous.toolkit.list-all = Ver todos Toolkits
 
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Authenticated
 master.menu.authenticated.chirp.list-recent = Ver chirps recientes
 master.menu.authenticated.item.list-all = Ver todos los Items
+master.menu.authenticated.toolkit.list-all = Ver todos Toolkits
 master.menu.authenticated.announcement.list = Ver todos los anuncios recientes
 master.menu.authenticated.configuration = Mostrar Configuracion
 

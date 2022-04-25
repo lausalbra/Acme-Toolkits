@@ -1,5 +1,7 @@
 package acme.features.authenticated.configuration;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +27,11 @@ public class AuthenticatedConfigurationShowService implements AbstractShowServic
 	@Override
 	public Configuration findOne(final Request<Configuration> request) {
 		assert request != null;
-		Configuration result;
-		result = this.repository.findConfiguration().stream().findFirst().get();
+		Configuration result = null;
+		final Optional<Configuration> resOpt = this.repository.findConfiguration().stream().findFirst();
+		if(resOpt.isPresent()) {
+			result = resOpt.get();
+		}
 		return result;
 	}
 

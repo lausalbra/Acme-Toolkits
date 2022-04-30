@@ -15,10 +15,13 @@ public class AdministratorConfigurationController extends AbstractController<Adm
 	// Internal state ---------------------------------------------------------
     @Autowired
     protected AdministratorConfigurationShowService    showService;
+    @Autowired
+    protected AdministratorConfigurationUpdateService    updateService;
     
     @PostConstruct
     protected void initialise() {
         super.addCommand("show", this.showService);
+        super.addCommand("update", this.updateService);
     }
     
 

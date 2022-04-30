@@ -4,3 +4,4 @@ administrator.configuration.form.label.strong-spam-terms = Palabras fuertes de s
 administrator.configuration.form.label.strong-spam-threshold = Fuerte umbral de spam:
 administrator.configuration.form.label.weak-spam-words = Palabras débiles de spam:
 administrator.configuration.form.label.weak-spam-threshold = Umbral de spam débil:
+dministrator.configuration.form.button.update = Actualizar

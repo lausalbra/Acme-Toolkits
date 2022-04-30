@@ -59,7 +59,29 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		if(!errors.hasErrors("defaultCurrency")) {
+			errors.state(request, entity.getDefaultCurrency()!=null, "defaultCurrency", "administrator.configuration.error-default-currency");
 		
+		}
+		if(!errors.hasErrors("acceptedCurrencies")) {
+			errors.state(request, entity.getAcceptedCurrencies()!=null, "acceptedCurrencies", "administrator.configuration.error-accepted-currencies");
+		
+		}
+		if(!errors.hasErrors("strongSpamTerms")) {
+			errors.state(request, entity.getStrongSpamTerms()!=null, "strongSpamTerms", "administrator.configuration.error-strong-spamTerms");
+			
+		}
+		if(!errors.hasErrors("strongSpamThreshold")) {
+			errors.state(request, entity.getStrongSpamThreshold()>=0&&entity.getStrongSpamThreshold()<=100, "strongSpamThreshold", "administrator.configuration.strong-spam-threshold");
+		
+		}
+		if(!errors.hasErrors("weakSpamTerms")) {
+		errors.state(request, entity.getWeakSpamTerms()!=null, "weakSpamTerms", "administrator.configuration.weak-spam-terms");
+		
+		}
+		if(!errors.hasErrors("weakSpamThreshold")) {
+			errors.state(request, entity.getStrongSpamThreshold()>=0&&entity.getStrongSpamThreshold()<=100, "weakSpamThreshold", "administrator.configuration.weak-spam-threshold");
+		}
 	}
 
 	@Override

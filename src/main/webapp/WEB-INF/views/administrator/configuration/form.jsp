@@ -10,5 +10,5 @@
     <acme:input-double code="administrator.configuration.form.label.strong-spam-threshold" path="strongSpamThreshold"/>
     <acme:input-textbox code="administrator.configuration.form.label.weak-spam-words" path="weakSpamTerms"/>
     <acme:input-double code="administrator.configuration.form.label.weak-spam-threshold" path="weakSpamThreshold"/>
-	<acme:submit code="dministrator.configuration.form.button.update" action="/administrator/configuration/update"/>
+	<acme:submit code="administrator.configuration.form.button.update" action="/administrator/configuration/update"/>
 </acme:form>

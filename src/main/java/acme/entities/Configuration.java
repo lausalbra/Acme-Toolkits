@@ -1,10 +1,11 @@
 package acme.entities;
 
 import javax.persistence.Entity;
-import javax.validation.constraints.DecimalMax;
-import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Range;
 
 import acme.framework.entities.AbstractEntity;
 import lombok.Getter;
@@ -28,16 +29,18 @@ public class Configuration extends AbstractEntity{
 	@NotBlank
 	protected String acceptedCurrencies;
 	
+	@NotBlank
 	protected String strongSpamTerms;
 	
-	@DecimalMin(value = "0.00")
-	@DecimalMax(value = "100.00")
+	@Range(min = 0, max = 100)
+	@Digits(integer = 2, fraction = 2)
 	protected double strongSpamThreshold;
 	
+	@NotBlank
 	protected String weakSpamTerms;
 	
-	@DecimalMin(value = "0.00")
-	@DecimalMax(value = "100.00")
+	@Range(min = 0, max = 100)
+	@Digits(integer = 2, fraction = 2)
 	protected double weakSpamThreshold;
 
 }

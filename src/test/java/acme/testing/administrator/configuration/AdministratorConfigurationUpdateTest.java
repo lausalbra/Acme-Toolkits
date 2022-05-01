@@ -11,20 +11,18 @@ public class AdministratorConfigurationUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/configuration/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex,final String defaultCurrency, final String acceptedCurrencies, final String strongSpamTerms,  
+	public void positiveTest(final int recordIndex, final String acceptedCurrencies, final String strongSpamTerms,  
 		final String strongSpamThreshold, final String weakSpamTerms, final String weakSpamThreshold) {
 
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Administrator", "Show configuration");
 		super.checkFormExists();
-		super.fillInputBoxIn("defaultCurrency", defaultCurrency);
 		super.fillInputBoxIn("acceptedCurrencies", acceptedCurrencies);
 		super.fillInputBoxIn("strongSpamTerms", strongSpamTerms);
 		super.fillInputBoxIn("strongSpamThreshold", strongSpamThreshold);
 		super.fillInputBoxIn("weakSpamTerms", weakSpamTerms);
 		super.fillInputBoxIn("weakSpamThreshold", weakSpamThreshold);
 		super.clickOnSubmit("Update");
-		super.checkInputBoxHasValue("defaultCurrency", defaultCurrency);
 		super.checkInputBoxHasValue("acceptedCurrencies", acceptedCurrencies);
 		super.checkInputBoxHasValue("strongSpamTerms", strongSpamTerms);
 		super.checkInputBoxHasValue("strongSpamThreshold", strongSpamThreshold);

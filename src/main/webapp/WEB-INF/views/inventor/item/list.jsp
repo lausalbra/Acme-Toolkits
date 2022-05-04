@@ -12,3 +12,5 @@
     <acme:list-column code="inventor.item.list.label.published" path="published" width="10%"/>
     
 </acme:list>
+
+<acme:button code="inventor.item.list.button.create" action="/inventor/item/create"/>

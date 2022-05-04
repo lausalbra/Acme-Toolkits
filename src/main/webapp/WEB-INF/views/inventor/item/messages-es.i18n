@@ -4,6 +4,8 @@ inventor.item.list.label.technology = Tecnología
 inventor.item.list.label.retailPrice = Precio de venta
 inventor.item.list.label.published = Publicado
 
+inventor.item.list.button.create = Crear Nuevo Artículo
+
 inventor.item.form.label.name = Nombre
 inventor.item.form.label.code = Código
 inventor.item.form.label.technology = Tecnología
@@ -11,3 +13,11 @@ inventor.item.form.label.description = Descripción
 inventor.item.form.label.retailPrice = Precio de venta
 inventor.item.form.label.optionalLink = Link Opcional
 inventor.item.form.label.published = Publicado
+
+inventor.item.form.button.create = Crear
+inventor.item.form.button.update = Actualizar
+inventor.item.form.button.delete = Borrar
+inventor.item.form.button.publish = Publicar
+
+inventor.item.form.error.duplicated = Ya existe un artículo con este código
+inventor.item.form.error.negative-retailPrice = El precio de venta al público no puede ser negativo

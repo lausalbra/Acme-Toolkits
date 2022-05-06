@@ -56,6 +56,11 @@ public class Patronage extends AbstractEntity{
 	@URL
 	protected String link;
 	
+	protected boolean notPublished;
+	
+	@NotNull
+	protected Date creationDate;
+	
 	//Relationships -----------------------------------------------------------------------------
 	@NotNull
 	@Valid

@@ -1,6 +1,7 @@
 package acme.features.patron.patronage;
 
 import java.util.Collection;
+import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,8 +47,23 @@ public class PatronPatronageListMineService implements AbstractListService<Patro
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "code","startPeriod","endPeriod");
 		
+		request.unbind(entity, model, "code", "startPeriod", "endPeriod", "notPublished");
+		
+		final boolean isPublished = !entity.isNotPublished();
+		String strPublished = "";
+		
+		if (isPublished) {
+			if (request.getLocale().equals(Locale.ENGLISH)) {
+				strPublished = "Yes";
+			} else {
+				strPublished = "Sí";
+			}
+		} else {
+			strPublished = "No";
+		}
+		
+		model.setAttribute("isPublished", strPublished);
 	}
 	
 }

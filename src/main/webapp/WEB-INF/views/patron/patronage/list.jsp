@@ -5,6 +5,9 @@
 
 <acme:list>
     <acme:list-column code="patron.patronage.list.label.code" path="code" width="40%"/>
-    <acme:list-column code="patron.patronage.list.label.start-period" path="startPeriod" width="30%"/>
-    <acme:list-column code="patron.patronage.list.label.end-period" path="endPeriod" width="30%"/>
+    <acme:list-column code="patron.patronage.list.label.start-period" path="startPeriod" width="25%"/>
+    <acme:list-column code="patron.patronage.list.label.end-period" path="endPeriod" width="25%"/>
+    <acme:list-column code="patron.patronage.list.label.published" path="isPublished" width="10%"/>
 </acme:list>
+
+<acme:button code="patron.patronage.list.button.create" action="/patron/patronage/create"/>

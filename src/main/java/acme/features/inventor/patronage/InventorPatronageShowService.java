@@ -3,6 +3,7 @@ package acme.features.inventor.patronage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Status;
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -46,6 +47,9 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		
 		request.unbind(entity, model, "status","code","legalStuff","budget","startPeriod","endPeriod","link");
 		
+		final boolean proposed = entity.getStatus().equals(Status.PROPOSED);
+		model.setAttribute("proposed", proposed);
+		
 		final String fullName = entity.getPatron().getUserAccount().getIdentity().getFullName();
 		model.setAttribute("fullName", fullName);
 		
@@ -53,7 +57,7 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		model.setAttribute("email", email);
 		
 		model.setAttribute("confirmation", false);
-		model.setAttribute("readonly", true);
+		model.setAttribute("readonly", false);
 		
 	}
 	

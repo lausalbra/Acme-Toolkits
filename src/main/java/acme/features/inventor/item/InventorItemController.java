@@ -16,10 +16,23 @@ public class InventorItemController extends AbstractController<Inventor, Item>{
 	//Internal state 
 	
 	@Autowired
-	protected InventorItemListService		listService;
+	protected InventorItemShowService			showService;	
 	
 	@Autowired
-	protected InventorItemShowService			showService;
+	protected InventorItemListService			listService;
+	
+	@Autowired
+	protected InventorItemCreateService			createService;
+	
+	@Autowired
+	protected InventorItemUpdateService			updateService;
+	
+	@Autowired
+	protected InventorItemDeleteService			deleteService;
+	
+	@Autowired
+	protected InventorItemPublishService		publishService;
+	
 	
 	//Esto es para mostrar los items asociados a toolkits del inventor
 	@Autowired
@@ -32,6 +45,13 @@ public class InventorItemController extends AbstractController<Inventor, Item>{
 	protected void initialise() {
 		super.addCommand("show", this.showService);
 		super.addCommand("list", this.listService);
+		super.addCommand("create", this.createService);
+		super.addCommand("update", this.updateService);
+		super.addCommand("delete", this.deleteService);
+		
+		
+		super.addCommand("publish", "update", this.publishService);
+		
 		//Esto es para mostrar los items asociados a toolkits del inventor
 		super.addCommand("list-toolkit", "list", this.toolkitItemListService);
 		

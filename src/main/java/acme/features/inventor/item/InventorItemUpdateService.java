@@ -38,24 +38,6 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 	}
 	
 	@Override
-	public void validate(final Request<Item> request, final Item entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
-		
-		if (!errors.hasErrors("code")) {
-			Item existing;
-
-			existing = this.repository.findOneItemByCode(entity.getCode());
-			errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.item.form.error.duplicated");
-		}
-		
-		if (!errors.hasErrors("retailPrice")) {
-			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.item.form.error.negative-retailPrice");
-		}
-	}
-	
-	@Override
 	public void bind(final Request<Item> request, final Item entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
@@ -86,6 +68,24 @@ public class InventorItemUpdateService implements AbstractUpdateService<Inventor
 		return result;
 	}
 	
+	@Override
+	public void validate(final Request<Item> request, final Item entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+		
+		if (!errors.hasErrors("code")) {
+			Item existing;
+
+			existing = this.repository.findOneItemByCode(entity.getCode());
+			errors.state(request, existing == null || existing.getId() == entity.getId(), "code", "inventor.item.form.error.duplicated");
+		}
+		
+		if (!errors.hasErrors("retailPrice")) {
+			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.item.form.error.negative-retailPrice");
+		}
+	}
+		
 	@Override
 	public void update(final Request<Item> request, final Item entity) {
 		assert request != null;

@@ -38,6 +38,24 @@ public class InventorItemPublishService  implements AbstractUpdateService<Invent
 	}
 	
 	@Override
+	public void bind(final Request<Item> request, final Item entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+		
+		request.bind(entity, errors, "name","itemType","code","technology","description","retailPrice","optionalLink");
+	}
+	
+	@Override
+	public void unbind(final Request<Item> request, final Item entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+		
+		request.unbind(entity, model, "name","itemType","code","technology","description","retailPrice","optionalLink", "published");
+	}
+	
+	@Override
 	public Item findOne(final Request<Item> request) {
 		assert request != null;
 		
@@ -48,15 +66,6 @@ public class InventorItemPublishService  implements AbstractUpdateService<Invent
 		result = this.repository.findOneItemById(id);
 		
 		return result;
-	}
-	
-	@Override
-	public void bind(final Request<Item> request, final Item entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
-		
-		request.bind(entity, errors, "name","itemType","code","technology","description","retailPrice","optionalLink");
 	}
 	
 	@Override
@@ -77,16 +86,7 @@ public class InventorItemPublishService  implements AbstractUpdateService<Invent
 		}
 		
 	}
-	
-	@Override
-	public void unbind(final Request<Item> request, final Item entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
 		
-		request.unbind(entity, model, "name","itemType","code","technology","description","retailPrice","optionalLink", "published");
-	}
-	
 	@Override
 	public void update(final Request<Item> request, final Item entity) {
 		assert request != null;

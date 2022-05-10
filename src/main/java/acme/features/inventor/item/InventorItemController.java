@@ -16,10 +16,10 @@ public class InventorItemController extends AbstractController<Inventor, Item>{
 	//Internal state 
 	
 	@Autowired
-	protected InventorItemListService			listService;
+	protected InventorItemShowService			showService;	
 	
 	@Autowired
-	protected InventorItemShowService			showService;
+	protected InventorItemListService			listService;
 	
 	@Autowired
 	protected InventorItemCreateService			createService;
@@ -32,7 +32,6 @@ public class InventorItemController extends AbstractController<Inventor, Item>{
 	
 	@Autowired
 	protected InventorItemPublishService		publishService;
-	
 	
 	
 	//Esto es para mostrar los items asociados a toolkits del inventor

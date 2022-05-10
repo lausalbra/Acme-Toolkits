@@ -13,20 +13,33 @@ import acme.roles.Inventor;
 @Service
 public class InventorItemCreateService implements AbstractCreateService<Inventor, Item>{
 	
-	// Internal State 
-	
 	@Autowired
 	protected InventorItemRepository repository;
-	
-	//AbstractCreateService<Inventor, Item> interface
 	
 	@Override
 	public boolean authorise(final Request<Item> request) {
 		assert request != null;
-		
 		return true;
 	}
-	
+
+	@Override
+	public void bind(final Request<Item> request, final Item entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+		request.bind(entity, errors, "name","itemType", "code", "technology", "description", "retailPrice", "optionalLink");
+	}
+
+	@Override
+	public void unbind(final Request<Item> request, final Item entity, final Model model) {
+		assert request != null;
+		assert entity != null;
+		assert model != null;
+
+		request.unbind(entity, model, "name","itemType", "code", "technology", "description", "retailPrice", "optionalLink", "published");		
+	}
+
 	@Override
 	public Item instantiate(final Request<Item> request) {
 		assert request != null;
@@ -44,15 +57,6 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 	}
 
 	@Override
-	public void bind(final Request<Item> request, final Item entity, final Errors errors) {
-		assert request != null;
-		assert entity != null;
-		assert errors != null;
-
-		request.bind(entity, errors, "name","itemType", "code", "technology", "description", "retailPrice", "optionalLink");
-	}
-	
-	@Override
 	public void validate(final Request<Item> request, final Item entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
@@ -68,24 +72,27 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		if (!errors.hasErrors("retailPrice")) {
 			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.item.form.error.negative-retailPrice");
 		}
+		if (!errors.hasErrors("name")) {
+			errors.state(request, entity.getName().length()<101, "name", "inventor.item.form.error.incorrect-name");
+		
+		}if (!errors.hasErrors("technology")) {
+			errors.state(request, entity.getTechnology().length()<101, "technology", "inventor.item.form.error.incorrect-technology");
+		
+		}if (!errors.hasErrors("description")) {
+			errors.state(request, entity.getDescription().length()<256, "description", "inventor.item.form.error.incorrect-description");
+		
+		}
 		
 	}
-	
-	@Override
-	public void unbind(final Request<Item> request, final Item entity, final Model model) {
-		assert request != null;
-		assert entity != null;
-		assert model != null;
 
-		request.unbind(entity, model, "name","itemType", "code", "technology", "description", "retailPrice", "optionalLink", "published");
-	}
-	
 	@Override
 	public void create(final Request<Item> request, final Item entity) {
 		assert request != null;
 		assert entity != null;
 
 		this.repository.save(entity);
+		
 	}
 	
+
 }

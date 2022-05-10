@@ -45,7 +45,7 @@ public class InventorPatronageListMineService implements AbstractListService<Inv
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "code","startPeriod","endPeriod");
+		request.unbind(entity, model, "code", "startPeriod", "endPeriod", "status");
 		
 	}
 	

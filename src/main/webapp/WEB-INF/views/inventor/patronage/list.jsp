@@ -4,7 +4,8 @@
 <%@taglib prefix="acme" uri="urn:jsptagdir:/WEB-INF/tags"%>
 
 <acme:list>
-    <acme:list-column code="inventor.patronage.list.label.code" path="code" width="40%"/>
-    <acme:list-column code="inventor.patronage.list.label.start-period" path="startPeriod" width="30%"/>
-    <acme:list-column code="inventor.patronage.list.label.end-period" path="endPeriod" width="30%"/>
+    <acme:list-column code="inventor.patronage.list.label.code" path="code" width="35%"/>
+    <acme:list-column code="inventor.patronage.list.label.start-period" path="startPeriod" width="25%"/>
+    <acme:list-column code="inventor.patronage.list.label.end-period" path="endPeriod" width="25%"/>
+    <acme:list-column code="inventor.patronage.list.label.status" path="status" width="15%"/>
 </acme:list>

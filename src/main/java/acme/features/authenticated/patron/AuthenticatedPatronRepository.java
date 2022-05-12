@@ -1,0 +1,16 @@
+package acme.features.authenticated.patron;
+
+import org.springframework.data.jpa.repository.Query;
+
+import acme.framework.entities.UserAccount;
+import acme.framework.repositories.AbstractRepository;
+import acme.roles.Patron;
+
+public interface AuthenticatedPatronRepository extends AbstractRepository {
+	
+	@Query("select ua from UserAccount ua where ua.id = :id")
+	UserAccount findOneUserAccountById(int id);
+
+	@Query("select p from Patron p where p.userAccount.id = :id")
+	Patron findOnePatronByUserAccountId(int id);
+}

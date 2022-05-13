@@ -10,6 +10,7 @@ inventor.toolkit.list.button.create = Create
 
 inventor.toolkit.list.label.code = Code
 inventor.toolkit.list.label.title = Title
+inventor.toolkit.list.label.draft = Draft
 
 inventor.toolkit.form.button.delete = Delete
 inventor.toolkit.form.button.update = Update

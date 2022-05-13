@@ -70,7 +70,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		model.setAttribute("retailPrice", retailPrice);
 		
-		request.unbind(entity, model, "code", "title", "description", "assemblyNote", "optionalLink");
+		request.unbind(entity, model, "code", "title", "description", "assemblyNote", "optionalLink", "draft");
 	}
 
 }

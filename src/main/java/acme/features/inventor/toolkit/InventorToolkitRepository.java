@@ -10,6 +10,7 @@ import acme.entities.items.Item;
 import acme.entities.quantities.Quantity;
 import acme.entities.toolkits.Toolkit;
 import acme.framework.repositories.AbstractRepository;
+import acme.roles.Inventor;
 
 @Repository
 public interface InventorToolkitRepository extends AbstractRepository{
@@ -31,5 +32,11 @@ public interface InventorToolkitRepository extends AbstractRepository{
 	
 	@Query("select q.item.retailPrice.currency from Quantity q where q.toolkit.id = :id group by q.item.retailPrice.currency")
 	List<String> findAllCurrenciesByToolkitId(int id);
+	
+	@Query("select i from Inventor i where i.id = :id")
+	Inventor findOneInventorById(int id);
+	
+	@Query("select t from Toolkit t where t.code = :code")
+	Toolkit findOneToolkitByCode(String code);
 	
 }

@@ -23,6 +23,7 @@ master.menu.anonymous.chirp.list-recent = List recent chirps
 master.menu.anonymous.item.list-all = List All Item
 master.menu.anonymous.toolkit.list-all = List All Toolkits
 
+
 # master.menu.authenticated #######################################################
 
 master.menu.authenticated = Authenticated
@@ -41,9 +42,11 @@ master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shut-down = Shut down
 master.menu.administrator.configuration = Show configuration
 master.menu.administrator.chirp.list-recent = List recent chirps
-
 master.menu.administrator.item.list-all = List All Item
 master.menu.administrator.dashboard = Dashboard
+master.menu.administrator.announcement.create-announcement = Create Announcement
+
+
 
 
 # master.menu.provider ########################################################

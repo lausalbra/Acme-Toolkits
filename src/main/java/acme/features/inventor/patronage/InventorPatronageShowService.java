@@ -56,7 +56,6 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		final String email = entity.getPatron().getUserAccount().getIdentity().getEmail();
 		model.setAttribute("email", email);
 		
-		model.setAttribute("confirmation", false);
 		model.setAttribute("readonly", false);
 		
 	}

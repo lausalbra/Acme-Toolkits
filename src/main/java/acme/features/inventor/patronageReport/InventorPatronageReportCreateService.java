@@ -42,7 +42,13 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
         
         final Patronage patronage = this.repository.findOnePatronage(code);
         entity.setPatronage(patronage);
-		
+        
+        final Collection<PatronageReport> patronagesReports = this.repository.findPatronagesReportsByPatronages(code);
+        final int number = patronagesReports.size() + 1;
+        final String str = String.format("%04d", number);
+        final String sequenceNumber = code + ":" + str;
+		entity.setSequenceNumber(sequenceNumber);
+
 	}
 	
 	@Override
@@ -51,6 +57,8 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
         assert entity != null;
         assert errors != null;
         
+        final boolean confirmation = request.getModel().getBoolean("confirmation");
+        
         if(!errors.hasErrors("code")) {
         	final String code = request.getModel().getString("code");
         	final Patronage patronage = this.repository.findOnePatronage(code);
@@ -58,6 +66,16 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
         	if (!code.equals("")) {
         		errors.state(request, patronage != null, "code", "inventor.patronage-report.form.error.code-does-not-exist");
         	}
+        }
+        
+        if(!errors.hasErrors("code")) {
+        	final String number = entity.getSequenceNumber().substring(entity.getSequenceNumber().length() - 4);
+        	final int i = Integer.parseInt(number);
+        	errors.state(request, i <= 9999, "code", "inventor.patronage-report.form.error.code-9999");
+        }
+        
+        if(!errors.hasErrors("confirmation")) {
+        	errors.state(request, confirmation, "confirmation", "inventor.patronage-report.form.error.confirmation");
         }
         
 	}
@@ -70,7 +88,10 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		
 		request.unbind(entity, model, "memorandum", "link");
 		
-		model.setAttribute("confirmation", false);
+		if (entity.getPatronage() != null) {
+			final String code = entity.getPatronage().getCode();
+			model.setAttribute("code", code);
+		}
 		
 	}
 	
@@ -83,8 +104,8 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		
 		Date moment;
 		moment = new Date(System.currentTimeMillis() - 1);
-		result.setCreationMoment(moment);
-		
+		result.setCreationMoment(moment);	
+        
 		return result;
 	}
 	
@@ -92,8 +113,6 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 	public void create(final Request<PatronageReport> request, final PatronageReport entity) {
 		assert request != null;
         assert entity != null;
-        
-        final Collection<PatronageReport> patronagesReports = this.repository.findPatronagesReportsByPatronages(entity.getPatronage().getCode());
         
         this.repository.save(entity);
 	}

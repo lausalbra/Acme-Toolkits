@@ -67,7 +67,6 @@ public class InventorPatronageAcceptOrDenyService implements AbstractUpdateServi
 		model.setAttribute("email", email);
 		
 		model.setAttribute("readonly", false);
-		model.setAttribute("confirmation", false);
 		
 	}
 

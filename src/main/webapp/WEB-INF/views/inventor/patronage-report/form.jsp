@@ -12,8 +12,10 @@
 		    <acme:input-url code="inventor.patronage-report.form.label.link" path="link" readonly="${true}"/>
     	</jstl:when>
     	<jstl:when test="${command == 'create'}">
+    		<acme:input-textbox code="inventor.patronage-report.form.label.code" path="code"/>
     		<acme:input-textarea code="inventor.patronage-report.form.label.memorandum" path="memorandum"/>
 	    	<acme:input-url code="inventor.patronage-report.form.label.link" path="link"/>
+	    	<acme:input-checkbox code="inventor.patronage-report.form.label.confirmation" path="confirmation"/>
 	    	<acme:submit code="inventor.patronage-report.form.button.create" action="/inventor/patronage-report/create"/>
     	</jstl:when>
     </jstl:choose>

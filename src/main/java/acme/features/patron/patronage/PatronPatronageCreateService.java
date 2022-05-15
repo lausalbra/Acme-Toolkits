@@ -103,8 +103,6 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		
 		request.unbind(entity, model, "code", "legalStuff", "budget", "startPeriod", "endPeriod", "link");
 		
-		model.setAttribute("confirmation", false);
-		
 	}
 	
 	@Override

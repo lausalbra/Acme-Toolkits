@@ -40,6 +40,8 @@
 	      	<acme:menu-suboption code="master.menu.any.user-account.list" action="/any/user-account/list"/>
 	      	<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
 	      	<acme:menu-suboption code="master.menu.authenticated.configuration" action="/authenticated/configuration/show"/>
+	      	<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.authenticated.money-exchage" action="/authenticated/money-exchange/perform"/>
 		</acme:menu-option>
 		
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">

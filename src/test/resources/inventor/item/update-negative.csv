@@ -1,0 +1,12 @@
+recordIndex,name,itemType,code,technology,description,retailPrice,optionalLink
+0,,TOOL,,,,,
+0,more than 100 char. more than 100 char. more than 100 char. more than 100 char. more than 100 char!!!!!,TOOL,,,,,
+0,,TOOL,,,,,
+0,,TOOL,,more than 100 char. more than 100 char. more than 100 char. more than 100 char. more than 100 char!!!!!,,,
+0,,TOOL,,,more than 255 char.more than 255 char.more than 255 char. more than 255 char. more than 255 char. more than 255 char. more than 255 char. more than 255 char. more than 255 char. more than 255 char. more than 255 char. more than 255 char. more than 255 char. more than 255 char,,
+0,,TOOL,,,,not number,
+0,,TOOL,,,,3457,
+0,,TOOL,,,,USD -900,
+0,,TOOL,,,,,not a link
+0,,TOOL,Not Pattern,,,,
+0,,TOOL,AAA-000,,,,

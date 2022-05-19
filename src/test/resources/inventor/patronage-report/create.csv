@@ -1,5 +1,5 @@
 recordIndex,patronageCode,memorandum,link,sequenceNumber
-1,ABC-123-A,Prueba positiva con link,https://www.twitch.tv,ABC-123-A:0002
-2,ABC-123-A,Prueba positiva sin link,,ABC-123-A:0003
-3,ABC-123-A,Prueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y ,,ABC-123-A:0004
-4,ABC-123-A,1,,ABC-123-A:0005
+0,ABC-123-A,Prueba positiva con link,https://www.twitch.tv,ABC-123-A:0001
+1,ABC-123-A,Prueba positiva sin link,,ABC-123-A:0002
+2,ABC-123-A,Prueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y mucho textoPrueba positiva sin link y,,ABC-123-A:0003
+3,ABC-123-A,1,,ABC-123-A:0004

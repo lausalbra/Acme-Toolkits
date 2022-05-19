@@ -71,6 +71,7 @@ master.menu.patron.patron-dashboard = Panel del patrón
 master.menu.inventor = Inventor
 master.menu.inventor.chirp.list-recent = Ver chirps recientes
 master.menu.inventor.patronage.list-mine = Ver mis patrocinios
+master.menu.inventor.xx1.list-mine = Ver mis xx1
 master.menu.inventor.patronage-report.list-mine = Ver los reportes de mis patrocinios
 master.menu.inventor.toolkit.list-mine-toolkit = Ver mis kits de herramientas
 master.menu.inventor.item.list-mine = Ver mis Items

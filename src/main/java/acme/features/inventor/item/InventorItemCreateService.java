@@ -37,7 +37,7 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "name","itemType", "code", "technology", "description", "retailPrice", "optionalLink", "published");		
+		request.unbind(entity, model, "name","itemType", "code", "technology", "description", "retailPrice", "optionalLink");		
 	}
 
 	@Override
@@ -72,17 +72,19 @@ public class InventorItemCreateService implements AbstractCreateService<Inventor
 		if (!errors.hasErrors("retailPrice")) {
 			errors.state(request, entity.getRetailPrice().getAmount() > 0, "retailPrice", "inventor.item.form.error.negative-retailPrice");
 		}
-		if (!errors.hasErrors("name")) {
-			errors.state(request, entity.getName().length()<101, "name", "inventor.item.form.error.incorrect-name");
 		
-		}if (!errors.hasErrors("technology")) {
-			errors.state(request, entity.getTechnology().length()<101, "technology", "inventor.item.form.error.incorrect-technology");
-		
-		}if (!errors.hasErrors("description")) {
-			errors.state(request, entity.getDescription().length()<256, "description", "inventor.item.form.error.incorrect-description");
-		
-		}
-		
+		if(!errors.hasErrors("retailPrice")) {
+        	final String acceptedCurrencies = this.repository.findConfiguration().getAcceptedCurrencies();
+            final String[] currencies = acceptedCurrencies.split(",");
+            boolean isCorrect = false;
+            final String rp = entity.getRetailPrice().getCurrency();
+            for (final String currency : currencies) {
+            	if (rp.equals(currency)) {
+            		isCorrect = true;
+            	}
+			}
+        	errors.state(request, isCorrect, "retailPrice", "inventor.item.form.error.incorrect-currency");
+        }
 	}
 
 	@Override

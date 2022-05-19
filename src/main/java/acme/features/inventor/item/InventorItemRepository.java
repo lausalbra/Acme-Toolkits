@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.Configuration;
 import acme.entities.items.Item;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
@@ -23,6 +24,9 @@ public interface InventorItemRepository extends AbstractRepository{
 
 	@Query("select i from Item i where i.code = :code")
 	Item findOneItemByCode(String code);
+	
+	@Query("select c from Configuration c")
+	Configuration findConfiguration();
 	
 	
 }

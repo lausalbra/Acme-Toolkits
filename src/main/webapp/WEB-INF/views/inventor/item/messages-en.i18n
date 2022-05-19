@@ -27,3 +27,4 @@ inventor.item.form.button.publish = Publish
 
 inventor.item.form.error.duplicated = There is already an Item with this code
 inventor.item.form.error.negative-retailPrice = Retail Price cannot be in negative
+inventor.item.form.error.incorrect-currency = Incorrect currency. Can only be EUR, USD and GBP. 

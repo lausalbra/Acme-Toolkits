@@ -31,4 +31,4 @@ patron.patronage.form.error.username-null = El nombre de usuario no debe ser nul
 patron.patronage.form.error.username-does-not-exist = El nombre de usuario que introdujo corresponde a un inventor inexistente. Por favor, pruebe de nuevo
 patron.patronage.form.error.start-period-not-enough = El comienzo del período debe de ser, al menos, un mes después de este momento
 patron.patronage.form.error.end-period-one-week-before-start-period = El fin del período debe de ser, al menos, una semana desués del comienzo del período
-
+patron.patronage.form.error.spam = Este texto es un texto spam

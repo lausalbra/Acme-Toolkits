@@ -8,11 +8,7 @@
     <acme:input-textbox code="inventor.toolkit.form.label.title" path="title"/>
     <acme:input-textarea code="inventor.toolkit.form.label.description" path="description"/>
     <acme:input-textarea code="inventor.toolkit.form.label.assemblyNote" path="assemblyNote"/>
-    <jstl:choose>
-		<jstl:when test="${command == 'show' && draft == false}">
-			<acme:input-textarea code="inventor.toolkit.form.label.retailPrice" path="retailPrice"/>
-		</jstl:when>
-	</jstl:choose>
+	<acme:input-textarea code="inventor.toolkit.form.label.retailPrice" path="retailPrice" readonly="${true}"/>
     <acme:input-url code="inventor.toolkit.form.label.link" path="optionalLink"/>
 	
 	

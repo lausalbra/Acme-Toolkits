@@ -6,7 +6,7 @@ inventor.toolkit.form.label.retailPrice = Retail Price:
 inventor.toolkit.form.label.link = Optional Link:
 
 inventor.toolkit.form.button.items = Items
-inventor.toolkit.list.button.create = Create
+inventor.toolkit.list.button.create = Create New Toolkit
 
 inventor.toolkit.list.label.code = Code
 inventor.toolkit.list.label.title = Title

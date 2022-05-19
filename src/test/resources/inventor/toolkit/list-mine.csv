@@ -1,4 +1,4 @@
-recordIndex,code,title
-0,ABC-333-B,Titulo 3
-1,ABC-111-A,Titulo 1
-2,ABC-666,Titulo 6
+recordIndex,code,title,draft
+0,ABC-111-A,Titulo 1,true
+1,ABC-333-B,Titulo 3,false
+2,ABC-666,Titulo 6,true

@@ -6,7 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class InventorToolkitListTest extends TestHarness{
+public class InventorToolkitDeleteTest extends TestHarness{
 
 	@ParameterizedTest
 	@CsvFileSource(resources = "/inventor/toolkit/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
@@ -17,9 +17,7 @@ public class InventorToolkitListTest extends TestHarness{
 		super.clickOnMenu("Inventor", "List my Toolkits");
 		super.checkListingExists();
 		
-		super.checkColumnHasValue(recordIndex, 0, code);
-		super.checkColumnHasValue(recordIndex, 1, title);
-		super.checkColumnHasValue(recordIndex, 2, draft);
+		// Por terminar
 		
 		super.signOut();
 	}

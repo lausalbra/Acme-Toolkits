@@ -1,4 +1,4 @@
-package acme.testing.inventor.patronage;
+package acme.testing.inventor.patronageReport;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;

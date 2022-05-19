@@ -1,11 +1,15 @@
 package acme.features.inventor.patronageReport;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Configuration;
 import acme.entities.patronages.Patronage;
 import acme.entities.patronages.PatronageReport;
 import acme.framework.components.models.Model;
@@ -13,6 +17,7 @@ import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
+import main.spamDetector;
 
 @Service
 public class InventorPatronageReportCreateService implements AbstractCreateService<Inventor, PatronageReport>{
@@ -25,6 +30,7 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
 		assert request != null;
 		
 		boolean result;
+		
 		result = request.getPrincipal().hasRole(Inventor.class);
 		
 		return result;
@@ -69,9 +75,40 @@ public class InventorPatronageReportCreateService implements AbstractCreateServi
         }
         
         if(!errors.hasErrors("code")) {
+        	final String code = request.getModel().getString("code");
+        	final Patronage patronage = this.repository.findOnePatronage(code);
+        	final Inventor inventor = patronage.getInventor();
+        	final String username = inventor.getUserAccount().getUsername();
+        	errors.state(request, !code.equals(""), "code", "inventor.patronage-report.form.error.code-null");
+        	if (!code.equals("")) {
+        		errors.state(request, username.equals(request.getPrincipal().getUsername()), "code", "inventor.patronage-report.form.error.code-forbidden");
+        	}
+        }
+        
+        if(!errors.hasErrors("code")) {
+        	final String code = request.getModel().getString("code");
+        	final Patronage patronage = this.repository.findOnePatronage(code);
+        	errors.state(request, !code.equals(""), "code", "inventor.patronage-report.form.error.code-null");
+        	if (!code.equals("")) {
+        		errors.state(request, !patronage.isNotPublished(), "code", "inventor.patronage-report.form.error.code-not-published");
+        	}
+        }
+        
+        if(!errors.hasErrors("code")) {
         	final String number = entity.getSequenceNumber().substring(entity.getSequenceNumber().length() - 4);
         	final int i = Integer.parseInt(number);
         	errors.state(request, i <= 9999, "code", "inventor.patronage-report.form.error.code-9999");
+        }
+        
+        if(!errors.hasErrors("memorandum")) {
+        	final Configuration configuration = this.repository.findConfiguration();
+        	final String[] sp = configuration.getWeakSpamTerms().split(",");
+        	final List<String> softSpam = new ArrayList<String>(Arrays.asList(sp));
+        	final Double softThreshold = configuration.getWeakSpamThreshold();
+        	final String[] hp = configuration.getStrongSpamTerms().split(",");
+        	final List<String> hardSpam = new ArrayList<String>(Arrays.asList(hp));
+        	final Double hardThreshold = configuration.getStrongSpamThreshold();
+        	errors.state(request, !spamDetector.isSpam(entity.getMemorandum(), softSpam, softThreshold, hardSpam, hardThreshold), "memorandum", "inventor.patronage-report.form.error.spam");
         }
         
         if(!errors.hasErrors("confirmation")) {

@@ -28,3 +28,4 @@ patron.patronage.form.error.username-null = The username of the inventor must no
 patron.patronage.form.error.username-does-not-exist = The username you typed corresponds to a non-existing inventor. Please, try again
 patron.patronage.form.error.start-period-not-enough = The start period needs to be, at least, one month after this moment
 patron.patronage.form.error.end-period-one-week-before-start-period = The end period needs to be, at least, one week after Start Period
+patron.patronage.form.error.spam = This text is a spam text

@@ -11,7 +11,8 @@ public class PatronPatronageListMineTest extends TestHarness {
 	@ParameterizedTest	
 	@CsvFileSource(resources = "/patron/patronage/list-mine.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void positiveTest(final int recordIndex, final String code, final String startPeriod, final String endPeriod) {
+	public void positiveTest(final int recordIndex, final String code, final String startPeriod, final String endPeriod,
+		final String isPublished) {
 		
 		super.signIn("patron1", "patron1");
 		super.clickOnMenu("Patron", "List my patronages");
@@ -21,6 +22,7 @@ public class PatronPatronageListMineTest extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, startPeriod);
 		super.checkColumnHasValue(recordIndex, 2, endPeriod);
+		super.checkColumnHasValue(recordIndex, 3, isPublished);
 		super.signOut();
 	}
 }

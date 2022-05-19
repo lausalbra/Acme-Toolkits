@@ -62,6 +62,10 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
         	errors.state(request, isCorrect, "budget", "patron.patronage.form.error.incorrect-currency");
         }
         
+        if(!errors.hasErrors("budget")) {
+        	errors.state(request, entity.getBudget().getAmount() >= 0.0, "budget", "patron.patronage.form.error.negative-budget");
+        }
+        
         if(!errors.hasErrors("startPeriod")) {
         	final Date startPeriod = entity.getStartPeriod();
         	final Calendar calendar = Calendar.getInstance();
@@ -71,7 +75,7 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
         	errors.state(request, startPeriod.after(calendar.getTime()), "startPeriod", "patron.patronage.form.error.start-period-not-enough");
         }
         
-        if(!errors.hasErrors("endPeriod")) {
+        if(!errors.hasErrors("endPeriod") && entity.getStartPeriod()!=null) {
         	final Date startPeriod = entity.getStartPeriod();
         	final Date endPeriod = entity.getEndPeriod();
         	final Date moment = new Date(startPeriod.getTime() + 604799999); // Una semana menos un milisegundo

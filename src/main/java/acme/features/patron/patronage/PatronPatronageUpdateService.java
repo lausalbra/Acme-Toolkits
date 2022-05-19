@@ -28,7 +28,8 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
 		final int id = request.getModel().getInteger("id");
 		final Patronage patronage = this.repository.findOnePatronage(id);
 		
-		result = request.getPrincipal().hasRole(Patron.class) && patronage.isNotPublished();
+		result = request.getPrincipal().hasRole(Patron.class) && patronage.isNotPublished() && patronage.getPatron().getUserAccount().getUsername().equals(request.getPrincipal().getUsername());
+
 		
 		return result;
 	}

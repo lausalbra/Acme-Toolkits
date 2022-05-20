@@ -89,14 +89,14 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
         }
         
         if(!errors.hasErrors("legalStuff")) {
-        	final Configuration configuration = this.repository.findConfiguration();
-        	final String[] sp = configuration.getWeakSpamTerms().split(",");
-        	final List<String> softSpam = new ArrayList<String>(Arrays.asList(sp));
-        	final Double softThreshold = configuration.getWeakSpamThreshold();
-        	final String[] hp = configuration.getStrongSpamTerms().split(",");
-        	final List<String> hardSpam = new ArrayList<String>(Arrays.asList(hp));
-        	final Double hardThreshold = configuration.getStrongSpamThreshold();
-        	errors.state(request, !spamDetector.isSpam(entity.getLegalStuff(), softSpam, softThreshold, hardSpam, hardThreshold), "memorandum", "patron.patronage.form.error.spam");
+        	final Configuration conf = this.repository.findConfiguration();
+        	final Double hardThreshold = conf.getStrongSpamThreshold();
+        	final Double softThreshold = conf.getWeakSpamThreshold();
+        	final List<String> hardWords = new ArrayList<String>(Arrays.asList(conf.getStrongSpamTerms().split(",")));
+        	final List<String> softWords = new ArrayList<String>(Arrays.asList(conf.getWeakSpamTerms().split(",")));
+        	final String legalStuff = entity.getLegalStuff();
+        	final boolean isSpam = spamDetector.isSpam(legalStuff, softWords, softThreshold, hardWords, hardThreshold);
+        	errors.state(request,!isSpam, "legalStuff", "patron.patronage.form.error.spam");
         }
         
 	}

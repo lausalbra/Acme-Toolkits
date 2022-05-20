@@ -1,17 +1,22 @@
 package acme.features.patron.patronage;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Configuration;
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Patron;
+import main.spamDetector;
 
 @Service
 public class PatronPatronageUpdateService implements AbstractUpdateService<Patron, Patronage>{
@@ -80,6 +85,17 @@ public class PatronPatronageUpdateService implements AbstractUpdateService<Patro
         	final Date endPeriod = entity.getEndPeriod();
         	final Date moment = new Date(startPeriod.getTime() + 604799999); // Una semana menos un milisegundo
         	errors.state(request, endPeriod.after(moment), "endPeriod", "patron.patronage.form.error.end-period-one-week-before-start-period");
+        }
+        
+        if(!errors.hasErrors("legalStuff")) {
+        	final Configuration conf = this.repository.findConfiguration();
+        	final Double hardThreshold = conf.getStrongSpamThreshold();
+        	final Double softThreshold = conf.getWeakSpamThreshold();
+        	final List<String> hardWords = new ArrayList<String>(Arrays.asList(conf.getStrongSpamTerms().split(",")));
+        	final List<String> softWords = new ArrayList<String>(Arrays.asList(conf.getWeakSpamTerms().split(",")));
+        	final String legalStuff = entity.getLegalStuff();
+        	final boolean isSpam = spamDetector.isSpam(legalStuff, softWords, softThreshold, hardWords, hardThreshold);
+        	errors.state(request,!isSpam, "legalStuff", "patron.patronage.form.error.spam");
         }
         
 	}

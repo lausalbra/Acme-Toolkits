@@ -1,6 +1,7 @@
 package acme.features.authenticated.patron;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -15,6 +16,7 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 import acme.roles.Patron;
 
+@Service
 public class AuthenticatedPatronCreateService implements AbstractCreateService<Authenticated,Patron> {
 	
 	@Autowired

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import acme.entities.items.Item;
-import acme.features.inventor.toolkit.ToolkitItemListService;
 import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
@@ -34,9 +33,6 @@ public class InventorItemController extends AbstractController<Inventor, Item>{
 	protected InventorItemPublishService		publishService;
 	
 	
-	//Esto es para mostrar los items asociados a toolkits del inventor
-	@Autowired
-	protected ToolkitItemListService        toolkitItemListService;
 
 	
 	//Constructors
@@ -52,8 +48,6 @@ public class InventorItemController extends AbstractController<Inventor, Item>{
 		
 		super.addCommand("publish", "update", this.publishService);
 		
-		//Esto es para mostrar los items asociados a toolkits del inventor
-		super.addCommand("list-toolkit", "list", this.toolkitItemListService);
 		
 	}
 	

@@ -33,7 +33,7 @@ public class InventorToolkitDeleteService implements AbstractDeleteService<Inven
 		masterId = request.getModel().getInteger("id");
 		toolkit = this.repository.findOneToolkitById(masterId);
 		inventor = toolkit.getInventor();
-		result = toolkit.isDraft() && request.isPrincipal(inventor);
+		result = !toolkit.isPublished() && request.isPrincipal(inventor);
 
 		return result;
 	}

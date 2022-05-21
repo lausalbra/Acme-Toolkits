@@ -32,7 +32,7 @@ public class InventorToolkitPublishService  implements AbstractUpdateService<Inv
 		masterId = request.getModel().getInteger("id");
 		toolkit = this.repository.findOneToolkitById(masterId);
 		inventor = toolkit.getInventor();
-		result = toolkit.isDraft() && request.isPrincipal(inventor);
+		result = !toolkit.isPublished() && request.isPrincipal(inventor);
 		
 		return result; 
 	}
@@ -88,7 +88,7 @@ public class InventorToolkitPublishService  implements AbstractUpdateService<Inv
 		assert request != null;
 		assert entity != null;
 		
-		entity.setDraft(false);
+		entity.setPublished(true);
 		this.repository.save(entity);
 	}
 

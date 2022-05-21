@@ -10,7 +10,9 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
+import org.springframework.data.annotation.Transient;
 
+import acme.framework.datatypes.Money;
 import acme.framework.entities.AbstractEntity;
 import acme.roles.Inventor;
 import lombok.Getter;
@@ -47,11 +49,14 @@ public class Toolkit extends AbstractEntity{
 	@URL
 	protected String	optionalLink;
 	
-	protected boolean   draft;
+	protected boolean   published;
 	
 	@ManyToOne(optional = false)
     @Valid
     @NotNull
     protected Inventor inventor;
+	
+	@Transient
+	protected Money 	retailPrice;
  
 }

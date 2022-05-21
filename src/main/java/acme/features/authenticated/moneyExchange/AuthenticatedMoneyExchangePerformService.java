@@ -119,12 +119,12 @@ public class AuthenticatedMoneyExchangePerformService implements AbstractPerform
 			targetAmount = rate * sourceAmount;
 
 			target = new Money();
-			target.setAmount(targetAmount);
+			target.setAmount((double) Math.round(targetAmount*100)/100);
 			target.setCurrency(targetCurrency);
 
 			result = new MoneyExchange();
 			result.setSource(source);
-			result.setTargetCurrency(targetCurrency);
+			result.setCurrencyTarget(targetCurrency);
 			result.setDate(record.getDate());
 			result.setTarget(target);
 		} catch (final Throwable oops) {

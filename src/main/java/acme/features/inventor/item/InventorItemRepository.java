@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import acme.entities.Configuration;
 import acme.entities.items.Item;
+import acme.forms.MoneyExchange;
 import acme.framework.repositories.AbstractRepository;
 import acme.roles.Inventor;
 
@@ -27,6 +28,9 @@ public interface InventorItemRepository extends AbstractRepository{
 	
 	@Query("select c from Configuration c")
 	Configuration findConfiguration();
+
+	@Query("select me from MoneyExchange me where me.source.currency = :currency and me.source.amount = :amount")
+    MoneyExchange findMoneyExchageByCurrencyAndAmount(String currency, Double amount);
 	
 	
 }

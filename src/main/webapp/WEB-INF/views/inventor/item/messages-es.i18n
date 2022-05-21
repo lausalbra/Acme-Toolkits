@@ -3,6 +3,7 @@ inventor.item.list.label.code = Código
 inventor.item.list.label.technology = Tecnología
 inventor.item.list.label.retailPrice = Precio de venta
 inventor.item.list.label.published = Publicado
+inventor.item.form.label.conversion = Conversion
 
 inventor.item.list.button.create = Crear Nuevo Artículo
 

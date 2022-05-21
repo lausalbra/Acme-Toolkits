@@ -70,7 +70,10 @@ public class PatronPatronagePublishTest extends TestHarness{
 		super.fillInputBoxIn("endPeriod", endPeriod);
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Publish");
+		
 		super.checkErrorsExist();
+		super.checkNotPanicExists();
+		
 		super.signOut();
 	}
 }

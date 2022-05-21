@@ -1,6 +1,6 @@
 inventor.item.list.label.name = Nombre
 inventor.item.list.label.code = Código
-inventor.item.list.label.technology = Tecnología
+inventor.item.list.label.username = Inventor
 inventor.item.list.label.retailPrice = Precio de venta
 inventor.item.list.label.published = Publicado
 inventor.item.form.label.conversion = Conversion
@@ -15,6 +15,8 @@ inventor.item.form.label.description = Descripción
 inventor.item.form.label.retailPrice = Precio de venta
 inventor.item.form.label.optionalLink = Link Opcional
 inventor.item.form.label.published = Publicado
+inventor.item.form.label.username = Usuario del Inventor
+inventor.item.form.label.fullname = Nombre del Inventor
 
 inventor.item.form.error.incorrect-name = Nombre tiene que ser menor a 101
 inventor.item.form.error.incorrect-technology = Tecnologia tiene que ser menor a 101

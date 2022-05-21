@@ -1,6 +1,7 @@
 package acme.testing.patron.patronage;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -25,4 +26,22 @@ public class PatronPatronageListMineTest extends TestHarness {
 		super.checkColumnHasValue(recordIndex, 3, isPublished);
 		super.signOut();
 	}
+	
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		super.navigate("/patron/patronage/list-mine");
+		super.checkPanicExists();
+		
+		super.signIn("administrator", "administrator");
+		super.navigate("/patron/patronage/list-mine");
+		super.checkPanicExists();
+		super.signOut();
+
+		super.signIn("inventor1", "inventor1");
+		super.navigate("/patron/patronage/list-mine");
+		super.checkPanicExists();
+		super.signOut();
+	}
+
 }

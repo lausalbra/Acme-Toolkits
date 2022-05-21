@@ -1,6 +1,7 @@
 package acme.testing.patron.patronage;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -27,6 +28,7 @@ public class PatronPatronageCreateTest extends TestHarness {
 		super.fillInputBoxIn("endPeriod", endPeriod);
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Create");
+		super.checkListingExists();
 		
 		super.clickOnMenu("Patron", "List my patronages");
 		super.checkListingExists();
@@ -77,4 +79,22 @@ public class PatronPatronageCreateTest extends TestHarness {
 
 		super.signOut();
 	}
+	
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		super.navigate("/patron/patronage/create");
+		super.checkPanicExists();
+		
+		super.signIn("administrator", "administrator");
+		super.navigate("/patron/patronage/create");
+		super.checkPanicExists();
+		super.signOut();
+
+		super.signIn("inventor1", "inventor1");
+		super.navigate("/patron/patronage/create");
+		super.checkPanicExists();
+		super.signOut();
+	}
+	
 }

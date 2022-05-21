@@ -1,18 +1,22 @@
 code,legalStuff,budget,username,startPeriod,endPeriod,link
-"",No hay code,"USD 10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,,"USD 10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,No hay budget,,inventor1,2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,No hay inventor,"USD 10,000.00",,2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,No hay fecha de inicio,"USD 10,000.00",inventor1,,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,No hay fecha de fin,"USD 10,000.00",inventor1,2024/01/01 00:00,,https://www.twitch.tv
-ASTURIAS,Code no valido,"USD 10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,Demasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoD,"USD 10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,Budget no valido,"10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,Budget con divisa no valida,"FRA 10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,Inventor no existente,"USD 10,000.00",inventor3,2024/01/01 00:00,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,Fecha de inicio no valida,"USD 10,000.00",inventor1,2 de febrero niño,2024/03/01 00:00,https://www.twitch.tv
-XXX-111-C,Fecha de fin no valida,"USD 10,000.00",inventor1,2024/01/01 00:00,3 de febrero niño,https://www.twitch.tv
-XXX-111-C,Link invalido,"USD 10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,ole ole er twitch
-XXX-111-C,Presupuesto negativo,"USD -10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,ttps://www.twitch.tv
-XXX-111-Z,Este patronage ya existe,"USD 10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,ttps://www.twitch.tv
-XXX-111-C,Este tiene spam como nigeria,"USD 10,000.00",inventor1,2024/01/01 00:00,2024/03/01 00:00,ttps://www.twitch.tv
+"",,,,,,
+"",Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+ABC-123-A,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+nocode,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,,"USD 18,000.00",inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Demasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoDemasiado textoD,"USD 18,000.00",inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,"Aqui hay spam,nigeria One    million","USD 18,000.00",inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,,inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD -18,000.00",inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"XXX 18,000.00",inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,no Moneda $,inventor1,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor4,2024/02/03 00:00,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,no es una fecha,2024/05/01 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,2024/02/03 00:00,,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,2024/02/03 00:00,no es una fecha,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,2024/02/03 00:00,2022/05/20 00:20,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,2024/02/03 00:00,2024/02/05 00:00,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,2024/02/03 00:00,2024/02/09 23:59,https://www.twitch.tv
+XXX-999,Se ha reducido el texto y cambiado todo,"USD 18,000.00",inventor1,2024/02/03 00:00,2024/05/01 00:00,no es un link

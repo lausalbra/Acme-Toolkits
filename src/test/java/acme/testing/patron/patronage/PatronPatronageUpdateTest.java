@@ -13,7 +13,7 @@ public class PatronPatronageUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/patron/patronage/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(30)
-	public void positiveTest (final int recordIndex, final String status, final String legalStuff,
+	public void positiveTest (final int recordIndex, final String legalStuff,
 		final String budget, final String startPeriod, final String endPeriod, final String link) {
 
 		super.signIn("patron1", "patron1");
@@ -24,13 +24,13 @@ public class PatronPatronageUpdateTest extends TestHarness{
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 
-		super.fillInputBoxIn("status", status);
 		super.fillInputBoxIn("legalStuff", legalStuff);
 		super.fillInputBoxIn("budget", budget);
 		super.fillInputBoxIn("startPeriod", startPeriod);
 		super.fillInputBoxIn("endPeriod", endPeriod);
 		super.fillInputBoxIn("link", link);
 		super.clickOnSubmit("Update");
+		super.checkListingExists();
 
 		super.clickOnMenu("Patron", "List my patronages");
 		super.checkListingExists();
@@ -40,7 +40,6 @@ public class PatronPatronageUpdateTest extends TestHarness{
 
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
-		super.checkInputBoxHasValue("status", status);
 		super.checkInputBoxHasValue("legalStuff", legalStuff);
 		super.checkInputBoxHasValue("budget", budget);
 		super.checkInputBoxHasValue("startPeriod", startPeriod);
@@ -53,7 +52,7 @@ public class PatronPatronageUpdateTest extends TestHarness{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/patron/patronage/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void negativeTest(final int recordIndex, final String status, final String legalStuff,
+	public void negativeTest(final int recordIndex, final String legalStuff,
 		final String budget, final String startPeriod, final String endPeriod, final String link)  {
 
 		super.signIn("patron1", "patron1");
@@ -64,7 +63,6 @@ public class PatronPatronageUpdateTest extends TestHarness{
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 
-		super.fillInputBoxIn("status", status);
 		super.fillInputBoxIn("legalStuff", legalStuff);
 		super.fillInputBoxIn("budget", budget);
 		super.fillInputBoxIn("startPeriod", startPeriod);

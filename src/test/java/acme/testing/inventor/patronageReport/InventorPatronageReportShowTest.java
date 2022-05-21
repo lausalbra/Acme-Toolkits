@@ -26,4 +26,27 @@ public class InventorPatronageReportShowTest extends TestHarness {
 		
 		super.signOut();
 	}
+	
+//	@Test
+//	@Order(30)
+//	public void hackingTest() {
+//		super.checkNotLinkExists("Account");
+//		super.navigate("/inventor/patronage-report/show?id=82");
+//		super.checkPanicExists();
+//
+//		super.signIn("administrator", "administrator");
+//		super.navigate("/inventor/patronage-report/show?id=82");
+//		super.checkPanicExists();
+//		super.signOut();
+//
+//		super.signIn("patron1", "patron1");
+//		super.navigate("/inventor/patronage-report/show?id=82");
+//		super.checkPanicExists();
+//		super.signOut();
+//		
+//		super.signIn("inventor2", "inventor2");
+//		super.navigate("/inventor/patronage-report/show?id=82");
+//		super.checkPanicExists();
+//		super.signOut();
+//	}
 }

@@ -76,6 +76,7 @@ public class PatronPatronageCreateTest extends TestHarness {
 		super.clickOnSubmit("Create");
 
 		super.checkErrorsExist();
+		super.checkNotPanicExists();
 
 		super.signOut();
 	}

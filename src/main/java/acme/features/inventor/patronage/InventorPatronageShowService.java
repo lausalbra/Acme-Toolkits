@@ -25,7 +25,7 @@ public class InventorPatronageShowService implements AbstractShowService<Invento
 		final int id = request.getModel().getInteger("id");
 		final Patronage patronage = this.repository.findOnePatronage(id);
 
-		result = request.getPrincipal().hasRole(Inventor.class) && patronage.getInventor().getUserAccount().getUsername().equals(request.getPrincipal().getUsername()) && !patronage.isNotPublished();
+		result = request.getPrincipal().hasRole(Inventor.class) && !patronage.isNotPublished();
 		
 		return result;
 	}

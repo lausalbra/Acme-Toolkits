@@ -71,6 +71,7 @@ public class PatronPatronageUpdateTest extends TestHarness{
 		super.clickOnSubmit("Update");
 
 		super.checkErrorsExist();
+		super.checkNotPanicExists();
 
 		super.signOut();
 	}

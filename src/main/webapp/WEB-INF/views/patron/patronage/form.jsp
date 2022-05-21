@@ -5,7 +5,7 @@
 
 <acme:form>
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish')}">
+		<jstl:when test="${command == 'show' && !notPublished}">
 			<acme:input-select code="patron.patronage.form.label.status" path="status" readonly="${true}">
 				<acme:input-option code="PROPOSED" value="PROPOSED" selected="${status == 'PROPOSED'}"/>
 				<acme:input-option code="ACCEPTED" value="ACCEPTED" selected="${status == 'ACCEPTED'}"/>

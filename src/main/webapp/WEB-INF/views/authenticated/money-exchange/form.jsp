@@ -17,7 +17,7 @@
 
 <acme:form>
 	<acme:input-money code="authenticated.money-exchange.form.label.source" path="source"/>
-	<acme:input-textbox code="authenticated.money-exchange.form.label.target-currency" path="targetCurrency" placeholder="EUR, USD, GBP, ..."/>
+	<acme:input-textbox code="authenticated.money-exchange.form.label.target-currency" path="currencyTarget" placeholder="EUR, USD, GBP, ..."/>
 	
 	<acme:input-money code="authenticated.money-exchange.form.label.date" path="date" readonly="true" placeholder=""/>
 	<acme:input-money code="authenticated.money-exchange.form.label.target" path="target" readonly="true" placeholder=""/>

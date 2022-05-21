@@ -14,7 +14,7 @@ import acme.roles.Inventor;
 @Repository
 public interface InventorItemRepository extends AbstractRepository{
 	
-	@Query("select i from Item i where i.inventor.userAccount.username = :username")
+	@Query("select i from Item i where i.published = true or i.published = false and i.inventor.userAccount.username = :username")
 	Collection<Item> findMyItems(String username);
 	
 	@Query("select i from Item i where i.id = :id")

@@ -34,7 +34,7 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		 
 		 itemId = request.getModel().getInteger("id");
 		 item = this.repository.findOneItemById(itemId);
-		 result = item.getInventor().getId()==request.getPrincipal().getActiveRoleId();
+		 result = item.getInventor().getId()==request.getPrincipal().getActiveRoleId() || item.isPublished();
 		
 		return result; 
 	}
@@ -78,6 +78,11 @@ public class InventorItemShowService implements AbstractShowService<Inventor, It
 		assert model != null;
 		final MoneyExchange conversion = this.conversion(entity.getRetailPrice());
 		model.setAttribute("conversion", conversion.getTarget());
+		
+		final String fullname = entity.getInventor().getUserAccount().getIdentity().getFullName();
+		model.setAttribute("fullname", fullname);
+		final String username = entity.getInventor().getUserAccount().getUsername();
+		model.setAttribute("username", username);
 		
 		request.unbind(entity, model, "name","itemType", "code", "technology", "description", "retailPrice", "optionalLink", "published");
 	}

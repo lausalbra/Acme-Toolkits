@@ -49,6 +49,8 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		final String username = entity.getInventor().getUserAccount().getUsername();
+		model.setAttribute("username", username);
 		
 		request.unbind(entity, model, "name", "itemType", "code", "technology", "retailPrice", "published");
 		

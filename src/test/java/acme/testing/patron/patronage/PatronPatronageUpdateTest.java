@@ -6,72 +6,71 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class PatronPatronageCreateTest extends TestHarness {
+public class PatronPatronageUpdateTest extends TestHarness{
 
-	@ParameterizedTest	
-	@CsvFileSource(resources = "/patron/patronage/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(10)
-	public void positiveTest(final int recordIndex, final String status, final String code, final String legalStuff,
-		final String budget, final String username, final String fullName, final String email, final String startPeriod,
-		final String endPeriod, final String link) {
-		
+	// Test cases
+
+	@ParameterizedTest
+	@CsvFileSource(resources = "/patron/patronage/update-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(30)
+	public void positiveTest (final int recordIndex, final String status, final String legalStuff,
+		final String budget, final String startPeriod, final String endPeriod, final String link) {
+
 		super.signIn("patron1", "patron1");
 		super.clickOnMenu("Patron", "List my patronages");
-		
-		super.clickOnButton("Create");
-		super.fillInputBoxIn("code", code);
+		super.checkListingExists();
+
+		super.sortListing(0, "asc");		
+		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
+
+		super.fillInputBoxIn("status", status);
 		super.fillInputBoxIn("legalStuff", legalStuff);
 		super.fillInputBoxIn("budget", budget);
-		super.fillInputBoxIn("username", username);
 		super.fillInputBoxIn("startPeriod", startPeriod);
 		super.fillInputBoxIn("endPeriod", endPeriod);
 		super.fillInputBoxIn("link", link);
-		super.clickOnSubmit("Create");
-		
+		super.clickOnSubmit("Update");
+
 		super.clickOnMenu("Patron", "List my patronages");
 		super.checkListingExists();
 		super.sortListing(0, "asc");
-		
-		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, startPeriod);
 		super.checkColumnHasValue(recordIndex, 2, endPeriod);
-		super.checkColumnHasValue(recordIndex, 3, "No");
+
 		super.clickOnListingRecord(recordIndex);
-		
 		super.checkFormExists();
 		super.checkInputBoxHasValue("status", status);
-		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("legalStuff", legalStuff);
 		super.checkInputBoxHasValue("budget", budget);
-		super.checkInputBoxHasValue("username", username);
-		super.checkInputBoxHasValue("fullName", fullName);
-		super.checkInputBoxHasValue("email", email);
 		super.checkInputBoxHasValue("startPeriod", startPeriod);
 		super.checkInputBoxHasValue("endPeriod", endPeriod);
 		super.checkInputBoxHasValue("link", link);
-		
+
 		super.signOut();
 	}
-	
-	@ParameterizedTest	
-	@CsvFileSource(resources = "/patron/patronage/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	@Order(20)
-	public void negativeTest(final String code, final String legalStuff,
-		final String budget, final String username, final String startPeriod,
-		final String endPeriod, final String link) {
+
+	@ParameterizedTest
+	@CsvFileSource(resources = "/patron/patronage/update-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@Order(10)
+	public void negativeTest(final int recordIndex, final String status, final String legalStuff,
+		final String budget, final String startPeriod, final String endPeriod, final String link)  {
 
 		super.signIn("patron1", "patron1");
 		super.clickOnMenu("Patron", "List my patronages");
-		
-		super.clickOnButton("Create");
-		super.fillInputBoxIn("code", code);
+		super.checkListingExists();
+
+		super.sortListing(0, "asc");		
+		super.clickOnListingRecord(recordIndex);
+		super.checkFormExists();
+
+		super.fillInputBoxIn("status", status);
 		super.fillInputBoxIn("legalStuff", legalStuff);
 		super.fillInputBoxIn("budget", budget);
-		super.fillInputBoxIn("username", username);
 		super.fillInputBoxIn("startPeriod", startPeriod);
 		super.fillInputBoxIn("endPeriod", endPeriod);
 		super.fillInputBoxIn("link", link);
-		super.clickOnSubmit("Create");
+		super.clickOnSubmit("Update");
 
 		super.checkErrorsExist();
 

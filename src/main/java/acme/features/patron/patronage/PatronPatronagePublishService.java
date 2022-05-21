@@ -96,7 +96,7 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
         	final String[] hp = configuration.getStrongSpamTerms().split(",");
         	final List<String> hardSpam = new ArrayList<String>(Arrays.asList(hp));
         	final Double hardThreshold = configuration.getStrongSpamThreshold();
-        	errors.state(request, !spamDetector.isSpam(entity.getLegalStuff(), softSpam, softThreshold, hardSpam, hardThreshold), "memorandum", "patron.patronage.form.error.spam");
+        	errors.state(request, !spamDetector.isSpam(entity.getLegalStuff(), softSpam, softThreshold, hardSpam, hardThreshold), "legalStuff", "patron.patronage.form.error.spam");
         }
         
 	}

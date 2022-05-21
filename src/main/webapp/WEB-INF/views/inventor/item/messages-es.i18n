@@ -29,4 +29,4 @@ inventor.item.form.button.publish = Publicar
 
 inventor.item.form.error.duplicated = Ya existe un artículo con este código
 inventor.item.form.error.negative-retailPrice = El precio de venta al público no puede ser negativo
-inventor.item.form.error.incorrect-currency = Divisa incorrecta. Solo puede ser EUR, USD y GBP 
+inventor.item.form.error.incorrect-currency = La divisa del presupuesto debe de ser una de las aceptadas por el sistema. Por favor, revise los parámetros de configuración 

@@ -1,13 +1,17 @@
 package acme.features.inventor.quantity;
 
 import java.util.Collection;
+import java.util.HashSet;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.items.Item;
 import acme.entities.quantities.Quantity;
+import acme.entities.toolkits.Toolkit;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.helpers.CollectionHelper;
 import acme.framework.services.AbstractListService;
 import acme.roles.Inventor;
 
@@ -26,36 +30,45 @@ public class InventorQuantityListService implements AbstractListService<Inventor
 
     @Override
     public Collection<Quantity> findMany(final Request<Quantity> request) {
+        final Collection<Item> result = new HashSet<>();
         int toolkitId;
 
-        toolkitId = request.getModel().getInteger("id");
+        toolkitId = request.getModel().getInteger("masterId");
+        final Collection<Quantity> quantities = this.repository.findManyQuantitiesByToolkitId(toolkitId);
+ 
+        for(final Quantity quantity: quantities) {
+            final int id=quantity.getId();
+            final Collection<Item> items=this.repository.findManyItemsByQuantityId(id);
+            result.addAll(items);
+        }
 
-//        for(final Quantity quantity: quantities) {
-//            final int id=quantity.getId();
-//            final Collection<Item> items=this.repository.findManyItemsByQuantityId(id);
-//            result.addAll(items);
-//        }
-
-        return this.repository.findManyQuantitiesByToolkitId(toolkitId);
+        return quantities;
     }
-
+    
+    @Override
+    public void unbind(final Request<Quantity> request, final Collection<Quantity> list, final Model model) {
+    	assert request != null; 
+    	assert !CollectionHelper.someNull(list);
+        assert model != null; 
+        
+        int masterId;
+        Toolkit toolkit;
+        boolean showCreate;
+        
+        masterId = request.getModel().getInteger("masterId");
+        toolkit = this.repository.findOneToolkitById(masterId);
+        showCreate = (toolkit.isDraft() && request.isPrincipal(toolkit.getInventor()));
+        
+        model.setAttribute("masterId", masterId);
+        model.setAttribute("showCreate", showCreate);
+	}
+    
     @Override
     public void unbind(final Request<Quantity> request, final Quantity entity, final Model model) {
         assert request != null; 
         assert entity != null; 
         assert model != null; 
-        
-        final String name = entity.getItem().getName().trim();
-        final String code = entity.getItem().getCode().trim();
-        final String technology = entity.getItem().getTechnology().trim();
-        final String itemType = entity.getItem().getItemType().toString().trim();
-        
-        model.setAttribute("name", name);
-        model.setAttribute("code", code);
-        model.setAttribute("technology", technology);
-        model.setAttribute("itemType", itemType);
 
-        request.unbind(entity, model, "number"); 
-
+        request.unbind(entity, model, "number", "item.name","item.retailPrice", "item.technology", "item.itemType"); 
     }
 }

@@ -4,10 +4,8 @@ administrator.configuration.form.label.strong-spam-terms = Palabras fuertes de s
 administrator.configuration.form.label.strong-spam-threshold = Fuerte umbral de spam:
 administrator.configuration.form.label.weak-spam-words = Palabras débiles de spam:
 administrator.configuration.form.label.weak-spam-threshold = Umbral de spam débil:
+
 administrator.configuration.form.button.update = Actualizar
-administrator.configuration.error-default-currency = Error monedas por defecto:
-administrator.configuration.error-accepted-currencies = Error monedas aceptadas:
-administrator.configuration.error-strong-spamTerms = Error palabras fuertes de spam:
-administrator.configuration.strong-spam-threshold = Error fuerte umbral de spam:
-administrator.configuration.weak-spam-terms = Error palabras débiles de spam:
-administrator.configuration.weak-spam-threshold = Error umbral de spam débil:
+
+administrator.configuration.default-is-not-accepted = La divisa predeterminada no está entre las aceptadas
+administrator.configuration.accepted-not-correct = Una o varias de las divisas que introdujo no son correctas

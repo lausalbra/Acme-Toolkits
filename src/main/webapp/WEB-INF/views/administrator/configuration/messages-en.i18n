@@ -4,10 +4,8 @@ administrator.configuration.form.label.strong-spam-terms = Strong spam terms:
 administrator.configuration.form.label.strong-spam-threshold = Strong spam threshold:
 administrator.configuration.form.label.weak-spam-words = Weak spam Words:
 administrator.configuration.form.label.weak-spam-threshold = Weak spam Words:
+
 administrator.configuration.form.button.update = Update
-administrator.configuration.error-default-currency = Error default currency:
-administrator.configuration.error-accepted-currencies = Error  accepted currencies:
-administrator.configuration.error-strong-spamTerms = Error strong spam terms:
-administrator.configuration.strong-spam-threshold = Error strong spam threshold:
-administrator.configuration.weak-spam-terms = Error weak spam Words:
-administrator.configuration.weak-spam-threshold = Error weak spam Words:
+
+administrator.configuration.default-is-not-accepted = The default currency is not one of the accepted
+administrator.configuration.accepted-not-correct = One or many of the currencies you inputted are not correct  

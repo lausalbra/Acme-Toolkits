@@ -59,28 +59,24 @@ public class AdministratorConfigurationUpdateService implements AbstractUpdateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
 		if(!errors.hasErrors("defaultCurrency")) {
-			errors.state(request, entity.getDefaultCurrency()!=null, "defaultCurrency", "administrator.configuration.error-default-currency");
-		
+			errors.state(request, entity.getAcceptedCurrencies().contains(entity.getDefaultCurrency()), "defaultCurrency", "administrator.configuration.default-is-not-accepted");
 		}
+		
 		if(!errors.hasErrors("acceptedCurrencies")) {
-			errors.state(request, entity.getAcceptedCurrencies()!=null, "acceptedCurrencies", "administrator.configuration.error-accepted-currencies");
-		
-		}
-		if(!errors.hasErrors("strongSpamTerms")) {
-			errors.state(request, entity.getStrongSpamTerms()!=null, "strongSpamTerms", "administrator.configuration.error-strong-spamTerms");
+			final String acceptedCurrencies = entity.getAcceptedCurrencies();
+			final String[] currencies = acceptedCurrencies.split(",");
+			boolean isCorrect = true;
 			
-		}
-		if(!errors.hasErrors("strongSpamThreshold")) {
-			errors.state(request, entity.getStrongSpamThreshold()>=0&&entity.getStrongSpamThreshold()<=100, "strongSpamThreshold", "administrator.configuration.strong-spam-threshold");
-		
-		}
-		if(!errors.hasErrors("weakSpamTerms")) {
-		errors.state(request, entity.getWeakSpamTerms()!=null, "weakSpamTerms", "administrator.configuration.weak-spam-terms");
-		
-		}
-		if(!errors.hasErrors("weakSpamThreshold")) {
-			errors.state(request, entity.getStrongSpamThreshold()>=0&&entity.getStrongSpamThreshold()<=100, "weakSpamThreshold", "administrator.configuration.weak-spam-threshold");
+			for (int i = 0; i < currencies.length; i++){
+				isCorrect = currencies[i].matches("^[A-Z]{3}$");
+				
+			    if (!isCorrect) {
+			    	break;
+			    }
+			}
+			errors.state(request, isCorrect, "acceptedCurrencies", "administrator.configuration.accepted-not-correct");
 		}
 	}
 

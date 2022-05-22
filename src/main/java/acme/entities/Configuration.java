@@ -29,18 +29,16 @@ public class Configuration extends AbstractEntity{
 	@NotBlank
 	protected String acceptedCurrencies;
 	
-	@NotBlank
 	protected String strongSpamTerms;
 	
-	@Range(min = 0, max = 100)
-	@Digits(integer = 2, fraction = 2)
+	@Range(min = 0, max = 1)
+	@Digits(integer = 1, fraction = 2)
 	protected double strongSpamThreshold;
 	
-	@NotBlank
 	protected String weakSpamTerms;
 	
-	@Range(min = 0, max = 100)
-	@Digits(integer = 2, fraction = 2)
+	@Range(min = 0, max = 1)
+	@Digits(integer = 1, fraction = 2)
 	protected double weakSpamThreshold;
 
 }

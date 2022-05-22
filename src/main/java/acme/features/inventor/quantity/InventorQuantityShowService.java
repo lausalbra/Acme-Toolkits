@@ -9,7 +9,6 @@ import acme.entities.Configuration;
 import acme.entities.quantities.Quantity;
 import acme.entities.toolkits.Toolkit;
 import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
-import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.forms.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
@@ -18,10 +17,10 @@ import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
 @Service
-public class ToolkitQuantityShowService implements AbstractShowService<Inventor, Quantity> {
+public class InventorQuantityShowService implements AbstractShowService<Inventor, Quantity> {
 
 	@Autowired
-	protected InventorToolkitRepository repository;
+	protected InventorQuantityRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Quantity> request) {
@@ -40,8 +39,6 @@ public class ToolkitQuantityShowService implements AbstractShowService<Inventor,
 		result = toolkit.getInventor().getId()==request.getPrincipal().getActiveRoleId();
 
 		return result;
-
-
 	}
 
 	@Override

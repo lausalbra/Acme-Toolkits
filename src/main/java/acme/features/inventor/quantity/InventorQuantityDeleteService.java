@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.quantities.Quantity;
 import acme.entities.toolkits.Toolkit;
-import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -13,10 +12,10 @@ import acme.framework.services.AbstractDeleteService;
 import acme.roles.Inventor;
 
 @Service
-public class ToolkitQuantityDeleteService implements AbstractDeleteService<Inventor, Quantity> {
+public class InventorQuantityDeleteService implements AbstractDeleteService<Inventor, Quantity> {
 
 	@Autowired
-    protected InventorToolkitRepository repository;
+    protected InventorQuantityRepository repository;
 	
 	
 	@Override
@@ -45,7 +44,6 @@ public class ToolkitQuantityDeleteService implements AbstractDeleteService<Inven
         assert errors != null;
 
         request.bind(entity, errors, "number");
-		
 	}
 
 	@Override
@@ -55,7 +53,6 @@ public class ToolkitQuantityDeleteService implements AbstractDeleteService<Inven
         assert model != null;
         
         request.unbind(entity, model, "number","item.name","item.retailPrice", "item.technology", "item.itemType", "item.description");
-		
 	}
 
 	@Override
@@ -84,9 +81,6 @@ public class ToolkitQuantityDeleteService implements AbstractDeleteService<Inven
         assert entity != null;
 
 
-        this.repository.delete(entity);
-		
+        this.repository.delete(entity);	
 	}
-	
-
 }

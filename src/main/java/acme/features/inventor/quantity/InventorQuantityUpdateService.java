@@ -7,7 +7,6 @@ import acme.entities.items.Item;
 import acme.entities.items.ItemType;
 import acme.entities.quantities.Quantity;
 import acme.entities.toolkits.Toolkit;
-import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -15,10 +14,10 @@ import acme.framework.services.AbstractUpdateService;
 import acme.roles.Inventor;
 
 @Service
-public class ToolkitQuantityUpdateService implements AbstractUpdateService<Inventor, Quantity>{
+public class InventorQuantityUpdateService implements AbstractUpdateService<Inventor, Quantity>{
 
 	@Autowired
-	protected InventorToolkitRepository repository;
+	protected InventorQuantityRepository repository;
 
 	@Override
 	public boolean authorise(final Request<Quantity> request) {
@@ -37,8 +36,6 @@ public class ToolkitQuantityUpdateService implements AbstractUpdateService<Inven
 		result = toolkit.getInventor().getId()==request.getPrincipal().getActiveRoleId();
 
 		return result;
-
-
 	}
 
 	@Override
@@ -59,7 +56,6 @@ public class ToolkitQuantityUpdateService implements AbstractUpdateService<Inven
 		model.setAttribute("toolkitDraft", entity.getToolkit().isDraft());
 
 		request.unbind(entity, model, "number","item.name","item.retailPrice", "item.technology", "item.itemType", "item.description");
-
 	}
 
 	@Override
@@ -92,9 +88,5 @@ public class ToolkitQuantityUpdateService implements AbstractUpdateService<Inven
 		assert entity != null;
 
 		this.repository.save(entity);
-
 	}
-
-
-
 }

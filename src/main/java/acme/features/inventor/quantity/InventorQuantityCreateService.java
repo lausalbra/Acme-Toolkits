@@ -7,7 +7,6 @@ import acme.entities.items.Item;
 import acme.entities.items.ItemType;
 import acme.entities.quantities.Quantity;
 import acme.entities.toolkits.Toolkit;
-import acme.features.inventor.toolkit.InventorToolkitRepository;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
@@ -15,10 +14,10 @@ import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 
 @Service
-public class ToolkitQuantityCreateService  implements AbstractCreateService <Inventor, Quantity>{
+public class InventorQuantityCreateService  implements AbstractCreateService <Inventor, Quantity>{
 
 	@Autowired
-	protected InventorToolkitRepository repository;
+	protected InventorQuantityRepository repository;
 	
 	@Override
 	public boolean authorise(final Request<Quantity> request) {
@@ -40,13 +39,12 @@ public class ToolkitQuantityCreateService  implements AbstractCreateService <Inv
         assert entity != null;
         assert errors != null;
         
-        if(this.repository.findAllIPossibletems(entity.getToolkit().getId()).isEmpty()) {
+        if(this.repository.findAllIPossibleItems(entity.getToolkit().getId()).isEmpty()) {
             request.bind(entity, errors, "number");
         } else {
             entity.setItem(this.repository.finOneItemById(Integer.valueOf( request.getModel().getAttribute("itemId").toString()))); // Le pasamos el id del selector del formulario NEcesito pasar de object a integer
             request.bind(entity, errors, "number", "itemId");
         }
-		
 	}
 
 	@Override
@@ -56,10 +54,9 @@ public class ToolkitQuantityCreateService  implements AbstractCreateService <Inv
         assert model != null;
         
         model.setAttribute("masterId", request.getModel().getAttribute("masterId"));
-        model.setAttribute("items", this.repository.findAllIPossibletems(entity.getToolkit().getId()));
+        model.setAttribute("items", this.repository.findAllIPossibleItems(entity.getToolkit().getId()));
         
         request.unbind(entity, model, "number");
-        
 	}
 
 	@Override
@@ -77,7 +74,6 @@ public class ToolkitQuantityCreateService  implements AbstractCreateService <Inv
         quantity.setToolkit(toolkit);
         
         return quantity;
-		
 	}
 
 	@Override
@@ -93,7 +89,6 @@ public class ToolkitQuantityCreateService  implements AbstractCreateService <Inv
                 errors.state(request,entity.getNumber() == 1, "number", "inventor.quantity.form.error.toolkit-has-tool");
             }
         }
-		
 	}
 
 	@Override
@@ -101,8 +96,6 @@ public class ToolkitQuantityCreateService  implements AbstractCreateService <Inv
 		assert request != null;
         assert entity != null;
 
-        this.repository.save(entity);
-		
+        this.repository.save(entity);	
 	}
-
 }

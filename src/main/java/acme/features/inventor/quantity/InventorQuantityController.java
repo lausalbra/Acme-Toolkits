@@ -10,22 +10,22 @@ import acme.framework.controllers.AbstractController;
 import acme.roles.Inventor;
 
 @Controller
-public class ToolkitQuantityListController extends AbstractController<Inventor, Quantity> {
+public class InventorQuantityController extends AbstractController<Inventor, Quantity> {
 	
 	@Autowired 
-	protected ToolkitQuantityListService listService;
+	protected InventorQuantityListService listService;
 	
 	@Autowired 
-	protected ToolkitQuantityShowService showService;
+	protected InventorQuantityShowService showService;
 	
 	@Autowired 
-	protected ToolkitQuantityCreateService createService;
+	protected InventorQuantityCreateService createService;
 	
 	@Autowired
-	protected ToolkitQuantityDeleteService deleteService;
+	protected InventorQuantityDeleteService deleteService;
 	
 	@Autowired
-	protected ToolkitQuantityUpdateService updateService;
+	protected InventorQuantityUpdateService updateService;
 	
 	@PostConstruct
 	protected void initialise() {

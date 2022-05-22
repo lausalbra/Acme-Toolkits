@@ -35,7 +35,6 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		
 		return result;
 	}
-
 	@Override
 	public void bind(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 		assert request != null;
@@ -101,18 +100,18 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
         	final Date moment = new Date(startPeriod.getTime() + 604799999); // Una semana menos un milisegundo
         	errors.state(request, endPeriod.after(moment), "endPeriod", "patron.patronage.form.error.end-period-one-week-before-start-period");
         }
-        
+
         if(!errors.hasErrors("legalStuff")) {
-        	final Configuration configuration = this.repository.findConfiguration();
-        	final String[] sp = configuration.getWeakSpamTerms().split(",");
-        	final List<String> softSpam = new ArrayList<String>(Arrays.asList(sp));
-        	final Double softThreshold = configuration.getWeakSpamThreshold();
-        	final String[] hp = configuration.getStrongSpamTerms().split(",");
-        	final List<String> hardSpam = new ArrayList<String>(Arrays.asList(hp));
-        	final Double hardThreshold = configuration.getStrongSpamThreshold();
-        	errors.state(request, !spamDetector.isSpam(entity.getLegalStuff(), softSpam, softThreshold, hardSpam, hardThreshold), "memorandum", "patron.patronage.form.error.spam");
+        	final Configuration conf = this.repository.findConfiguration();
+        	final Double hardThreshold = conf.getStrongSpamThreshold();
+        	final Double softThreshold = conf.getWeakSpamThreshold();
+        	final List<String> hardWords = new ArrayList<String>(Arrays.asList(conf.getStrongSpamTerms().split(",")));
+        	final List<String> softWords = new ArrayList<String>(Arrays.asList(conf.getWeakSpamTerms().split(",")));
+        	final String legalStuff = entity.getLegalStuff();
+        	final boolean isSpam = spamDetector.isSpam(legalStuff, softWords, softThreshold, hardWords, hardThreshold);
+        	errors.state(request,!isSpam, "legalStuff", "patron.patronage.form.error.spam");
         }
-        
+
 	}
 
 	@Override
@@ -149,7 +148,6 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 	public void create(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
         assert entity != null;
-
         this.repository.save(entity);
 	}
 	

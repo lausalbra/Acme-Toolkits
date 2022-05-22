@@ -1,5 +1,6 @@
 package acme.testing.patron.patronage;
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -75,5 +76,17 @@ public class PatronPatronagePublishTest extends TestHarness{
 		super.checkNotPanicExists();
 		
 		super.signOut();
+	}
+	
+	
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		// HINT: the framework doesn't provide enough support to implement this test case,
+		// so it must be performed manually:
+		//		a) publish a patronage with a role other than "Patron";
+		//		b) publish a published patronage that was registered by the principal;
+		//		c) publish a published patronage that wasn't registered by the principal;
+		//		d) publish an unpublished patronage that wasn't registered by the principal.
 	}
 }

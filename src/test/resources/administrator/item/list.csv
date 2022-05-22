@@ -1,6 +1,5 @@
 recordIndex,name,itemType,code,technology,retailPrice,fullname
 0,Component 01,COMPONENT,AAA-000,Technology 02,EUR 16.00,"Number One, Inventor"
-1,Component 12,COMPONENT,FFF-555-F,Technology 01,USD 50.50,"Number Two, Inventor"
-2,Tool 01,TOOL,ABC-000,Technology 01,EUR 123.13,"Number One, Inventor"
-3,Component 02,COMPONENT,AAA-000-A,Technology 03,EUR 15.50,"Number One, Inventor"
-4,Component 13,COMPONENT,GGG-666,Technology 02,USD 45.45,"Number Two, Inventor"
+1,Component 02,COMPONENT,AAA-000-A,Technology 03,EUR 15.50,"Number One, Inventor"
+2,Component 04,COMPONENT,BBB-111-B,Technology 02,EUR 987.67,"Number One, Inventor"
+3,Component 05,COMPONENT,CCC-222,Technology 03,EUR 1.00,"Number One, Inventor"

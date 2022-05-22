@@ -1,6 +1,7 @@
 package acme.testing.anonymous.item;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -17,8 +18,9 @@ public class AnonymousItemShowTest  extends TestHarness{
 		
 		super.clickOnMenu("Anonymous", "List All Item");
 		super.checkListingExists();
-		super.clickOnListingRecord(recordIndex);
+		super.sortListing(0, "asc");
 		
+		super.clickOnListingRecord(recordIndex);
 		super.checkInputBoxHasValue("name", name);
 		super.checkInputBoxHasValue("itemType", itemType);
 		super.checkInputBoxHasValue("code", code);
@@ -29,5 +31,11 @@ public class AnonymousItemShowTest  extends TestHarness{
 		super.checkInputBoxHasValue("fullname", fullname);
 		
 	}
+	
+	@Test
+    @Order(30)
+    public void hackingTest() {
+        // a) Show a item from /any/item/list with a role 
+    }
 
 }

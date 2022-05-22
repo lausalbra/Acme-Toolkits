@@ -30,6 +30,7 @@ public class PatronPatronageListMineTest extends TestHarness {
 	@Test
 	@Order(30)
 	public void hackingTest() {
+		super.checkNotLinkExists("Account");
 		super.navigate("/patron/patronage/list-mine");
 		super.checkPanicExists();
 		

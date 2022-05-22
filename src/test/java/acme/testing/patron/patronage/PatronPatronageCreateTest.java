@@ -41,7 +41,6 @@ public class PatronPatronageCreateTest extends TestHarness {
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkFormExists();
-		super.checkInputBoxHasValue("status", status);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("legalStuff", legalStuff);
 		super.checkInputBoxHasValue("budget", budget);
@@ -84,6 +83,7 @@ public class PatronPatronageCreateTest extends TestHarness {
 	@Test
 	@Order(30)
 	public void hackingTest() {
+		super.checkNotLinkExists("Account");
 		super.navigate("/patron/patronage/create");
 		super.checkPanicExists();
 		

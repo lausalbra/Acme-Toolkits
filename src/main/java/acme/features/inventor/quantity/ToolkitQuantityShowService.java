@@ -63,31 +63,29 @@ public class ToolkitQuantityShowService implements AbstractShowService<Inventor,
 		assert entity != null;
 		assert model != null;
 
-		final MoneyExchange conversion = this.conversion(entity.getItem().getRetailPrice());
-		model.setAttribute("conversion", conversion.getTarget());
+		final MoneyExchange change = this.change(entity.getItem().getRetailPrice());
+		model.setAttribute("change", change.getTarget());
 		model.setAttribute("toolkitDraft", entity.getToolkit().isDraft());
 
 		request.unbind(entity, model, "number", "item.name","item.retailPrice", "item.technology", "item.itemType", "item.description");
 	}
-	protected MoneyExchange conversion(final Money money) {
+	protected MoneyExchange change(final Money money) {
 		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
-		MoneyExchange conversion = new MoneyExchange();
+		MoneyExchange change = new MoneyExchange();
 		final Configuration configuration = this.repository.findConfiguration();
 		
 		if(!money.getCurrency().equals(configuration.getDefaultCurrency())) { //money usd y lo otro eur
-			conversion = this.repository.findMoneyExchageByCurrencyAndAmount(money.getCurrency(),money.getAmount());//comprobar si esta en la cache
-			if(conversion == null) {//no el precio es 0 necesito esto para que no pete
-				conversion = moneyExchange.computeMoneyExchange(money, configuration.getDefaultCurrency());
-				this.repository.save(conversion); // y la guardo en bbdd
+			change = this.repository.findMoneyExchageByCurrencyAndAmount(money.getCurrency(),money.getAmount());//comprobar si esta en la cache
+			if(change == null) {//no el precio es 0 necesito esto para que no pete
+				change = moneyExchange.computeMoneyExchange(money, configuration.getDefaultCurrency());
+				this.repository.save(change); // y la guardo en bbdd
 			}
-		}else {//Si tengo euro euro no necesito conversion
-			conversion.setSource(money);
-			conversion.setTarget(money);
-			conversion.setCurrencyTarget(configuration.getDefaultCurrency());
-			conversion.setDate(new Date(System.currentTimeMillis()));		
+		}else {//Si tengo euro euro no necesito change
+			change.setSource(money);
+			change.setTarget(money);
+			change.setCurrencyTarget(configuration.getDefaultCurrency());
+			change.setDate(new Date(System.currentTimeMillis()));		
 		}
-		return conversion;
+		return change;
 	}
-
-
 }

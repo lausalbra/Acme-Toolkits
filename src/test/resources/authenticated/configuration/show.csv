@@ -1,2 +1,2 @@
-recordIndex,defaultCurrency,acceptedCurrencies
-0,EUR,EUR-USD-GBP
+defaultCurrency,acceptedCurrencies
+EUR,"EUR,USD,GBP"

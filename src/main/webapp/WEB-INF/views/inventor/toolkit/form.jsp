@@ -13,7 +13,7 @@
 	
 	
 	<jstl:choose>
-		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && draft == true}">
 			<acme:submit code="inventor.toolkit.form.button.update" action="/inventor/toolkit/update"/>
 			<acme:submit code="inventor.toolkit.form.button.delete" action="/inventor/toolkit/delete"/>
 			<acme:submit code="inventor.toolkit.form.button.publish" action="/inventor/toolkit/publish"/>

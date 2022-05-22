@@ -13,7 +13,7 @@
         <acme:input-money code="inventor.item.form.label.conversion" path="conversion" readonly="true"/>
     </jstl:if>
 
-    <jstl:if test="${toolkitPublished == false}">
+    <jstl:if test="${toolkitDraft == true}">
         <acme:submit code="inventor.quantity.form.button.update" action="/inventor/quantity/update"/>
         <acme:submit code="inventor.quantity.form.button.delete" action="/inventor/quantity/delete"/>
     </jstl:if>

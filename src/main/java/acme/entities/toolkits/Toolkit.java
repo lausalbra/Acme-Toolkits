@@ -49,7 +49,7 @@ public class Toolkit extends AbstractEntity{
 	@URL
 	protected String	optionalLink;
 	
-	protected boolean   published;
+	protected boolean   draft;
 	
 	@ManyToOne(optional = false)
     @Valid

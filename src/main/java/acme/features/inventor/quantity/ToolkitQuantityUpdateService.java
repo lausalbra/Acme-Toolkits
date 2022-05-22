@@ -56,7 +56,7 @@ public class ToolkitQuantityUpdateService implements AbstractUpdateService<Inven
 		assert entity != null;
 		assert model != null;
 
-		model.setAttribute("toolkitPublished", entity.getToolkit().isPublished());
+		model.setAttribute("toolkitDraft", entity.getToolkit().isDraft());
 
 		request.unbind(entity, model, "number","item.name","item.retailPrice", "item.technology", "item.itemType", "item.description");
 

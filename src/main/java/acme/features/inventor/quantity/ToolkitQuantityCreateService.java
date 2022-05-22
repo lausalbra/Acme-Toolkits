@@ -29,7 +29,7 @@ public class ToolkitQuantityCreateService  implements AbstractCreateService <Inv
 		 
 		 masterId = request.getModel().getInteger("masterId");
 		 toolkit = this.repository.findOneToolkitById(masterId);
-		 result = toolkit != null && !toolkit.isPublished() && request.isPrincipal(toolkit.getInventor());
+		 result = toolkit != null && toolkit.isDraft() && request.isPrincipal(toolkit.getInventor());
 		 
 		return result;
 	}

@@ -50,7 +50,7 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		inventor = this.repository.findOneInventorById(request.getPrincipal().getActiveRoleId());
 		
 		result = new Toolkit();
-		result.setPublished(false);
+		result.setDraft(true);
 		result.setInventor(inventor);
 		
 		return result;

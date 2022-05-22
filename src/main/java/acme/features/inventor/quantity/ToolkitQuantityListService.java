@@ -58,7 +58,7 @@ public class ToolkitQuantityListService implements AbstractListService<Inventor,
         
         masterId = request.getModel().getInteger("masterId");
         toolkit = this.repository.findOneToolkitById(masterId);
-        showCreate = (!toolkit.isPublished() && request.isPrincipal(toolkit.getInventor()));
+        showCreate = (toolkit.isDraft() && request.isPrincipal(toolkit.getInventor()));
         
         model.setAttribute("masterId", masterId);
         model.setAttribute("showCreate", showCreate);

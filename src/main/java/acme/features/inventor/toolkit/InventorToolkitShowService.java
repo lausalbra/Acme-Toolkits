@@ -70,25 +70,26 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		request.unbind(entity, model, "code", "title", "description", "assemblyNote", "optionalLink", "draft");
 	}
 
-	protected MoneyExchange conversion(final Money money) {
+	protected MoneyExchange change(final Money money) {
 		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
-		MoneyExchange conversion = new MoneyExchange();
+		MoneyExchange change = new MoneyExchange();
 		final Configuration configuration = this.repository.findConfiguration();
 		
 		if(!money.getCurrency().equals(configuration.getDefaultCurrency())) { //money usd y lo otro eur
-			conversion = this.repository.findMoneyExchageByCurrencyAndAmount(money.getCurrency(),money.getAmount());//comprobar si esta en la cache
-			if(conversion == null) {//no el precio es 0 necesito esto para que no pete
-				conversion = moneyExchange.computeMoneyExchange(money, configuration.getDefaultCurrency());
-				this.repository.save(conversion); // y la guardo en bbdd
+			change = this.repository.findMoneyExchageByCurrencyAndAmount(money.getCurrency(),money.getAmount());//comprobar si esta en la cache
+			if(change == null) {//no el precio es 0 necesito esto para que no pete
+				change = moneyExchange.computeMoneyExchange(money, configuration.getDefaultCurrency());
+				this.repository.save(change); // y la guardo en bbdd
 			}
 		}else {//Si tengo euro euro no necesito conversion
-			conversion.setSource(money);
-			conversion.setTarget(money);
-			conversion.setCurrencyTarget(configuration.getDefaultCurrency());
-			conversion.setDate(new Date(System.currentTimeMillis()));		
+			change.setSource(money);
+			change.setTarget(money);
+			change.setCurrencyTarget(configuration.getDefaultCurrency());
+			change.setDate(new Date(System.currentTimeMillis()));		
 		}
-		return conversion;
+		return change;
 	}
+	
 	private Money totalPriceOfToolkit(final int toolkitId) {
         final Money result = new Money();
         result.setAmount(0.0);
@@ -97,13 +98,13 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
         final Collection<Quantity> quantities = this.repository.findManyQuantitiesByToolkitId(toolkitId);
 
         for(final Quantity quantity: quantities) {
-            final double conversionAmount;
+            final double changeAmount;
             final Money itemMoney = quantity.getItem().getRetailPrice();
             final int number = quantity.getNumber();
 
-            conversionAmount = this.conversion(itemMoney).getTarget().getAmount();
+            changeAmount = this.change(itemMoney).getTarget().getAmount();
 
-            final Double newAmount = (double) Math.round((result.getAmount() + conversionAmount*number)*100)/100;
+            final Double newAmount = (double) Math.round((result.getAmount() + changeAmount*number)*100)/100;
             result.setAmount(newAmount);
         }
 

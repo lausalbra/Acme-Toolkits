@@ -14,7 +14,7 @@ inventor.item.form.label.description = Description
 inventor.item.form.label.retailPrice = Retail Price
 inventor.item.form.label.optionalLink = Optional Link
 inventor.item.form.label.published = Published
-inventor.item.form.label.conversion = Conversion
+inventor.item.form.label.change = change
 inventor.item.form.label.username = Inventor's Username
 inventor.item.form.label.fullname = Inventor's Fullname
 

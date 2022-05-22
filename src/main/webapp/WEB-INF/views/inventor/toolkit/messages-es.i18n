@@ -10,7 +10,7 @@ inventor.toolkit.list.button.create = Crear
 
 inventor.toolkit.list.label.code = Codigo
 inventor.toolkit.list.label.title = Titulo
-inventor.toolkit.list.label.published = ¿Publicado?
+inventor.toolkit.list.label.draft = ¿Borrador?
 
 inventor.toolkit.form.button.delete = Eliminar
 inventor.toolkit.form.button.update = Actualizar

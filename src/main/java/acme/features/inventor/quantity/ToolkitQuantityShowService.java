@@ -65,7 +65,7 @@ public class ToolkitQuantityShowService implements AbstractShowService<Inventor,
 
 		final MoneyExchange conversion = this.conversion(entity.getItem().getRetailPrice());
 		model.setAttribute("conversion", conversion.getTarget());
-		model.setAttribute("toolkitPublished", entity.getToolkit().isPublished());
+		model.setAttribute("toolkitDraft", entity.getToolkit().isDraft());
 
 		request.unbind(entity, model, "number", "item.name","item.retailPrice", "item.technology", "item.itemType", "item.description");
 	}

@@ -67,7 +67,7 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		model.setAttribute("retailPrice", retailPrice);
 		
-		request.unbind(entity, model, "code", "title", "description", "assemblyNote", "optionalLink", "published");
+		request.unbind(entity, model, "code", "title", "description", "assemblyNote", "optionalLink", "draft");
 	}
 
 	protected MoneyExchange conversion(final Money money) {

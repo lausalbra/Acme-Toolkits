@@ -26,7 +26,7 @@ public class InventorPatronageAcceptOrDenyService implements AbstractUpdateServi
 		final int id = request.getModel().getInteger("id");
 		final Patronage patronage = this.repository.findOnePatronage(id);
 		
-		result = request.getPrincipal().hasRole(Inventor.class) && patronage.getStatus().equals(Status.PROPOSED);
+		result = request.getPrincipal().hasRole(Inventor.class) && patronage.getStatus().equals(Status.PROPOSED) && patronage.getInventor().getUserAccount().getUsername().equals(request.getPrincipal().getUsername()) && !patronage.isNotPublished();
 		
 		return result;
 	}

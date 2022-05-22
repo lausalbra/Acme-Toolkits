@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.Configuration;
 import acme.entities.patronages.Patronage;
 import acme.entities.patronages.PatronageReport;
 import acme.framework.repositories.AbstractRepository;
@@ -24,5 +25,8 @@ public interface InventorPatronageReportRepository extends AbstractRepository {
 	
 	@Query("select pr from PatronageReport pr where pr.patronage.code = :code")
 	Collection<PatronageReport> findPatronagesReportsByPatronages(String code);
+	
+	@Query("select c from Configuration c")
+	Configuration findConfiguration();
 
 }

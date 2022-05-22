@@ -33,7 +33,7 @@ public class AuthenticatedMoneyExchangePerformService implements AbstractPerform
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "source", "targetCurrency", "date", "target");
+		request.bind(entity, errors, "source", "currencyTarget", "date", "target");
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class AuthenticatedMoneyExchangePerformService implements AbstractPerform
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "source", "targetCurrency", "date", "target");
+		request.unbind(entity, model, "source", "currencyTarget", "date", "target");
 	}
 
 	@Override
@@ -69,13 +69,13 @@ public class AuthenticatedMoneyExchangePerformService implements AbstractPerform
 		assert entity != null;
 
 		Money source, target;
-		String targetCurrency;
+		String currencyTarget;
 		Date date;
 		MoneyExchange exchange;
 
 		source = request.getModel().getAttribute("source", Money.class);
-		targetCurrency = request.getModel().getAttribute("targetCurrency", String.class);
-		exchange = this.computeMoneyExchange(source, targetCurrency);
+		currencyTarget = request.getModel().getAttribute("currencyTarget", String.class);
+		exchange = this.computeMoneyExchange(source, currencyTarget);
 		errors.state(request, exchange != null, "*", "authenticated.money-exchange.form.label.api-error");
 		if (exchange == null) {
 			entity.setTarget(null);
@@ -90,9 +90,9 @@ public class AuthenticatedMoneyExchangePerformService implements AbstractPerform
 
 	// Ancillary methods 
 
-	public MoneyExchange computeMoneyExchange(final Money source, final String targetCurrency) {
+	public MoneyExchange computeMoneyExchange(final Money source, final String currencyTarget) {
 		assert source != null;
-		assert !StringHelper.isBlank(targetCurrency);
+		assert !StringHelper.isBlank(currencyTarget);
 
 		MoneyExchange result;
 		RestTemplate api;
@@ -111,20 +111,20 @@ public class AuthenticatedMoneyExchangePerformService implements AbstractPerform
 				"https://api.exchangerate.host/latest?base={0}&symbols={1}", //
 				ExchangeRate.class, //
 				sourceCurrency, //
-				targetCurrency //
+				currencyTarget //
 			);
 
 			assert record != null;
-			rate = record.getRates().get(targetCurrency);
+			rate = record.getRates().get(currencyTarget);
 			targetAmount = rate * sourceAmount;
 
 			target = new Money();
-			target.setAmount(targetAmount);
-			target.setCurrency(targetCurrency);
+			target.setAmount((double) Math.round(targetAmount*100)/100);
+			target.setCurrency(currencyTarget);
 
 			result = new MoneyExchange();
 			result.setSource(source);
-			result.setTargetCurrency(targetCurrency);
+			result.setCurrencyTarget(currencyTarget);
 			result.setDate(record.getDate());
 			result.setTarget(target);
 		} catch (final Throwable oops) {

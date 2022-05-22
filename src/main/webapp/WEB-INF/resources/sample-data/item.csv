@@ -5,7 +5,7 @@ Item-03,Tool 03,ABC-111,Technology 03,Sample Tool,EUR 789.99,null,TOOL,true,inve
 Item-04,Tool 04,ABC-111-B,Technology 01,Sample Tool,EUR 987.77,https://es.wikipedia.org/wiki/Tool,TOOL,true,inventor-01
 Item-05,Tool 05,ABC-222,Technology 02,Sample Tool,EUR 654.23,null,TOOL,false,inventor-01
 Item-06,Tool 06,ABC-222-C,Technology 03,Sample Tool,USD 432.01,https://es.wikipedia.org/wiki/Tool,TOOL,true,inventor-02
-Item-07,Tool 07,ABC-333,Technology 01,Sample Tool,USD 1693.23,null,TOOL,true,inventor-02
+Item-07,Tool 07,ABC-333,Technology 01,Sample Tool,USD 169.23,null,TOOL,true,inventor-02
 Item-08,Tool 08,ABC-333-D,Technology 02,Sample Tool,USD 873.43,https://es.wikipedia.org/wiki/Tool,TOOL,true,inventor-02
 Item-09,Tool 09,ABC-444,Technology 03,Sample Tool,USD 2.78,null,TOOL,true,inventor-02
 Item-10,Tool 10,ABC-444-E,Technology 01,Sample Tool,USD 90.00,https://es.wikipedia.org/wiki/Tool,TOOL,false,inventor-02

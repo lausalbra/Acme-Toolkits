@@ -1,23 +1,18 @@
-inventor.toolkit.form.label.code = Codigo:
-inventor.toolkit.form.label.title = Titulo:
-inventor.toolkit.form.label.description = Descripción:
-inventor.toolkit.form.label.assemblyNote = Notas de ensamblaje:
-inventor.toolkit.form.label.retailPrice = Precio de venta:
-inventor.toolkit.form.label.link = Link opcional:
+inventor.item.list.label.number = Numero de elementos
+inventor.item.list.label.item-type = Tipo de objeto 
+inventor.item.list.label.item-name = Nombre
+inventor.item.list.label.item-technology = Tecnologia
+inventor.item.list.label.item-retailPrice = Precio
 
-inventor.toolkit.form.button.items = Objetos
-inventor.toolkit.list.button.create = Crear Nuevo Toolkit
+inventor.item-toolkit.list.button.create = Asociar objeto al kit de herramientas
 
-inventor.toolkit.list.label.code = Codigo
-inventor.toolkit.list.label.title = Titulo
-inventor.toolkit.list.label.draft = Borrador
+inventor.item.form.label.number = Numero de elementos
+inventor.item.form.label.item = Objetos posibles
 
-inventor.toolkit.form.button.delete = Eliminar
-inventor.toolkit.form.button.update = Actualizar
-inventor.toolkit.form.button.publish = Publicar borrador
-inventor.toolkit.form.button.create = Crear
+inventor.quantity.form.button.update = Actualizar
+inventor.quantity.form.button.delete = Eliminar
 
-inventor.toolkit.form.error.duplicated = Ya existe un Toolkit con ese código
-inventor.toolkit.form.error.incorrect-title =  Titulo tiene que ser menor a 101 caracteres
-inventor.toolkit.form.error.incorrect-description = Descripción tiene que ser menor a 256 caracteres
-inventor.toolkit.form.error.incorrect-assemblyNote = Notas de ensamblaje tiene que ser menor a 256 caracteres
+inventor.item-toolkit.form.button.create = Asociar objeto al kit de herramientas
+
+inventor.quantity.form.error.toolkit-has-tool = El kit de herramienta debe tener 1 herramienta
+inventor.quantity.form.error.noItem = Debes selecionar un objeto como minimo 

@@ -1,17 +1,22 @@
 package acme.features.patron.patronage;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Configuration;
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
 import acme.framework.controllers.Request;
 import acme.framework.services.AbstractUpdateService;
 import acme.roles.Patron;
+import main.spamDetector;
 
 @Service
 public class PatronPatronagePublishService implements AbstractUpdateService<Patron, Patronage>{
@@ -28,7 +33,7 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
 		final int id = request.getModel().getInteger("id");
 		final Patronage patronage = this.repository.findOnePatronage(id);
 		
-		result = request.getPrincipal().hasRole(Patron.class) && patronage.isNotPublished();
+		result = request.getPrincipal().hasRole(Patron.class) && patronage.isNotPublished() && patronage.getPatron().getUserAccount().getUsername().equals(request.getPrincipal().getUsername());
 		
 		return result;
 	}
@@ -62,6 +67,10 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
         	errors.state(request, isCorrect, "budget", "patron.patronage.form.error.incorrect-currency");
         }
         
+        if(!errors.hasErrors("budget")) {
+        	errors.state(request, entity.getBudget().getAmount() >= 0.0, "budget", "patron.patronage.form.error.negative-budget");
+        }
+        
         if(!errors.hasErrors("startPeriod")) {
         	final Date startPeriod = entity.getStartPeriod();
         	final Calendar calendar = Calendar.getInstance();
@@ -72,11 +81,22 @@ public class PatronPatronagePublishService implements AbstractUpdateService<Patr
         	errors.state(request, startPeriod.after(calendar.getTime()), "startPeriod", "patron.patronage.form.error.start-period-not-enough");
         }
         
-        if(!errors.hasErrors("endPeriod")) {
+        if(!errors.hasErrors("endPeriod") && entity.getStartPeriod()!=null) {
         	final Date startPeriod = entity.getStartPeriod();
         	final Date endPeriod = entity.getEndPeriod();
         	final Date moment = new Date(startPeriod.getTime() + 604799999); // Una semana menos un milisegundo
         	errors.state(request, endPeriod.after(moment), "endPeriod", "patron.patronage.form.error.end-period-one-week-before-start-period");
+        }
+        
+        if(!errors.hasErrors("legalStuff")) {
+        	final Configuration configuration = this.repository.findConfiguration();
+        	final String[] sp = configuration.getWeakSpamTerms().split(",");
+        	final List<String> softSpam = new ArrayList<String>(Arrays.asList(sp));
+        	final Double softThreshold = configuration.getWeakSpamThreshold();
+        	final String[] hp = configuration.getStrongSpamTerms().split(",");
+        	final List<String> hardSpam = new ArrayList<String>(Arrays.asList(hp));
+        	final Double hardThreshold = configuration.getStrongSpamThreshold();
+        	errors.state(request, !spamDetector.isSpam(entity.getLegalStuff(), softSpam, softThreshold, hardSpam, hardThreshold), "legalStuff", "patron.patronage.form.error.spam");
         }
         
 	}

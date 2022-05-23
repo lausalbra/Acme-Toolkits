@@ -6,7 +6,7 @@ inventor.toolkit.form.label.retailPrice = Precio de venta:
 inventor.toolkit.form.label.link = Link opcional:
 
 inventor.toolkit.form.button.items = Objetos
-inventor.toolkit.list.button.create = Crear
+inventor.toolkit.list.button.create = Crear Nuevo Toolkit
 
 inventor.toolkit.list.label.code = Codigo
 inventor.toolkit.list.label.title = Titulo

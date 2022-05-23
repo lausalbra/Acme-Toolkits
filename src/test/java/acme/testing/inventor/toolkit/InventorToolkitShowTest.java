@@ -26,7 +26,6 @@ public class InventorToolkitShowTest  extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("assemblyNote", assemblyNote);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
-		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
 		
 		super.signOut();

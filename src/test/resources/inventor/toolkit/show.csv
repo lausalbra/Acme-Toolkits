@@ -1,4 +1,3 @@
-recordIndex,code,title,description,assemblyNote,retailPrice,optionalLink
-0,ABC-111-A,Titulo 1,Sample Toolkit,Nota de montaje 1,EUR 0.00,https://es.wikipedia.org/wiki/Montaje
-1,ABC-333-B,Titulo 3,Sample Toolkit,Nota de montaje 3,EUR 1396.09,https://es.wikipedia.org/wiki/Montaje
-2,ABC-666,Titulo 6,Sample Toolkit,Nota de montaje 6,EUR 456.88,
+0,ABC-111-A,Titulo 1,Sample Toolkit,Nota de montaje 1,null,https://es.wikipedia.org/wiki/Montaje
+1,ABC-333-B,Titulo 3,Sample Toolkit,Nota de montaje 3,null,https://es.wikipedia.org/wiki/Montaje
+2,ABC-666,Titulo 6,Sample Toolkit,Nota de montaje 6,EUR 2741.28,

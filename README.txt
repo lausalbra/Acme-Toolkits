@@ -17,3 +17,5 @@ To get this project up and running, please follow the appropriate guideline, tak
 account that you must link Acme-Framework-22.1 excluding the following resources:
 
 - **/fragments/**
+
+Dentro de la carpeta spam se encuentra el .jar necesario para la correcta ejecucion del proyecto.

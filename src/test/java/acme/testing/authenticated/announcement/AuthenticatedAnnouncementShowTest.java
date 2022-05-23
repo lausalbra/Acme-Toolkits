@@ -1,6 +1,7 @@
 package acme.testing.authenticated.announcement;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -26,4 +27,11 @@ public class AuthenticatedAnnouncementShowTest extends TestHarness {
 		
 		super.signOut();
 	}
+	
+	 @Test
+	    @Order(30)
+	    public void hackingTest() {
+	        // a) Show a announcement  with no role
+	    }
+	   
 }

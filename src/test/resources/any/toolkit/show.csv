@@ -1,4 +1,4 @@
 recordIndex,code,title,description,assemblyNote,retailPrice,optionalLink,fullname
-0,ABC-333-B,Titulo 3,Sample Toolkit,Nota de montaje 3,null,https://es.wikipedia.org/wiki/Montaje,"Number One, Inventor"
-1,ABC-222,Titulo 2,Sample Toolkit,Nota de montaje 2,EUR 4274.99,,"Number Two, Inventor"
+0,ABC-222,Titulo 2,Sample Toolkit,Nota de montaje 2,EUR 1324.37,,"Number Two, Inventor"
+1,ABC-333-B,Titulo 3,Sample Toolkit,Nota de montaje 3,null,https://es.wikipedia.org/wiki/Montaje,"Number One, Inventor"
 2,ABC-555-C,Titulo 5,Sample Toolkit,Nota de montaje 5,null,https://es.wikipedia.org/wiki/Montaje,"Number Two, Patron"

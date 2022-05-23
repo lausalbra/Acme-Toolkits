@@ -41,7 +41,7 @@ public class InventorItemCreateTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 0, name);
 		super.checkColumnHasValue(recordIndex, 1, itemType);
 		super.checkColumnHasValue(recordIndex, 2, code);
-		super.checkColumnHasValue(recordIndex, 3, technology);
+		super.checkColumnHasValue(recordIndex, 3, "inventor1");
 		super.checkColumnHasValue(recordIndex, 4, retailPrice);
 		super.checkColumnHasValue(recordIndex, 5, "false");
 		
@@ -54,6 +54,9 @@ public class InventorItemCreateTest extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
+		super.checkInputBoxHasValue("username", "inventor1");
+		super.checkInputBoxHasValue("fullname", "Number One, Inventor");
+		
 		
 		super.signOut();
 	}
@@ -80,6 +83,7 @@ public class InventorItemCreateTest extends TestHarness{
 		super.fillInputBoxIn("optionalLink", optionalLink);
 		super.clickOnSubmit("Create");
 
+		super.checkNotPanicExists();
 		super.checkErrorsExist();
 
 		super.signOut();

@@ -10,7 +10,7 @@ inventor.toolkit.list.button.create = Create New Toolkit
 
 inventor.toolkit.list.label.code = Code
 inventor.toolkit.list.label.title = Title
-inventor.toolkit.list.label.draft = Draft
+inventor.toolkit.list.label.draft = Is draft?
 
 inventor.toolkit.form.button.delete = Delete
 inventor.toolkit.form.button.update = Update

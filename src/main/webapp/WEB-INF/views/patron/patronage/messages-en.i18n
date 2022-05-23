@@ -21,9 +21,11 @@ patron.patronage.form.button.update = Update
 patron.patronage.form.button.delete = Delete
 patron.patronage.form.button.publish = Publish
 
-patron.patronage.form.error.not-unique = Code must be unique
-patron.patronage.form.error.incorrect-currency = Currency of the budget must be one of the accepted by the system. Please, review the configuration parameters
-patron.patronage.form.error.username-null = Username of the inventor must not be null. There must be one inventor
+patron.patronage.form.error.not-unique = The code must be unique
+patron.patronage.form.error.incorrect-currency = The currency of the budget must be one of the accepted by the system. Please, review the configuration parameters
+patron.patronage.form.error.incorrect-budget = The budget must be positive
+patron.patronage.form.error.username-null = The username of the inventor must not be null. There must be one inventor
 patron.patronage.form.error.username-does-not-exist = The username you typed corresponds to a non-existing inventor. Please, try again
-patron.patronage.form.error.start-period-not-enough = Start period needs to be, at least, one month after this moment
-patron.patronage.form.error.end-period-one-week-before-start-period = End period needs to be, at least, one week after Start Period
+patron.patronage.form.error.start-period-not-enough = The start period needs to be, at least, one month after this moment
+patron.patronage.form.error.end-period-one-week-before-start-period = The end period needs to be, at least, one week after Start Period
+patron.patronage.form.error.spam = This text is a spam text

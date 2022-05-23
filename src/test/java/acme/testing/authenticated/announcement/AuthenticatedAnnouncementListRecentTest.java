@@ -1,6 +1,7 @@
 package acme.testing.authenticated.announcement;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -21,5 +22,14 @@ public class AuthenticatedAnnouncementListRecentTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 2, status);
 		super.signOut();
 	}
+	
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		super.checkNotLinkExists("Account");
+		super.navigate("/authenticated/announcement/list");
+		super.checkPanicExists();
+	}
+	
 }
 

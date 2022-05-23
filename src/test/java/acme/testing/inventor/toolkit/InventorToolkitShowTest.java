@@ -1,6 +1,7 @@
 package acme.testing.inventor.toolkit;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -17,6 +18,7 @@ public class InventorToolkitShowTest  extends TestHarness{
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my Toolkits");
 		super.checkListingExists();
+		super.sortListing(1, "asc");
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkInputBoxHasValue("code", code);
@@ -29,4 +31,11 @@ public class InventorToolkitShowTest  extends TestHarness{
 		super.signOut();
 	}
 
+	
+	   @Test
+	    @Order(30)
+	    public void hackingTest() {
+	        // a) Show a toolkit from inventor/toolkit/list-mine-toolkits with a role other than "Inventor"
+	    }
+	   
 }

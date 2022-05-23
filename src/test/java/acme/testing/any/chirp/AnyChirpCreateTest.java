@@ -26,6 +26,7 @@ public class AnyChirpCreateTest extends TestHarness {
 		
 		super.clickOnMenu("Anonymous", "List recent chirps");
 		super.checkListingExists();
+		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 1, title);
 		super.checkColumnHasValue(recordIndex, 2, author);
 		super.checkColumnHasValue(recordIndex, 3, body);
@@ -49,9 +50,10 @@ public class AnyChirpCreateTest extends TestHarness {
 		super.checkErrorsExist();
 		
 	}
+	
 	@Test
 	@Order(30)
 	public void hackingTest() {
-		//No existe hacking
+		//There is no possible hacking
 	}
 }

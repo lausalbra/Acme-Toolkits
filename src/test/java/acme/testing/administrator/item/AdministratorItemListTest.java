@@ -1,6 +1,7 @@
 package acme.testing.administrator.item;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -17,6 +18,7 @@ public class AdministratorItemListTest extends TestHarness{
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Administrator", "List All Item");
 		super.checkListingExists();
+		super.sortListing(0, "asc");
 		
 		super.checkColumnHasValue(recordIndex, 0, name);
 		super.checkColumnHasValue(recordIndex, 1, itemType);
@@ -25,6 +27,12 @@ public class AdministratorItemListTest extends TestHarness{
 		super.checkColumnHasValue(recordIndex, 4, retailPrice);
 		super.checkColumnHasValue(recordIndex, 5, fullname);
 		super.signOut();
+	}
+	
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		//There is no possible hacking
 	}
 	
 }

@@ -1,13 +1,19 @@
 package acme.features.inventor.toolkit;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Configuration;
+import acme.entities.quantities.Quantity;
 import acme.entities.toolkits.Toolkit;
+import acme.features.authenticated.moneyExchange.AuthenticatedMoneyExchangePerformService;
+import acme.forms.MoneyExchange;
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.services.AbstractShowService;
 import acme.roles.Inventor;
 
@@ -44,33 +50,64 @@ public class InventorToolkitShowService implements AbstractShowService<Inventor,
 		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneToolkitById(id);
+		result.setRetailPrice(this.totalPriceOfToolkit(id));
 		
 		return result;
 	}
 	
+
 	@Override
 	public void unbind (final Request<Toolkit> request, final Toolkit entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 		
-		int id;
-		id = request.getModel().getInteger("id");
+		final String retailPrice = entity.getRetailPrice().toString().replace("<<", "").replace(">>", "");
 		
-		final List<String> currencyList = this.repository.findAllCurrenciesByToolkitId(id);
-		
-		String retailPrice;
-		
-		if(currencyList.size()==1) {
-			final Double amount = this.repository.findRetailPriceByToolkitId(id);
-			retailPrice = currencyList.get(0) + " " + String.format("%.2f", amount);
-		}else {
-			retailPrice = "null";
-		}
 		
 		model.setAttribute("retailPrice", retailPrice);
 		
 		request.unbind(entity, model, "code", "title", "description", "assemblyNote", "optionalLink", "draft");
 	}
 
+	protected MoneyExchange change(final Money money) {
+		final AuthenticatedMoneyExchangePerformService moneyExchange = new AuthenticatedMoneyExchangePerformService();
+		MoneyExchange change = new MoneyExchange();
+		final Configuration configuration = this.repository.findConfiguration();
+		
+		if(!money.getCurrency().equals(configuration.getDefaultCurrency())) { //money usd y lo otro eur
+			change = this.repository.findMoneyExchageByCurrencyAndAmount(money.getCurrency(),money.getAmount());//comprobar si esta en la cache
+			if(change == null) {//no el precio es 0 necesito esto para que no pete
+				change = moneyExchange.computeMoneyExchange(money, configuration.getDefaultCurrency());
+				this.repository.save(change); // y la guardo en bbdd
+			}
+		}else {//Si tengo euro euro no necesito conversion
+			change.setSource(money);
+			change.setTarget(money);
+			change.setCurrencyTarget(configuration.getDefaultCurrency());
+			change.setDate(new Date(System.currentTimeMillis()));		
+		}
+		return change;
+	}
+	
+	private Money totalPriceOfToolkit(final int toolkitId) {
+        final Money result = new Money();
+        result.setAmount(0.0);
+        result.setCurrency("EUR");
+
+        final Collection<Quantity> quantities = this.repository.findManyQuantitiesByToolkitId(toolkitId);
+
+        for(final Quantity quantity: quantities) {
+            final double changeAmount;
+            final Money itemMoney = quantity.getItem().getRetailPrice();
+            final int number = quantity.getNumber();
+
+            changeAmount = this.change(itemMoney).getTarget().getAmount();
+
+            final Double newAmount = (double) Math.round((result.getAmount() + changeAmount*number)*100)/100;
+            result.setAmount(newAmount);
+        }
+
+        return result;
+    }
 }

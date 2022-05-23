@@ -1,6 +1,7 @@
 package acme.testing.authenticated.item;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -18,8 +19,9 @@ public class AuthenticatedItemShowTest  extends TestHarness{
 		super.signIn("administrator", "administrator");
 		super.clickOnMenu("Authenticated", "List all Item");
 		super.checkListingExists();
-		super.clickOnListingRecord(recordIndex);
+		super.sortListing(0, "asc");
 		
+		super.clickOnListingRecord(recordIndex);
 		super.checkInputBoxHasValue("name", name);
 		super.checkInputBoxHasValue("itemType", itemType);
 		super.checkInputBoxHasValue("code", code);
@@ -30,6 +32,12 @@ public class AuthenticatedItemShowTest  extends TestHarness{
 		super.checkInputBoxHasValue("fullname", fullname);
 		
 		super.signOut();
+	}
+	
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		//There is no possible hacking
 	}
 
 }

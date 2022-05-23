@@ -1,6 +1,7 @@
 package acme.features.authenticated.patron;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import acme.framework.components.models.Model;
 import acme.framework.controllers.Errors;
@@ -12,9 +13,9 @@ import acme.framework.entities.UserAccount;
 import acme.framework.helpers.PrincipalHelper;
 import acme.framework.roles.Authenticated;
 import acme.framework.services.AbstractCreateService;
-import acme.roles.Inventor;
 import acme.roles.Patron;
 
+@Service
 public class AuthenticatedPatronCreateService implements AbstractCreateService<Authenticated,Patron> {
 	
 	@Autowired
@@ -29,7 +30,7 @@ public class AuthenticatedPatronCreateService implements AbstractCreateService<A
 		
 		boolean result;
 		
-		result = !request.getPrincipal().hasRole(Inventor.class); 
+		result = !request.getPrincipal().hasRole(Patron.class); 
 
 		return result;
 	}

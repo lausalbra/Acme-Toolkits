@@ -14,6 +14,13 @@
 	<acme:input-textarea code="inventor.item.form.label.description" path="description"/>
 	<acme:input-money code="inventor.item.form.label.retailPrice" path="retailPrice"/>
 	<acme:input-url code="inventor.item.form.label.optionalLink" path="optionalLink"/>
+	<jstl:choose>
+		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish')}">
+			<acme:input-textbox code="inventor.item.form.label.username" path="username" readonly="true"/>
+			<acme:input-textbox code="inventor.item.form.label.fullname" path="fullname" readonly="true"/>
+			<acme:input-money code="inventor.item.form.label.change" path="change" readonly="true"/>
+		</jstl:when>
+	</jstl:choose>
 	
 	<jstl:choose>
 		<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish') && published == false}">

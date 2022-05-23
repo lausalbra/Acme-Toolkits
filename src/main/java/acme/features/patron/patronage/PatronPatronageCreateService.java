@@ -1,11 +1,15 @@
 package acme.features.patron.patronage;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.Configuration;
 import acme.entities.Status;
 import acme.entities.patronages.Patronage;
 import acme.framework.components.models.Model;
@@ -14,6 +18,7 @@ import acme.framework.controllers.Request;
 import acme.framework.services.AbstractCreateService;
 import acme.roles.Inventor;
 import acme.roles.Patron;
+import main.spamDetector;
 
 @Service
 public class PatronPatronageCreateService implements AbstractCreateService<Patron, Patronage>{
@@ -30,7 +35,6 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		
 		return result;
 	}
-
 	@Override
 	public void bind(final Request<Patronage> request, final Patronage entity, final Errors errors) {
 		assert request != null;
@@ -69,6 +73,10 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
         	errors.state(request, isCorrect, "budget", "patron.patronage.form.error.incorrect-currency");
         }
         
+        if(!errors.hasErrors("budget")) {
+        	errors.state(request, entity.getBudget().getAmount() >= 0.0, "budget", "patron.patronage.form.error.negative-budget");
+        }
+        
         if(!errors.hasErrors("username")) {
         	final String username = request.getModel().getString("username");
         	final Inventor inventor = this.repository.findOneInventorByUsername(username);
@@ -86,13 +94,24 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
         	errors.state(request, startPeriod.after(calendar.getTime()), "startPeriod", "patron.patronage.form.error.start-period-not-enough");
         }
         
-        if(!errors.hasErrors("endPeriod")) {
+        if(!errors.hasErrors("endPeriod") && entity.getStartPeriod()!=null) {
         	final Date startPeriod = entity.getStartPeriod();
         	final Date endPeriod = entity.getEndPeriod();
         	final Date moment = new Date(startPeriod.getTime() + 604799999); // Una semana menos un milisegundo
         	errors.state(request, endPeriod.after(moment), "endPeriod", "patron.patronage.form.error.end-period-one-week-before-start-period");
         }
-        
+
+        if(!errors.hasErrors("legalStuff")) {
+        	final Configuration conf = this.repository.findConfiguration();
+        	final Double hardThreshold = conf.getStrongSpamThreshold();
+        	final Double softThreshold = conf.getWeakSpamThreshold();
+        	final List<String> hardWords = new ArrayList<String>(Arrays.asList(conf.getStrongSpamTerms().split(",")));
+        	final List<String> softWords = new ArrayList<String>(Arrays.asList(conf.getWeakSpamTerms().split(",")));
+        	final String legalStuff = entity.getLegalStuff();
+        	final boolean isSpam = spamDetector.isSpam(legalStuff, softWords, softThreshold, hardWords, hardThreshold);
+        	errors.state(request,!isSpam, "legalStuff", "patron.patronage.form.error.spam");
+        }
+
 	}
 
 	@Override
@@ -102,8 +121,6 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 		assert model != null;
 		
 		request.unbind(entity, model, "code", "legalStuff", "budget", "startPeriod", "endPeriod", "link");
-		
-		model.setAttribute("confirmation", false);
 		
 	}
 	
@@ -131,7 +148,6 @@ public class PatronPatronageCreateService implements AbstractCreateService<Patro
 	public void create(final Request<Patronage> request, final Patronage entity) {
 		assert request != null;
         assert entity != null;
-
         this.repository.save(entity);
 	}
 	

@@ -1,6 +1,7 @@
 package acme.testing.any.toolkit;
 
 import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -16,8 +17,9 @@ public class AnyItemShowTest  extends TestHarness{
 		
 		super.clickOnMenu("Anonymous", "List All Toolkits");
 		super.checkListingExists();
-		super.clickOnListingRecord(recordIndex);
+		super.sortListing(1, "asc");
 		
+		super.clickOnListingRecord(recordIndex);
 		super.checkInputBoxHasValue("code", code);
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("description", description);
@@ -29,4 +31,11 @@ public class AnyItemShowTest  extends TestHarness{
 		
 	}
 
+	
+	@Test
+	@Order(30)
+	public void hackingTest() {
+		//There is no possible hacking
+	}
+	
 }

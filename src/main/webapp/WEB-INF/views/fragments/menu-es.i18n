@@ -31,6 +31,7 @@ master.menu.authenticated.item.list-all = Ver todos los Items
 master.menu.authenticated.toolkit.list-all = Ver todos Toolkits
 master.menu.authenticated.announcement.list = Ver todos los anuncios recientes
 master.menu.authenticated.configuration = Mostrar Configuracion
+master.menu.authenticated.money-exchage = Cambio de moneda
 
 # master.menu.administrator ###################################################
 

@@ -17,7 +17,7 @@ public class InventorToolkitListTest extends TestHarness{
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my Toolkits");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
+		super.sortListing(0, "asc");
 		
 		super.checkColumnHasValue(recordIndex, 0, code);
 		super.checkColumnHasValue(recordIndex, 1, title);

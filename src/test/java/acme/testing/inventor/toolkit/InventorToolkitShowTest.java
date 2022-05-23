@@ -18,7 +18,7 @@ public class InventorToolkitShowTest  extends TestHarness{
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my Toolkits");
 		super.checkListingExists();
-		super.sortListing(1, "asc");
+		super.sortListing(0, "asc");
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkInputBoxHasValue("code", code);

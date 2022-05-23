@@ -72,10 +72,14 @@ public class InventorToolkitCreateService implements AbstractCreateService<Inven
 		if (!errors.hasErrors("title")) {
 			errors.state(request, entity.getTitle().length()<101, "title", "inventor.toolkit.form.error.incorrect-title");
 		
-		}if (!errors.hasErrors("description")) {
+		}
+		
+		if (!errors.hasErrors("description")) {
 			errors.state(request, entity.getDescription().length()<256, "description", "inventor.toolkit.form.error.incorrect-description");
 		
-		}if (!errors.hasErrors("assemblyNote")) {
+		}
+		
+		if (!errors.hasErrors("assemblyNote")) {
 		errors.state(request, entity.getAssemblyNote().length()<256, "assemblyNote", "inventor.toolkit.form.error.incorrect-assemblyNote");
 		}
 	}

@@ -10,7 +10,7 @@ import acme.testing.TestHarness;
 public class AdministratorAnnouncementCreateTest extends TestHarness {
 	
 	@ParameterizedTest	
-	@CsvFileSource(resources = "/administrator/announcement/create.csv", encoding = "utf-8", numLinesToSkip = 1)
+	@CsvFileSource(resources = "/administrator/announcement/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void positiveTest(final int recordIndex, final String title,
 		final String status, final String body, final String link) {
@@ -40,7 +40,7 @@ public class AdministratorAnnouncementCreateTest extends TestHarness {
 		final String status, final String body, final String link) {
 		
 		super.signIn("administrator", "administrator");
-		super.clickOnMenu("administrator", "Create Announcement");
+		super.clickOnMenu("Administrator", "Create Announcement");
 		
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("status", status);

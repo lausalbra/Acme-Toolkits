@@ -42,7 +42,7 @@ public class InventorItemPublishTest extends TestHarness{
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my Items");
 		super.checkListingExists();
-		super.sortListing(5, "desc");
+		super.sortListing(0, "asc");
 		
 		super.checkColumnHasValue(recordIndex, 2, code);
 		super.checkColumnHasValue(recordIndex, 5, "true");

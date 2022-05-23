@@ -13,7 +13,9 @@ public class InventorItemShowTest  extends TestHarness{
 	@Order(10)
 	public void positiveTest(final int recordIndex,final String name, final String itemType, final String code,  
 								final String technology, final String description, final String retailPrice, 
-								final String optionalLink) {
+								final String optionalLink, final String username, final String fullname, 
+								final String change) {
+		
 		
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my Items");
@@ -27,6 +29,9 @@ public class InventorItemShowTest  extends TestHarness{
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("retailPrice", retailPrice);
 		super.checkInputBoxHasValue("optionalLink", optionalLink);
+		super.checkInputBoxHasValue("username", username);
+		super.checkInputBoxHasValue("fullname", fullname);
+		super.checkInputBoxHasValue("change", change);
 		
 		super.signOut();
 	}

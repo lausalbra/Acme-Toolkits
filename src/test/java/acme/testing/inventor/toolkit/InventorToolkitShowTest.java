@@ -35,6 +35,8 @@ public class InventorToolkitShowTest  extends TestHarness{
 	   @Test
 	    @Order(30)
 	    public void hackingTest() {
+		   	// HINT: the framework doesn't provide enough support to implement this test case,
+			// so it must be performed manually:
 	        // a) Show a toolkit from inventor/toolkit/list-mine-toolkits with a role other than "Inventor"
 	    }
 	   

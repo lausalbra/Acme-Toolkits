@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import acme.testing.TestHarness;
 
-public class AnyItemShowTest  extends TestHarness{
+public class AnyToolkitShowTest  extends TestHarness{
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/any/toolkit/show.csv", encoding = "utf-8", numLinesToSkip = 1)

@@ -10,7 +10,6 @@
         <acme:input-textbox code="inventor.item.form.label.technology" path="item.technology" readonly="true"/>
         <acme:input-textbox code="inventor.item.form.label.item-type" path="item.itemType" readonly="true"/>
         <acme:input-textbox code="inventor.item.form.label.description" path="item.description" readonly="true"/>
-        <acme:input-money code="inventor.item.form.label.change" path="change" readonly="true"/>
     </jstl:if>
 
     <jstl:if test="${toolkitDraft == true}">

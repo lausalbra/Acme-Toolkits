@@ -88,9 +88,9 @@ public class InventorToolkitUpdateTest extends TestHarness{
 	public void hackingTest() {
 		// HINT: the framework doesn't provide enough support to implement this test case,
 		// so it must be performed manually:
-		//		a) update an Item with a role other than "Inventor";
-		//		b) update an published item that was registered by the principal;
-		//		c) update an published item that wasn't registered by the principal;
-		//		d) update an unpublished item that wasn't registered by the principal;
+		//		a) update a toolkit with a role other than "Inventor";
+		//		b) update a non draft toolkit that was registered by the principal;
+		//		c) update a non draft toolkit that wasn't registered by the principal;
+		//		d) update a draft toolkit that wasn't registered by the principal;
 	}
 }

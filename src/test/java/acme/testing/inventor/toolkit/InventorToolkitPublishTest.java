@@ -57,9 +57,9 @@ public class InventorToolkitPublishTest extends TestHarness{
 	public void hackingTest() {
 		// HINT: the framework doesn't provide enough support to implement this test case,
 		// so it must be performed manually:
-		//		a) publish an item with a role other than "Inventor";
-		//		b) publish an published item that was registered by the principal;
-		//		c) publish an published item that wasn't registered by the principal;
-		//		d) publish an unpublished Item that wasn't registered by the principal.
+		//		a) publish a draft toolkit with a role other than "Inventor";
+		//		b) publish a non draft toolkit that was registered by the principal;
+		//		c) publish a non draft toolkit that wasn't registered by the principal;
+		//		d) publish a draft toolkit that wasn't registered by the principal.
 	}
 }

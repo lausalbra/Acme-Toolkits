@@ -4,6 +4,8 @@ inventor.item.list.label.item-name = Nombre
 inventor.item.list.label.item-technology = Tecnologia
 inventor.item.list.label.item-retailPrice = Precio
 
+inventor.item.form.label.item-type ? Tipo de objeto
+
 inventor.item-toolkit.list.button.create = Asociar objeto al kit de herramientas
 
 inventor.item.form.label.number = Numero de elementos

@@ -29,7 +29,6 @@ public class InventorToolkitCreateTest extends TestHarness{
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("assemblyNote", assemblyNote);
-		super.fillInputBoxIn("retailPrice", retailPrice);
 		super.fillInputBoxIn("optionalLink", optionalLink);
 		super.clickOnSubmit("Create");
 		
@@ -37,12 +36,10 @@ public class InventorToolkitCreateTest extends TestHarness{
 		super.checkListingExists();
 		super.sortListing(0, "asc");
 		super.checkColumnHasValue(recordIndex, 0, code);
-		super.checkColumnHasValue(recordIndex, 1, description);
-		super.checkColumnHasValue(recordIndex, 2, assemblyNote);
-		super.checkColumnHasValue(recordIndex, 3, retailPrice);
-		super.checkColumnHasValue(recordIndex, 4, optionalLink);
-		super.checkColumnHasValue(recordIndex, 5, "true");
+		super.checkColumnHasValue(recordIndex, 1, title);
+		super.checkColumnHasValue(recordIndex, 2, "true");
 		
+		super.checkListingExists();
 		super.clickOnListingRecord(recordIndex);
 		super.checkFormExists();
 		
@@ -60,7 +57,7 @@ public class InventorToolkitCreateTest extends TestHarness{
 	@CsvFileSource(resources = "/inventor/toolkit/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(20)
 	public void negativeTest(final int recordIndex, final String code, final String title, final String description, 
-		final String assemblyNote, final String retailPrice, final String optionalLink) {
+		final String assemblyNote, final String optionalLink) {
 
 		super.signIn("inventor1", "inventor1");
 		super.clickOnMenu("Inventor", "List my Toolkits");
@@ -72,7 +69,6 @@ public class InventorToolkitCreateTest extends TestHarness{
 		super.fillInputBoxIn("title", title);
 		super.fillInputBoxIn("description", description);
 		super.fillInputBoxIn("assemblyNote", assemblyNote);
-		super.fillInputBoxIn("retailPrice", retailPrice);
 		super.fillInputBoxIn("optionalLink", optionalLink);
 		super.clickOnSubmit("Create");
 

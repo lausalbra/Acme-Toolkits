@@ -25,7 +25,7 @@ master.menu.anonymous.toolkit.list-all = Ver todos Toolkits
 
 # master.menu.authenticated #######################################################
 
-master.menu.authenticated = Authenticated
+master.menu.authenticated = Autenticado
 master.menu.authenticated.chirp.list-recent = Ver chirps recientes
 master.menu.authenticated.item.list-all = Ver todos los Items
 master.menu.authenticated.toolkit.list-all = Ver todos Toolkits

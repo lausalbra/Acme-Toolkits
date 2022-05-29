@@ -38,7 +38,7 @@ public class InventorItemListService implements AbstractListService<Inventor, It
 		
 		
 		principal = request.getPrincipal();
-		result = this.repository.findMyItems(principal.getUsername());
+		result = this.repository.findManyItemsByInventorId(principal.getActiveRoleId());
 		
 		return result;
 	}

@@ -18,7 +18,7 @@
     		<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>
     	</jstl:when>
     	<jstl:when test="${acme:anyOf(command, 'show, update, delete, publish')}">
-    		<acme:input-textbox code="patron.patronage.form.label.code" path="code" readonly="${true}"/>
+    		<acme:input-textbox code="patron.patronage.form.label.code" path="code"/>
     	</jstl:when>
     </jstl:choose>
     <acme:input-textarea code="patron.patronage.form.label.legal-stuff" path="legalStuff"/>

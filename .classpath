@@ -47,5 +47,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="spam/spamDetector.jar"/>
+	<classpathentry kind="lib" path="Framerwork/Acme-Framework-22.7.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
